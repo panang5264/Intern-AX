@@ -1,3 +1,20 @@
 {
-  "__version__": "1.0.6"
+  "__version__": "1.0.6",
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "TowerDetection"
+      },
+      {
+        "index": 2,
+        "name": "Enemy"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 7,
+      "1": 5,
+      "2": 3
+    }
+  }
 }
