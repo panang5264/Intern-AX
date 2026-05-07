@@ -1,5 +1,6 @@
-import { _decorator, assert, Component, Node, Vec3, math, EventTarget, Prefab, Quat } from 'cc';
+import { _decorator, assert, Component, Node, Vec3, math, EventTarget, Prefab, Quat, instantiate, CCFloat, director } from 'cc';
 import { DetectionArea, DetectionType } from './detection_area';
+import { Bullet } from './bullet'
 const { ccclass, property } = _decorator;
 
 @ccclass('Tower')
@@ -9,22 +10,27 @@ export class Tower extends Component {
     private enemy_list: Array<Node> = new Array();
     // @property({ type: Prefab })
     // public bullet: Prefab
-    @property({ type: Node })
-    public bullet: Node
+    @property({ type: Prefab })
+    public bullet: Prefab = null;
+
+    @property({ type: CCFloat })
+    public cooldown = 0.5;
+    private cur_cooldown = 0;
 
     public onDetectEnemyBound: (node: Node) => void;
     public onEnemyLeaveBound: (node: Node) => void;
 
     protected start(): void {
-        if (this.detection_area === null) {
+        if (this.detection_area == null) {
             this.detection_area = this.node.getComponentInChildren(DetectionArea)
         }
         assert(this.enemy_list != null, "enemy_list is null or undefine")
+        assert(this.bullet != null, "insert bullet prefab")
+
         this.onDetectEnemyBound = this.onDetectEnemy.bind(this);
         this.onEnemyLeaveBound = this.onEnemyLeave.bind(this)
         this.detection_area.addListener(DetectionType.Enter, this.onDetectEnemyBound);
         this.detection_area.addListener(DetectionType.Leave, this.onEnemyLeaveBound);
-
     }
 
     public onDetectEnemy(enemy: Node) {
@@ -48,11 +54,17 @@ export class Tower extends Component {
         if (this.enemy_list.length === 0) {
             return
         }
-        let first_enemy = this.enemy_list[0];
-        const direction = first_enemy.worldPosition.subtract(this.node.worldPosition).normalize();
-        const radian = Math.atan2(direction.y, direction.x);
-        const quat = new Quat();
-        Quat.fromAxisAngle(quat, Vec3.FORWARD, -radian);
-        this.bullet.setWorldRotation(quat)
+        if (this.cur_cooldown >= this.cooldown) {
+            let first_enemy = this.enemy_list[0];
+            let node = instantiate(this.bullet)
+            node.worldPosition = this.node.position;
+            node.parent = director.getScene().getChildByName("Canvas");
+            let bullet = node.getComponent(Bullet);
+            bullet.target_pos = first_enemy.getWorldPosition();
+
+            this.cur_cooldown = 0;
+        }
+
+        this.cur_cooldown += dt;
     }
 }
