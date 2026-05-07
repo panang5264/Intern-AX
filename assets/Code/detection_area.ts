@@ -1,29 +1,41 @@
-import { _decorator, Component, Node, Collider2D, log, CircleCollider2D, Contact2DType, EventTarget } from 'cc';
+import { _decorator, Component, Node, Collider2D, CircleCollider2D, Contact2DType, EventTarget } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('detection_area')
-export class detection_area extends Component {
+export enum DetectionType {
+    Enter = "enemy_enter",
+    Leave = "enemy_leave"
+}
+
+@ccclass('DetectionArea')
+export class DetectionArea extends Component {
     private area: CircleCollider2D
-    private eventTarget = new EventTarget()
+    enemyDetected = new EventTarget()
     start() {
         console.log("detection init");
         this.area = this.node.getComponent(CircleCollider2D) as CircleCollider2D | null
-        if (this.area === null) {
+        if (this.area === null || this.area === undefined) {
             throw Error("missing CircleCollider2D Componenet")
         }
-        this.area.on(Contact2DType.BEGIN_CONTACT, this.onBegineContact, this)
+        this.area.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this)
+        this.area.on(Contact2DType.END_CONTACT, this.onEndContact, this)
     }
 
-    protected onBegineContact(selfCollider: Collider2D, otherCollider: Collider2D) {
-        console.log("Enemy Enter")
+    protected onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D) {
+        let other = otherCollider.node
+        this.enemyDetected.emit(DetectionType.Enter, other)
+    }
+
+    protected onEndContact(selfCollider: Collider2D, otherCollider: Collider2D) {
+        let other = otherCollider.node
+        this.enemyDetected.emit(DetectionType.Leave, other)
     }
 
 
-    public addListener(callback: (node: Node) => void) {
-        this.eventTarget.on('enemy_enter', callback, this)
+    public addListener(type: DetectionType, callback: (node: Node) => void) {
+        this.enemyDetected.on(type, callback)
     }
 
-    public removeListener(callback: (node: Node) => void) {
-        this.eventTarget.off('enemy_enter', callback, this)
+    public removeListener(type: DetectionType, callback: (node: Node) => void) {
+        this.enemyDetected.off(type, callback)
     }
 }

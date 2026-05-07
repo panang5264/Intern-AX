@@ -1,8 +1,8 @@
 import { _decorator, Component, Vec2, Input, input, EventMouse } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('enemy')
-export class enemy extends Component {
+@ccclass('Enemy')
+export class Enemy extends Component {
     private mouse_pos: Vec2 = new Vec2(0, 0)
     start() {
         console.log("enemey Init")
