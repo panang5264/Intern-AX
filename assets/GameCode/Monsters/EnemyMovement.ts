@@ -21,30 +21,36 @@ export class EnemyMovement extends Component {
         }
     }
 
+    public set_path_manager(pathManager: PathManager) {
+        this.pathManager = pathManager
+    }
+
     update(dt: number) {
         if (this._targetIndex >= this._waypoints.length) return;
 
         const targetPos = this._waypoints[this._targetIndex].worldPosition;
         const currentPos = this.node.worldPosition;
+        const stepLen = this.speed * dt;
+        const remaining = Vec3.distance(currentPos, targetPos);
+
+        if (remaining <= stepLen) {
+            this.node.worldPosition = targetPos;
+            this._targetIndex++;
+            if (this._targetIndex >= this._waypoints.length) {
+                this.reachGoal();
+            }
+            return;
+        }
 
         let dir = new Vec3();
         Vec3.subtract(dir, targetPos, currentPos);
         dir.normalize();
 
         let moveStep = new Vec3();
-        Vec3.multiplyScalar(moveStep, dir, this.speed * dt);
+        Vec3.multiplyScalar(moveStep, dir, stepLen);
         let nextPos = new Vec3();
         Vec3.add(nextPos, currentPos, moveStep);
         this.node.worldPosition = nextPos;
-
-
-        if (Vec3.distance(currentPos, targetPos) < 0.1) {
-            this._targetIndex++;
-
-            if (this._targetIndex >= this._waypoints.length) {
-                this.reachGoal();
-            }
-        }
     }
 
     private reachGoal() {

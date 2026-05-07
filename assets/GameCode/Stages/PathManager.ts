@@ -6,6 +6,18 @@ const { ccclass, property } = _decorator;
 export class PathManager extends Component {
     @property([Node]) waypoints: Node[] = [];
 
+    protected start(): void {
+        let children = this.node.children;
+        children.forEach(child => {
+            /* NOTE: use when create unorder waypoints or use WayPoints.id
+             * let name = child.name
+            name = name.split("_")[1]
+            let id = parseInt(name)
+            this.waypoints.splice(id - 1, 0, child) */
+            this.waypoints.push(child)
+        })
+    }
+
     public getWaypoints(): Node[] {
         return this.waypoints;
     }
