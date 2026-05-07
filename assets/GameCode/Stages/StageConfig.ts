@@ -3,13 +3,6 @@ const { ccclass, property } = _decorator;
 
 @ccclass('StageConfig')
 export class StageConfig extends Component {
-    start() {
-
-    }
-
-    update(deltaTime: number) {
-
-    }
 }
 export interface StageData {
     id: number;

@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label } from 'cc';
+import { _decorator, Component, Node, Label, CCInteger } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('BaseManager')
@@ -9,7 +9,7 @@ export class BaseManager extends Component {
     }
     @property(Label) hpLabel: Label = null;
 
-    private maxHp: number = 20;
+    @property(CCInteger) private maxHp: number = 20;
     private currentHp: number = 20;
 
     onLoad() {

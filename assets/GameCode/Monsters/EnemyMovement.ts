@@ -27,11 +27,9 @@ export class EnemyMovement extends Component {
         const targetPos = this._waypoints[this._targetIndex].worldPosition;
         const currentPos = this.node.worldPosition;
 
-
         let dir = new Vec3();
         Vec3.subtract(dir, targetPos, currentPos);
         dir.normalize();
-
 
         let moveStep = new Vec3();
         Vec3.multiplyScalar(moveStep, dir, this.speed * dt);
@@ -42,7 +40,6 @@ export class EnemyMovement extends Component {
 
         if (Vec3.distance(currentPos, targetPos) < 0.1) {
             this._targetIndex++;
-
 
             if (this._targetIndex >= this._waypoints.length) {
                 this.reachGoal();
