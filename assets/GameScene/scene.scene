@@ -23,7 +23,7 @@
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 85
+      "__id__": 96
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -54,7 +54,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 86
+      "__id__": 97
     },
     "_id": "02848434-b98c-4611-8cdc-83f1b98aeb68"
   },
@@ -83,22 +83,25 @@
         "__id__": 29
       },
       {
-        "__id__": 80
+        "__id__": 83
       },
       {
         "__id__": 33
+      },
+      {
+        "__id__": 85
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 82
+        "__id__": 93
       },
       {
-        "__id__": 83
+        "__id__": 94
       },
       {
-        "__id__": 84
+        "__id__": 95
       }
     ],
     "_prefab": null,
@@ -1113,7 +1116,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "EnemyManager",
+    "_name": "WaveManager",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": {
@@ -1191,10 +1194,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "enemyPrefab": {
-      "__uuid__": "39f40532-e880-47e8-a61c-8d270ce79a1d",
-      "__expectedType__": "cc.Prefab"
-    },
     "path_manager": {
       "__id__": 32
     },
@@ -1203,13 +1202,13 @@
         "__id__": 78
       },
       {
-        "__id__": 79
+        "__id__": 80
       }
     ],
     "spawnPoint": {
-      "__id__": 80
+      "__id__": 83
     },
-    "duration": 3,
+    "duration": 5,
     "_id": "5dIGsU8KdOyoPmDgp3kyad"
   },
   {
@@ -1847,14 +1846,50 @@
     "_id": "7avnX+R1ZC47Us2/Bz8y3Y"
   },
   {
-    "__type__": "WaveData",
-    "enemy_num": 3,
-    "spawn_freq": 1
+    "__type__": "Wave",
+    "wave_data": [
+      {
+        "__id__": 79
+      }
+    ]
   },
   {
     "__type__": "WaveData",
-    "enemy_num": 100,
-    "spawn_freq": 0.1
+    "enemy_num": 3,
+    "spawn_freq": 1,
+    "enemyPrefab": {
+      "__uuid__": "39f40532-e880-47e8-a61c-8d270ce79a1d",
+      "__expectedType__": "cc.Prefab"
+    }
+  },
+  {
+    "__type__": "Wave",
+    "wave_data": [
+      {
+        "__id__": 81
+      },
+      {
+        "__id__": 82
+      }
+    ]
+  },
+  {
+    "__type__": "WaveData",
+    "enemy_num": 3,
+    "spawn_freq": 1,
+    "enemyPrefab": {
+      "__uuid__": "43ef64d2-47ea-42e5-b173-8d09674516ce",
+      "__expectedType__": "cc.Prefab"
+    }
+  },
+  {
+    "__type__": "WaveData",
+    "enemy_num": 6,
+    "spawn_freq": 0.5,
+    "enemyPrefab": {
+      "__uuid__": "39f40532-e880-47e8-a61c-8d270ce79a1d",
+      "__expectedType__": "cc.Prefab"
+    }
   },
   {
     "__type__": "cc.Node",
@@ -1868,7 +1903,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 81
+        "__id__": 84
       }
     ],
     "_prefab": null,
@@ -1907,7 +1942,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 80
+      "__id__": 83
     },
     "_enabled": true,
     "__prefab": null,
@@ -1922,6 +1957,117 @@
       "y": 0.5
     },
     "_id": "d0oonaqNpFRJldTQqlQJle"
+  },
+  {
+    "__type__": "cc.Node",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_prefab": {
+      "__id__": 86
+    },
+    "__editorExtras__": {}
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 85
+    },
+    "asset": {
+      "__uuid__": "b581987e-2dd9-4528-9bee-f9f965eb793e",
+      "__expectedType__": "cc.Prefab"
+    },
+    "fileId": "cdYYEmWC9CHouwlyHOkiPt",
+    "instance": {
+      "__id__": 87
+    },
+    "targetOverrides": null,
+    "nestedPrefabInstanceRoots": null
+  },
+  {
+    "__type__": "cc.PrefabInstance",
+    "fileId": "64CgBwOKhEQqNMZY7uoW2i",
+    "prefabRootNode": null,
+    "mountedChildren": [],
+    "mountedComponents": [],
+    "propertyOverrides": [
+      {
+        "__id__": 88
+      },
+      {
+        "__id__": 90
+      },
+      {
+        "__id__": 91
+      },
+      {
+        "__id__": 92
+      }
+    ],
+    "removedComponents": []
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 89
+    },
+    "propertyPath": [
+      "_lpos"
+    ],
+    "value": {
+      "__type__": "cc.Vec3",
+      "x": -278.956,
+      "y": 19.276,
+      "z": 0
+    }
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "cdYYEmWC9CHouwlyHOkiPt"
+    ]
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 89
+    },
+    "propertyPath": [
+      "_name"
+    ],
+    "value": "Tower"
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 89
+    },
+    "propertyPath": [
+      "_lrot"
+    ],
+    "value": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    }
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 89
+    },
+    "propertyPath": [
+      "_euler"
+    ],
+    "value": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
   },
   {
     "__type__": "cc.UITransform",
@@ -2010,34 +2156,37 @@
       },
       {
         "__id__": 67
+      },
+      {
+        "__id__": 85
       }
     ]
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 87
+      "__id__": 98
     },
     "shadows": {
-      "__id__": 88
+      "__id__": 99
     },
     "_skybox": {
-      "__id__": 89
+      "__id__": 100
     },
     "fog": {
-      "__id__": 90
+      "__id__": 101
     },
     "octree": {
-      "__id__": 91
+      "__id__": 102
     },
     "skin": {
-      "__id__": 92
+      "__id__": 103
     },
     "lightProbeInfo": {
-      "__id__": 93
+      "__id__": 104
     },
     "postSettings": {
-      "__id__": 94
+      "__id__": 105
     },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false
