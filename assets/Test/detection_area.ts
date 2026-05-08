@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Collider2D, CircleCollider2D, Contact2DType, EventTarget } from 'cc';
+import { _decorator, Component, Node, Collider2D, CircleCollider2D, Contact2DType, EventTarget, GradientRange, Graphics, Color } from 'cc';
 const { ccclass, property } = _decorator;
 
 export enum DetectionType {
@@ -18,6 +18,12 @@ export class DetectionArea extends Component {
         }
         this.area.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this)
         this.area.on(Contact2DType.END_CONTACT, this.onEndContact, this)
+
+        const g = this.node.getComponent(Graphics)
+        g.circle(this.node.position.x, this.node.position.y, this.area.radius)
+        g.stroke()
+        g.fill()
+
     }
 
     protected onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D) {
