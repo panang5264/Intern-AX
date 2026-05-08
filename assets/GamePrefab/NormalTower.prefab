@@ -387,6 +387,7 @@
       "__expectedType__": "cc.Prefab"
     },
     "cooldown": 0.5,
+    "is_support": false,
     "_id": ""
   },
   {
