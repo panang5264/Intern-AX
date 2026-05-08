@@ -1,13 +1,13 @@
 {
   "__version__": "1.0.6",
+<<<<<<< HEAD
   "general": {
     "designResolution": {
       "width": 1920,
       "height": 1080,
       "fitHeight": true,
       "fitWidth": false
-    }
-  },
+=======
   "physics": {
     "collisionGroups": [
       {
@@ -28,7 +28,7 @@
       "1": 5,
       "2": 11,
       "3": 4
+>>>>>>> thunder-BE
     }
-  },
-  "custom_joint_texture_layouts": []
+  }
 }
