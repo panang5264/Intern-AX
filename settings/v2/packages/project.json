@@ -12,7 +12,7 @@
     "collisionGroups": [
       {
         "index": 1,
-        "name": "TowerDetection"
+        "name": "EnemyDetect"
       },
       {
         "index": 2,
@@ -21,13 +21,23 @@
       {
         "index": 3,
         "name": "Bullet"
+      },
+      {
+        "index": 4,
+        "name": "TowerDetect"
+      },
+      {
+        "index": 5,
+        "name": "Tower"
       }
     ],
     "collisionMatrix": {
       "0": 7,
       "1": 5,
       "2": 11,
-      "3": 4
+      "3": 4,
+      "4": 32,
+      "5": 16
     }
   },
   "custom_joint_texture_layouts": []

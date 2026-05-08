@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "43ef64d2-47ea-42e5-b173-8d09674516ce",
+  "uuid": "b581987e-2dd9-4528-9bee-f9f965eb793e",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Enemy-T1"
+    "syncNodeName": "NormalTower"
   }
 }
