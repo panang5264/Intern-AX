@@ -6,7 +6,7 @@
       "height": 1080,
       "fitHeight": true,
       "fitWidth": false
-	}
+    }
   },
   "physics": {
     "collisionGroups": [
@@ -29,5 +29,6 @@
       "2": 11,
       "3": 4
     }
-  }
+  },
+  "custom_joint_texture_layouts": []
 }

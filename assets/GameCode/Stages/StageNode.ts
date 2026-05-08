@@ -1,24 +1,34 @@
 // assets/GameCode/Stages/StageNode.ts
 import { _decorator, Component, Node, Label, Button, director, Color, Sprite } from 'cc';
 import { StageDataManager } from './StageDataManager';
+import { StageConfig, STAGE_LIST } from './StageConfig';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('StageNode')
 export class StageNode extends Component {
     @property(Label) stageLabel: Label = null;
+    @property(Number) stageId: number = 1;
+    @property(String) sceneName: string = "";
 
-    private _stageId: number = 0;
-    private _sceneToLoad: string = "";
     private _isUnlocked: boolean = false;
 
-    public init(id: number, name: string, sceneName: string, preReqId: number | null) {
-        this._stageId = id;
-        this._sceneToLoad = sceneName;
-        this.stageLabel.string = name;
+    start() {
+        const config = STAGE_LIST.find(s => s.id === this.stageId);
 
 
-        this._isUnlocked = StageDataManager.instance.isStageUnlocked(id, preReqId);
+        if (config && this.stageLabel) {
+            this.stageLabel.string = config.name;
+        }
+
+        const preReqId = config ? config.preRequisiteId : null;
+        this._isUnlocked = StageDataManager.instance.isStageUnlocked(this.stageId, preReqId);
         this.updateVisual();
+
+        const btn = this.getComponent(Button);
+        if (btn) {
+            this.node.on(Button.EventType.CLICK, this.onStageClick, this);
+        }
     }
 
     updateVisual() {
@@ -26,18 +36,24 @@ export class StageNode extends Component {
         const sprite = this.getComponent(Sprite);
 
         if (this._isUnlocked) {
-            btn.interactable = true;
+            if (btn) btn.interactable = true;
             if (sprite) sprite.color = Color.WHITE;
         } else {
-            btn.interactable = false;
+            if (btn) btn.interactable = false;
             if (sprite) sprite.color = Color.GRAY;
         }
     }
 
     onStageClick() {
         if (this._isUnlocked) {
-            console.log("Loading Stage: " + this._sceneToLoad);
-            director.loadScene(this._sceneToLoad);
+            if (this.sceneName !== "") {
+                console.log("กำลังโหลดด่าน: " + this.sceneName);
+                director.loadScene(this.sceneName);
+            } else {
+                console.warn("ยังไม่ได้ใส่ชื่อ Scene ใน Inspector สำหรับด่านที่ " + this.stageId);
+            }
+        } else {
+            console.log("ด่านนี้ยังไม่ปลดล็อค!");
         }
     }
 }
