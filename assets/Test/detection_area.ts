@@ -2,14 +2,14 @@ import { _decorator, Component, Node, Collider2D, CircleCollider2D, Contact2DTyp
 const { ccclass, property } = _decorator;
 
 export enum DetectionType {
-    Enter = "enemy_enter",
-    Leave = "enemy_leave"
+    Enter = "enter",
+    Leave = "leave",
 }
 
 @ccclass('DetectionArea')
 export class DetectionArea extends Component {
     private area: CircleCollider2D
-    enemyDetected = new EventTarget()
+    detected = new EventTarget()
     start() {
         console.log("detection init");
         this.area = this.node.getComponent(CircleCollider2D) as CircleCollider2D | null
@@ -28,20 +28,20 @@ export class DetectionArea extends Component {
 
     protected onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D) {
         let other = otherCollider.node
-        this.enemyDetected.emit(DetectionType.Enter, other)
+        this.detected.emit(DetectionType.Enter, other)
     }
 
     protected onEndContact(selfCollider: Collider2D, otherCollider: Collider2D) {
         let other = otherCollider.node
-        this.enemyDetected.emit(DetectionType.Leave, other)
+        this.detected.emit(DetectionType.Leave, other)
     }
 
 
     public addListener(type: DetectionType, callback: (node: Node) => void) {
-        this.enemyDetected.on(type, callback)
+        this.detected.on(type, callback)
     }
 
     public removeListener(type: DetectionType, callback: (node: Node) => void) {
-        this.enemyDetected.off(type, callback)
+        this.detected.off(type, callback)
     }
 }
