@@ -1,4 +1,4 @@
-import { _decorator, assert, CCFloat, Component, instantiate, Node, Prefab } from 'cc';
+import { _decorator, assert, CCFloat, Component, instantiate, macro, Node, Prefab } from 'cc';
 import { PathManager } from '../Stages/PathManager';
 import { EnemyMovement } from './EnemyMovement';
 const { ccclass, property } = _decorator;
@@ -7,6 +7,9 @@ const { ccclass, property } = _decorator;
 export class WaveData {
     @property({ displayName: "Enemy Amt.", range: [1, 99, 1] })
     enemy_num: number = 0;
+
+    @property({ displayName: "Start at", tooltip: "Start Spawn Enemy after ? sec." })
+    start_at: number = 0;
 
     @property({ displayName: "Spawn Freq.", tooltip: "Spawn Enemy in sec.", range: [0.1, 10, 0.1], slide: true })
     spawn_freq: number = 0.5;
@@ -31,6 +34,7 @@ export class WaveManager extends Component {
     @property(CCFloat) duration: number = 5.0;
 
     private wave_idx: number = 0;
+    private spawnCallbacks: Map<WaveData, () => void> = new Map();
 
     protected start(): void {
         assert(this.spawnPoint !== null, "didn't set enemy spawn Point for WaveManager");
@@ -43,13 +47,19 @@ export class WaveManager extends Component {
             return;
         }
 
-        const data = this.waves[this.wave_idx].get_data();
-        this.schedule(this.spawnEnemy, data.spawn_freq);
+        const wave = this.waves[this.wave_idx];
+        for (let data of wave.wave_data) {
+            const cb = this.spawnEnemy.bind(this, data);
+            this.spawnCallbacks.set(data, cb);
+            this.schedule(cb, data.spawn_freq, macro.REPEAT_FOREVER, data.start_at);
+        }
     }
 
-    private spawnEnemy(): void {
+    private spawnEnemy(data: WaveData): void {
         const wave = this.waves[this.wave_idx];
-        const data = wave.get_data();
+        if (wave == null) {
+            return;
+        }
 
         const node = instantiate(data.enemyPrefab);
         node.setParent(this.node, true);
@@ -61,16 +71,12 @@ export class WaveManager extends Component {
             return;
         }
 
-        this.unschedule(this.spawnEnemy);
+        this.unschedule(this.spawnCallbacks.get(data));
+        this.spawnCallbacks.delete(data);
         wave.idx++;
-
-        if (!wave.is_done()) {
-            this.beginWave();
-        } else {
-            this.wave_idx++;
-            if (this.wave_idx < this.waves.length) {
-                this.scheduleOnce(this.beginWave, this.duration);
-            }
+        if (wave.is_done()) {
+            this.wave_idx += 1;
+            this.scheduleOnce(this.beginWave, this.duration);
         }
     }
 }
