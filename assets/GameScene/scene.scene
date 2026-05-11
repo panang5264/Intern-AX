@@ -1856,6 +1856,7 @@
   {
     "__type__": "WaveData",
     "enemy_num": 3,
+    "start_at": 0,
     "spawn_freq": 1,
     "enemyPrefab": {
       "__uuid__": "39f40532-e880-47e8-a61c-8d270ce79a1d",
@@ -1876,6 +1877,7 @@
   {
     "__type__": "WaveData",
     "enemy_num": 3,
+    "start_at": 0,
     "spawn_freq": 1,
     "enemyPrefab": {
       "__uuid__": "43ef64d2-47ea-42e5-b173-8d09674516ce",
@@ -1885,6 +1887,7 @@
   {
     "__type__": "WaveData",
     "enemy_num": 6,
+    "start_at": 0,
     "spawn_freq": 0.5,
     "enemyPrefab": {
       "__uuid__": "39f40532-e880-47e8-a61c-8d270ce79a1d",
