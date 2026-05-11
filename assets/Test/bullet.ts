@@ -1,17 +1,20 @@
-import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, BoxCollider2D, Contact2DType } from 'cc';
+import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, BoxCollider2D, Contact2DType, CCInteger } from 'cc';
+import { Enemy } from '../GameCode/Monsters/Enemy';
 const { ccclass, property } = _decorator;
 
 @ccclass('Bullet')
 export class Bullet extends Component {
-    @property({ type: CCFloat })
-    speed = 0
-    public target_pos: Vec3 = new Vec3()
+    @property({ type: CCFloat }) speed = 0
+    public target: Node;
     public dir = new Vec3();
     @property({ type: Collider2D })
     public collider: Collider2D = null;
+    @property(CCInteger)
+    damage: number = 0;
 
     protected start(): void {
-        const direction = this.target_pos.subtract(this.node.worldPosition).normalize();
+        const target_pos = this.target.getWorldPosition();
+        const direction = target_pos.subtract(this.node.worldPosition).normalize();
         this.dir = direction
         const radian = Math.atan2(direction.y, direction.x);
         const quat = new Quat();
@@ -25,6 +28,14 @@ export class Bullet extends Component {
     }
 
     onHitEnemy(selfCollider: Collider2D, otherCollider: Collider2D) {
+        const enemy = otherCollider.body.getComponent(Enemy) as Enemy | null
+        if (enemy === null || otherCollider.body.node != this.target) {
+            return;
+        }
+        // if (enemy === null) {
+        //     return;
+        // }
+        enemy.takeDamage(this.damage)
         this.node.destroy()
     }
 

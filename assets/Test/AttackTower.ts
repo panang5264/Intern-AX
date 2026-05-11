@@ -76,17 +76,17 @@ export class AttackTower extends Component implements ITower {
         if (this.enemyList.length === 0) {
             return
         }
+
+        this.cur_cooldown += dt;
         if (this.cur_cooldown >= this.cooldown) {
+            this.cur_cooldown = 0;
             let first_enemy = this.enemyList[0];
+
             let node = instantiate(this.bullet)
             node.worldPosition = this.node.position;
             node.parent = director.getScene().getChildByName("Canvas");
-            let bullet = node.getComponent(Bullet);
-            bullet.target_pos = first_enemy.getWorldPosition();
-
-            this.cur_cooldown = 0;
+            node.getComponent(Bullet).target = first_enemy;
         }
 
-        this.cur_cooldown += dt;
     }
 }

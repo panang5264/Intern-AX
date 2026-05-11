@@ -23,7 +23,7 @@
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 109
+      "__id__": 107
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -54,7 +54,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 110
+      "__id__": 108
     },
     "_id": "02848434-b98c-4611-8cdc-83f1b98aeb68"
   },
@@ -83,28 +83,28 @@
         "__id__": 29
       },
       {
-        "__id__": 83
+        "__id__": 81
       },
       {
         "__id__": 33
       },
       {
-        "__id__": 85
+        "__id__": 83
       },
       {
-        "__id__": 95
+        "__id__": 93
       }
     ],
     "_active": true,
     "_components": [
       {
+        "__id__": 104
+      },
+      {
+        "__id__": 105
+      },
+      {
         "__id__": 106
-      },
-      {
-        "__id__": 107
-      },
-      {
-        "__id__": 108
       }
     ],
     "_prefab": null,
@@ -1203,15 +1203,12 @@
     "waves": [
       {
         "__id__": 78
-      },
-      {
-        "__id__": 80
       }
     ],
     "spawnPoint": {
-      "__id__": 83
+      "__id__": 81
     },
-    "duration": 5,
+    "duration": 0,
     "_id": "5dIGsU8KdOyoPmDgp3kyad"
   },
   {
@@ -1853,6 +1850,9 @@
     "wave_data": [
       {
         "__id__": 79
+      },
+      {
+        "__id__": 80
       }
     ]
   },
@@ -1860,36 +1860,15 @@
     "__type__": "WaveData",
     "enemy_num": 3,
     "start_at": 0,
-    "spawn_freq": 1,
+    "spawn_freq": 0.5,
     "enemyPrefab": {
       "__uuid__": "39f40532-e880-47e8-a61c-8d270ce79a1d",
       "__expectedType__": "cc.Prefab"
     }
   },
   {
-    "__type__": "Wave",
-    "wave_data": [
-      {
-        "__id__": 81
-      },
-      {
-        "__id__": 82
-      }
-    ]
-  },
-  {
     "__type__": "WaveData",
     "enemy_num": 3,
-    "start_at": 0,
-    "spawn_freq": 1,
-    "enemyPrefab": {
-      "__uuid__": "43ef64d2-47ea-42e5-b173-8d09674516ce",
-      "__expectedType__": "cc.Prefab"
-    }
-  },
-  {
-    "__type__": "WaveData",
-    "enemy_num": 6,
     "start_at": 0,
     "spawn_freq": 0.5,
     "enemyPrefab": {
@@ -1909,7 +1888,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 84
+        "__id__": 82
       }
     ],
     "_prefab": null,
@@ -1948,7 +1927,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 83
+      "__id__": 81
     },
     "_enabled": true,
     "__prefab": null,
@@ -1971,14 +1950,14 @@
       "__id__": 2
     },
     "_prefab": {
-      "__id__": 86
+      "__id__": 84
     },
     "__editorExtras__": {}
   },
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 85
+      "__id__": 83
     },
     "asset": {
       "__uuid__": "b581987e-2dd9-4528-9bee-f9f965eb793e",
@@ -1986,7 +1965,7 @@
     },
     "fileId": "cdYYEmWC9CHouwlyHOkiPt",
     "instance": {
-      "__id__": 87
+      "__id__": 85
     },
     "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
@@ -1999,19 +1978,19 @@
     "mountedComponents": [],
     "propertyOverrides": [
       {
+        "__id__": 86
+      },
+      {
         "__id__": 88
+      },
+      {
+        "__id__": 89
       },
       {
         "__id__": 90
       },
       {
         "__id__": 91
-      },
-      {
-        "__id__": 92
-      },
-      {
-        "__id__": 93
       }
     ],
     "removedComponents": []
@@ -2019,7 +1998,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 89
+      "__id__": 87
     },
     "propertyPath": [
       "_lpos"
@@ -2040,7 +2019,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 89
+      "__id__": 87
     },
     "propertyPath": [
       "_name"
@@ -2050,7 +2029,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 89
+      "__id__": 87
     },
     "propertyPath": [
       "_lrot"
@@ -2066,7 +2045,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 89
+      "__id__": 87
     },
     "propertyPath": [
       "_euler"
@@ -2081,7 +2060,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 94
+      "__id__": 92
     },
     "propertyPath": [
       "_fillColor"
@@ -2107,14 +2086,14 @@
       "__id__": 2
     },
     "_prefab": {
-      "__id__": 96
+      "__id__": 94
     },
     "__editorExtras__": {}
   },
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 95
+      "__id__": 93
     },
     "asset": {
       "__uuid__": "03e8953a-be6a-4bea-a1ee-c9fef0ed2551",
@@ -2122,7 +2101,7 @@
     },
     "fileId": "cdYYEmWC9CHouwlyHOkiPt",
     "instance": {
-      "__id__": 97
+      "__id__": 95
     },
     "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
@@ -2134,21 +2113,21 @@
     "mountedChildren": [],
     "mountedComponents": [
       {
-        "__id__": 98
+        "__id__": 96
       }
     ],
     "propertyOverrides": [
       {
+        "__id__": 99
+      },
+      {
         "__id__": 101
       },
       {
+        "__id__": 102
+      },
+      {
         "__id__": 103
-      },
-      {
-        "__id__": 104
-      },
-      {
-        "__id__": 105
       }
     ],
     "removedComponents": []
@@ -2156,11 +2135,11 @@
   {
     "__type__": "cc.MountedComponentsInfo",
     "targetInfo": {
-      "__id__": 99
+      "__id__": 97
     },
     "components": [
       {
-        "__id__": 100
+        "__id__": 98
       }
     ]
   },
@@ -2176,11 +2155,11 @@
     "_objFlags": 0,
     "__editorExtras__": {
       "mountedRoot": {
-        "__id__": 95
+        "__id__": 93
       }
     },
     "node": {
-      "__id__": 95
+      "__id__": 93
     },
     "_enabled": true,
     "__prefab": null,
@@ -2189,7 +2168,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 102
+      "__id__": 100
     },
     "propertyPath": [
       "_name"
@@ -2205,22 +2184,22 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 102
+      "__id__": 100
     },
     "propertyPath": [
       "_lpos"
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": -49.994,
-      "y": 106.71,
+      "x": 113.45,
+      "y": 80.331,
       "z": 0
     }
   },
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 102
+      "__id__": 100
     },
     "propertyPath": [
       "_lrot"
@@ -2236,7 +2215,7 @@
   {
     "__type__": "CCPropertyOverrideInfo",
     "targetInfo": {
-      "__id__": 102
+      "__id__": 100
     },
     "propertyPath": [
       "_euler"
@@ -2337,38 +2316,38 @@
         "__id__": 67
       },
       {
-        "__id__": 85
+        "__id__": 83
       },
       {
-        "__id__": 95
+        "__id__": 93
       }
     ]
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 111
+      "__id__": 109
     },
     "shadows": {
-      "__id__": 112
+      "__id__": 110
     },
     "_skybox": {
-      "__id__": 113
+      "__id__": 111
     },
     "fog": {
-      "__id__": 114
+      "__id__": 112
     },
     "octree": {
-      "__id__": 115
+      "__id__": 113
     },
     "skin": {
-      "__id__": 116
+      "__id__": 114
     },
     "lightProbeInfo": {
-      "__id__": 117
+      "__id__": 115
     },
     "postSettings": {
-      "__id__": 118
+      "__id__": 116
     },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false
