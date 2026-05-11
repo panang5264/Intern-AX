@@ -74,8 +74,10 @@ export class AttackTower extends Component implements ITower {
 
     protected update(dt: number): void {
         if (this.enemyList.length === 0) {
+            this.cur_cooldown = this.cooldown / 2.0
             return
         }
+
 
         this.cur_cooldown += dt;
         if (this.cur_cooldown >= this.cooldown) {
