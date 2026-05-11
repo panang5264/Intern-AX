@@ -405,7 +405,7 @@
     "fileId": "efHjXAfaJChpsmilzr95yg"
   },
   {
-    "__type__": "090ceQotptNpaAvE9Lmd7rh",
+    "__type__": "9a838tOs59LbZCZ0LbfM/xF",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -419,16 +419,16 @@
     "detectionArea": {
       "__id__": 5
     },
-    "bullet": {
+    "bulletPrefab": {
       "__uuid__": "bb99a52a-9b29-4e5b-ba1b-360575a59526",
       "__expectedType__": "cc.Prefab"
     },
-    "cooldown": 3,
+    "attackCooldown": 0.5,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "9aNHvUuQlCRI8rtLpisazy"
+    "fileId": "fdWlxz+wZMf6IZCezICX3Y"
   },
   {
     "__type__": "cc.PrefabInfo",

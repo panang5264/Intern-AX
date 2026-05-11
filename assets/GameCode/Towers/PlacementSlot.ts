@@ -1,101 +1,57 @@
-import { _decorator, Component, Node, Prefab, instantiate, Sprite, Color } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate, Vec3, director } from 'cc';
 import { TowerManager } from './TowerManager';
-
 const { ccclass, property } = _decorator;
 
 @ccclass('PlacementSlot')
 export class PlacementSlot extends Component {
-    @property({ tooltip: 'Optional: Specific tower prefab for this slot. If null, uses Manager selection.' })
-    public customTowerPrefab: Prefab | null = null;
+    @property({ type: Number, tooltip: 'จำกัดจำนวนป้อมประเภทนี้ (ใส่ 0 คือไม่จำกัด)' })
+    public typeLimit: number = 0;
 
-    @property({ type: Color })
-    public hoverColor: Color = new Color(200, 200, 200, 150);
+    @property public detectionRadius: number = 100;
 
-    private _originalColor: Color = Color.WHITE;
     private _isOccupied: boolean = false;
-    private _currentTower: Node | null = null;
-    private _sprite: Sprite | null = null;
 
     start() {
-        this._sprite = this.getComponent(Sprite);
-        if (this._sprite) {
-            this._originalColor = this._sprite.color.clone();
-        }
 
-        // Setup Event Listeners
-        this.node.on(Node.EventType.MOUSE_ENTER, this.onMouseEnter, this);
-        this.node.on(Node.EventType.MOUSE_LEAVE, this.onMouseLeave, this);
-        this.node.on(Node.EventType.MOUSE_UP, this.onSlotClicked, this);
+        director.getScene().on("TOWER_DROPPED", this.onTowerDropped, this);
     }
 
-    private onMouseEnter() {
-        if (!this._isOccupied && this._sprite) {
-            this._sprite.color = this.hoverColor;
+
+    onDestroy() {
+        if (director.getScene()) {
+            director.getScene().off("TOWER_DROPPED", this.onTowerDropped, this);
         }
     }
 
-    private onMouseLeave() {
-        if (this._sprite) {
-            this._sprite.color = this._originalColor;
-        }
-    }
+    private onTowerDropped(data: { position: Vec3, prefab: Prefab, type: string }) {
+        if (this._isOccupied) return;
 
-    private onSlotClicked() {
-        if (this._isOccupied) {
-            console.log("Slot is already occupied!");
-            // TODO: Open Upgrade/Sell menu
+
+        const slotWorldPos = new Vec3();
+        this.node.getWorldPosition(slotWorldPos);
+
+        const dist = Vec3.distance(slotWorldPos, data.position);
+
+        if (dist > this.detectionRadius) return;
+
+
+        if (TowerManager.instance && !TowerManager.instance.canPlaceTower(data.type, this.typeLimit)) {
             return;
         }
 
-        this.attemptPlaceTower();
+        this.placeTower(data.prefab, data.type);
     }
 
-    private attemptPlaceTower() {
-        // Use custom prefab if assigned, otherwise use global selection from TowerManager
-        let prefabToSpawn = this.customTowerPrefab;
-        
-        if (!prefabToSpawn && TowerManager.instance) {
-            prefabToSpawn = TowerManager.instance.selectedTowerPrefab;
-        }
-
-        if (!prefabToSpawn) {
-            console.warn("No tower prefab available for placement.");
-            return;
-        }
-
-        this.placeTower(prefabToSpawn);
-    }
-
-    public placeTower(prefab: Prefab) {
-        this._currentTower = instantiate(prefab);
-        this._currentTower.parent = this.node;
-        this._currentTower.setPosition(0, 0, 0);
-        
+    private placeTower(prefab: Prefab, type: string) {
+        const tower = instantiate(prefab);
+        tower.parent = this.node;
+        tower.setPosition(0, 0, 0);
         this._isOccupied = true;
-        
-        // Visual feedback
-        if (this._sprite) {
-            // Optional: Hide the slot marker when occupied
-            // this._sprite.enabled = false;
-            this._sprite.color = this._originalColor;
-        }
-        
-        console.log(`Tower placed at ${this.node.name}`);
-    }
 
-    public removeTower() {
-        if (this._currentTower) {
-            this._currentTower.destroy();
-            this._currentTower = null;
-            this._isOccupied = false;
-            
-            if (this._sprite) {
-                this._sprite.enabled = true;
-            }
+        if (TowerManager.instance) {
+            TowerManager.instance.recordPlacement(type);
         }
-    }
 
-    public get isOccupied(): boolean {
-        return this._isOccupied;
+        console.log(`วางป้อม ${type} ลงใน ${this.node.name} สำเร็จ!`);
     }
 }

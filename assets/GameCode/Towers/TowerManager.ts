@@ -1,36 +1,43 @@
-import { _decorator, Component, Prefab } from 'cc';
+import { _decorator, Component, Node, Prefab } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('TowerManager')
 export class TowerManager extends Component {
-    private static _instance: TowerManager | null = null;
+    public static instance: TowerManager = null;
 
-    public static get instance() {
-        return this._instance;
-    }
+    @property public maxTotalTowers: number = 10; // จำกัดจำนวนป้อมรวมทั้งด่าน
+    private _currentTotalTowers: number = 0;
 
-    @property(Prefab)
-    public defaultTowerPrefab: Prefab | null = null;
 
-    private _selectedTowerPrefab: Prefab | null = null;
+    private _typeCounts: Map<string, number> = new Map();
 
     onLoad() {
-        if (TowerManager._instance) {
-            this.node.destroy();
-            return;
+        TowerManager.instance = this;
+    }
+
+
+    public canPlaceTower(type: string, typeLimit: number): boolean {
+
+        if (this._currentTotalTowers >= this.maxTotalTowers) {
+            console.warn("Cant'place tower beacause max Total tower ");
+            return false;
         }
-        TowerManager._instance = this;
-        
-        // Default selection
-        this._selectedTowerPrefab = this.defaultTowerPrefab;
+
+
+        if (typeLimit > 0) {
+            const currentCount = this._typeCounts.get(type) || 0;
+            if (currentCount >= typeLimit) {
+                console.warn(`Can't place type tower beacause limit type tower ${type}!`);
+                return false;
+            }
+        }
+
+        return true;
     }
 
-    public get selectedTowerPrefab(): Prefab | null {
-        return this._selectedTowerPrefab;
-    }
-
-    public selectTower(prefab: Prefab) {
-        this._selectedTowerPrefab = prefab;
-        console.log("Selected new tower type");
+    public recordPlacement(type: string) {
+        this._currentTotalTowers++;
+        const currentCount = this._typeCounts.get(type) || 0;
+        this._typeCounts.set(type, currentCount + 1);
     }
 }
