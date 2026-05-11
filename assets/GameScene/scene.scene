@@ -2039,7 +2039,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": -372.267,
-      "y": -14.75,
+      "y": -7.707,
       "z": 0
     }
   },
@@ -2197,7 +2197,7 @@
     "propertyPath": [
       "_radius"
     ],
-    "value": 175
+    "value": 300
   },
   {
     "__type__": "cc.UITransform",
