@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "6d9e0893-fab6-4fc1-85a4-cac82f0200e9",
+  "uuid": "bb99a52a-9b29-4e5b-ba1b-360575a59526",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "SplashTower"
+    "syncNodeName": "Bullet-splash"
   }
 }

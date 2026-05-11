@@ -1,17 +1,23 @@
-import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, BoxCollider2D, Contact2DType } from 'cc';
+import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, assert, BoxCollider2D, Contact2DType, CCInteger, CCBoolean, Sprite } from 'cc';
+import { Enemy } from '../GameCode/Monsters/Enemy';
+import { SplashArea } from './SplashArea';
 const { ccclass, property } = _decorator;
 
 @ccclass('Bullet')
 export class Bullet extends Component {
-    @property({ type: CCFloat })
-    speed = 0
-    public target_pos: Vec3 = new Vec3()
+    @property({ type: CCFloat }) speed = 0
+    public target: Node;
     public dir = new Vec3();
     @property({ type: Collider2D })
     public collider: Collider2D = null;
+    @property(CCInteger) damage: number = 0;
+    @property(CCBoolean) area_damage: boolean = false;
+    @property(SplashArea) area_collider: SplashArea;
+    stopMoving: boolean = false;
 
     protected start(): void {
-        const direction = this.target_pos.subtract(this.node.worldPosition).normalize();
+        const target_pos = this.target.getWorldPosition();
+        const direction = target_pos.subtract(this.node.worldPosition).normalize();
         this.dir = direction
         const radian = Math.atan2(direction.y, direction.x);
         const quat = new Quat();
@@ -25,10 +31,31 @@ export class Bullet extends Component {
     }
 
     onHitEnemy(selfCollider: Collider2D, otherCollider: Collider2D) {
-        this.node.destroy()
+        const enemy = otherCollider.body.getComponent(Enemy) as Enemy | null
+        if (enemy == null || otherCollider.body.node != this.target) {
+            return;
+        }
+
+        if (this.area_damage) {
+            assert(this.area_collider != null, "Please Specify Area")
+            this.area_collider.explode(this.damage)
+            this.stopMoving = true;
+            this.node.getComponent(Sprite).enabled = false
+            this.scheduleOnce(this.node.destroy.bind(this.node), 0.25)
+        } else {
+            enemy.takeDamage(this.damage)
+            this.node.destroy()
+        }
+    }
+
+    protected onDestroy(): void {
+        this.collider.off(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this)
     }
 
     update(deltaTime: number) {
+        if (this.stopMoving === true) {
+            return;
+        }
         let moveStep = new Vec3();
         Vec3.multiplyScalar(moveStep, this.dir, this.speed * deltaTime);
         let nextPos = new Vec3();
