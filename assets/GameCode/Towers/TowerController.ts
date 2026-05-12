@@ -1,7 +1,8 @@
 import { _decorator, Component, Node, Prefab, instantiate, CCFloat, director, Vec3, CircleCollider2D, Enum } from 'cc';
-import { DetectionArea, DetectionType } from '../../Test/detection_area';
-import { Bullet } from '../../Test/bullet';
+import { DetectionArea, DetectionType } from './detection_area';
+import { Bullet } from './Bullet/bullet';
 import { DamageType } from '../CoreSystems/GameConfig'; // Import ประเภทดาเมจ
+import { BuffType } from '../../BuffType';
 
 const { ccclass, property } = _decorator;
 
@@ -40,8 +41,7 @@ export class TowerController extends Component {
         this._baseAttackCooldown = this.attackCooldown;
         if (!this.detectionArea) this.detectionArea = this.getComponentInChildren(DetectionArea);
         if (this.detectionArea) {
-            const collider = this.detectionArea.getComponent(CircleCollider2D);
-            if (collider) collider.radius = this.attackRange;
+            this.detectionArea.setRadius(this.attackRange)
             this.detectionArea.addListener(DetectionType.Enter, this.onEnemyEnter.bind(this));
             this.detectionArea.addListener(DetectionType.Leave, this.onEnemyLeave.bind(this));
         }
@@ -77,7 +77,7 @@ export class TowerController extends Component {
         this.node.getWorldPosition(myPos);
         bulletNode.setWorldPosition(myPos);
 
-        const bulletComp = bulletNode.getComponent(Bullet);
+        const bulletComp = bulletNode.getComponent(Bullet) as Bullet | null;
         if (bulletComp) {
             bulletComp.target = target;
             bulletComp.damage = this.damage;
@@ -86,18 +86,22 @@ export class TowerController extends Component {
         }
     }
 
-    public onEnemyEnter(enemy: Node) { if (enemy && this._enemyList.indexOf(enemy) === -1) this._enemyList.push(enemy); }
+    public onEnemyEnter(enemy: Node) {
+        if (enemy && this._enemyList.indexOf(enemy) === -1)
+            this._enemyList.push(enemy);
+    }
     public onEnemyLeave(enemy: Node) {
         const index = this._enemyList.indexOf(enemy);
-        if (index !== -1) this._enemyList.splice(index, 1);
+        if (index !== -1)
+            this._enemyList.splice(index, 1);
     }
 
-    public getBuff(buffType: any) {
+    public getBuff(buff: BuffType) {
         this.attackCooldown = this._baseAttackCooldown * 0.8;
         this._holyDamageBonus = 0.1; // รับบัฟ Priest ได้โบนัส Holy 10%
     }
 
-    public removeBuff(buffType: any) {
+    public removeBuff(buff: BuffType) {
         this.attackCooldown = this._baseAttackCooldown;
         this._holyDamageBonus = 0;
     }

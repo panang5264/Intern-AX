@@ -1,7 +1,7 @@
 import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, assert, BoxCollider2D, Contact2DType, CCInteger, CCBoolean, Sprite, Enum } from 'cc';
-import { Enemy } from '../GameCode/Monsters/Enemy';
 import { SplashArea } from './SplashArea';
-import { DamageType } from '../GameCode/CoreSystems/GameConfig';
+import { DamageType } from '../../CoreSystems/GameConfig';
+import { Enemy } from '../../Monsters/Enemy';
 
 const { ccclass, property } = _decorator;
 

@@ -1,5 +1,5 @@
 import { _decorator, Component, assert, CircleCollider2D, Collider2D, Contact2DType, Graphics, IPhysics2DContact, Vec2 } from 'cc';
-import { Enemy } from '../GameCode/Monsters/Enemy';
+import { Enemy } from '../../Monsters/Enemy';
 const { ccclass, property } = _decorator;
 
 @ccclass("SplashArea")

@@ -44,4 +44,11 @@ export class DetectionArea extends Component {
     public removeListener(type: DetectionType, callback: (node: Node) => void) {
         this.detected.off(type, callback)
     }
+
+    public setRadius(radius: number): void {
+        this.area.radius = radius
+    }
+    public getRadius(radius: number): number {
+        return this.area.radius;
+    }
 }

@@ -30,10 +30,10 @@
         "__id__": 6
       },
       {
-        "__id__": 10
+        "__id__": 8
       },
       {
-        "__id__": 8
+        "__id__": 10
       }
     ],
     "_prefab": {
@@ -142,7 +142,7 @@
     "fileId": "1cQF26bxhKc5y9QVKUtw8I"
   },
   {
-    "__type__": "5da9arXQCZP0LYZtLDFPh5n",
+    "__type__": "cc.RigidBody2D",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -153,16 +153,27 @@
     "__prefab": {
       "__id__": 7
     },
-    "speed": 1000,
-    "collider": {
-      "__id__": 8
+    "enabledContactListener": true,
+    "bullet": true,
+    "awakeOnLoad": true,
+    "_group": 8,
+    "_type": 1,
+    "_allowSleep": true,
+    "_gravityScale": 0,
+    "_linearDamping": 0,
+    "_angularDamping": 0,
+    "_linearVelocity": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
     },
-    "damage": 1,
+    "_angularVelocity": 0,
+    "_fixedRotation": false,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "8dQESqpO1FvIcPY3+TvIR+"
+    "fileId": "cfE8JEAeZPa5P8o4qtoUfh"
   },
   {
     "__type__": "cc.BoxCollider2D",
@@ -199,7 +210,7 @@
     "fileId": "78flJx5ZRNZa2yeM4TXayH"
   },
   {
-    "__type__": "cc.RigidBody2D",
+    "__type__": "5da9arXQCZP0LYZtLDFPh5n",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -210,27 +221,17 @@
     "__prefab": {
       "__id__": 11
     },
-    "enabledContactListener": true,
-    "bullet": true,
-    "awakeOnLoad": true,
-    "_group": 8,
-    "_type": 1,
-    "_allowSleep": true,
-    "_gravityScale": 0,
-    "_linearDamping": 0,
-    "_angularDamping": 0,
-    "_linearVelocity": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_angularVelocity": 0,
-    "_fixedRotation": false,
+    "speed": 5,
+    "collider": null,
+    "damage": 1,
+    "area_damage": false,
+    "damageType": 0,
+    "holyBonus": 0,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "cfE8JEAeZPa5P8o4qtoUfh"
+    "fileId": "9dI/4ahJpBCqgtFccoQaaC"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -241,6 +242,7 @@
       "__id__": 0
     },
     "fileId": "c46/YsCPVOJYA4mWEpNYRx",
-    "instance": null
+    "instance": null,
+    "targetOverrides": null
   }
 ]
