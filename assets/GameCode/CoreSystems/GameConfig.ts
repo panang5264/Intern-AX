@@ -1,5 +1,9 @@
 // assets/GameCode/CoreSystems/GameConfig.ts
 
+export enum TowerType {
+    ATTACK_TOWER,
+    GOLDMINE,
+}
 export enum DamageType {
     PHYSICAL,
     MAGIC,

@@ -3,16 +3,12 @@
 import { _decorator, Component, Node, Prefab, instantiate, CCFloat, director, Vec3, Enum } from 'cc';
 import { DetectionArea, DetectionType } from './detection_area';
 import { Bullet } from './Bullet/bullet';
-import { DamageType } from '../CoreSystems/GameConfig'; // Import ประเภทดาเมจ
+import { DamageType, TowerType } from '../CoreSystems/GameConfig'; // Import ประเภทดาเมจ
 import { BUFF_HOLY, BUFF_SPD_SCALE, BuffType } from '../CoreSystems/BuffType';
 import { ResourceManager } from '../CoreSystems/ResourceManager';
 
 const { ccclass, property } = _decorator;
 
-export enum TowerType {
-    AttackTower,
-    GoldMine,
-}
 
 @ccclass('TowerController')
 export class TowerController extends Component {
@@ -37,7 +33,7 @@ export class TowerController extends Component {
 
     @property({ type: DetectionArea }) public detectionArea: DetectionArea = null;
     @property({ type: Prefab }) public bulletPrefab: Prefab = null;
-    @property({ type: Enum(TowerType) }) public type = TowerType.AttackTower;
+    @property({ type: Enum(TowerType) }) public type = TowerType.ATTACK_TOWER;
 
     private _enemyList: Node[] = [];
     private _attackTimer: number = 0;
@@ -48,7 +44,7 @@ export class TowerController extends Component {
     protected start() {
         this._baseAttackCooldown = this.attackCooldown;
         switch (this.type) {
-            case TowerType.AttackTower:
+            case TowerType.ATTACK_TOWER:
                 if (!this.detectionArea) {
                     this.detectionArea = this.getComponentInChildren(DetectionArea);
                 }
@@ -58,7 +54,7 @@ export class TowerController extends Component {
                     this.detectionArea.addListener(DetectionType.Leave, this.onEnemyLeave.bind(this));
                 }
                 break;
-            case TowerType.GoldMine:
+            case TowerType.GOLDMINE:
                 this._generatedGoldBound = this.generatedGold.bind(this)
                 this.schedule(this._generatedGoldBound, this.generationInterval)
                 break;
