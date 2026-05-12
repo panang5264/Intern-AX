@@ -8,7 +8,7 @@ export enum DetectionType {
 
 @ccclass('DetectionArea')
 export class DetectionArea extends Component {
-    private area: CircleCollider2D | null = null;
+    private area: CircleCollider2D = null;
     detected = new EventTarget();
 
     onLoad() {
@@ -52,6 +52,10 @@ export class DetectionArea extends Component {
         if (this.area) {
             this.area.radius = radius;
             this.area.apply(); // สำคัญ: อัปเดตค่าในระบบฟิสิกส์
+            const g = this.getComponent(Graphics);
+            g.circle(this.node.position.x, this.node.position.y, this.area.radius);
+            g.stroke();
+            g.fill();
         }
     }
 

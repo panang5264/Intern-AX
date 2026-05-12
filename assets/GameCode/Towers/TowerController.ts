@@ -89,7 +89,7 @@ export class TowerController extends Component {
     private shoot() {
         if (this._enemyList.length === 0) return;
         const target = this._enemyList[0];
-        
+
         if (!target || !target.isValid) return;
         if (!this.bulletPrefab) {
             console.error(`[Tower] ${this.towerName} ลืมใส่ Bullet Prefab!`);
@@ -123,9 +123,6 @@ export class TowerController extends Component {
                 console.log(`[Tower] ${this.towerName} ตรวจพบศัตรู: ${enemy.name}`);
                 this._enemyList.push(enemy);
             }
-        } else {
-            // ไม่ใช่ศัตรู (อาจเป็นตัวเองหรือป้อมอื่น) ให้ข้ามไป
-            console.log(`[Tower] ${this.towerName} ตรวจพบวัตถุที่ไม่ใช่ศัตรู: ${enemy.name} (ข้ามไป)`);
         }
     }
 
