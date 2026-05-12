@@ -11,7 +11,7 @@
   },
   {
     "__type__": "cc.Scene",
-    "_name": "scene",
+    "_name": "tower-test",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -214,7 +214,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 879.7733711048159,
+    "_orthoHeight": 1560.6030150753768,
     "_near": 0,
     "_far": 2000,
     "_color": {
@@ -1872,7 +1872,8 @@
       {
         "__id__": 79
       }
-    ]
+    ],
+    "goldReward": 100
   },
   {
     "__type__": "WaveData",
@@ -1893,7 +1894,8 @@
       {
         "__id__": 82
       }
-    ]
+    ],
+    "goldReward": 100
   },
   {
     "__type__": "WaveData",
@@ -2108,7 +2110,8 @@
       "__uuid__": "b581987e-2dd9-4528-9bee-f9f965eb793e",
       "__expectedType__": "cc.Prefab"
     },
-    "towerType": "Archer",
+    "towerName": "Archer",
+    "towerCost": 100,
     "_id": "79aeYF2vBEK56Ikrk4y31/"
   },
   {
@@ -2237,7 +2240,8 @@
       "__uuid__": "074894e9-d5f1-4858-8cd1-4a804a6f491d",
       "__expectedType__": "cc.Prefab"
     },
-    "towerType": "Bomb",
+    "towerName": "Archer",
+    "towerCost": 100,
     "_id": "02No2GtndDWpbs2zBmh2dq"
   },
   {
@@ -2366,7 +2370,8 @@
       "__uuid__": "03e8953a-be6a-4bea-a1ee-c9fef0ed2551",
       "__expectedType__": "cc.Prefab"
     },
-    "towerType": "Support",
+    "towerName": "Archer",
+    "towerCost": 100,
     "_id": "7cKOq2vEhALqvP97WxFpN9"
   },
   {
@@ -2493,6 +2498,7 @@
     "__prefab": null,
     "typeLimit": 0,
     "detectionRadius": 100,
+    "snapDistance": 120,
     "_id": "26pbjZg1VDzpVkNYr8RMVG"
   },
   {
@@ -2619,6 +2625,7 @@
     "__prefab": null,
     "typeLimit": 0,
     "detectionRadius": 100,
+    "snapDistance": 120,
     "_id": "1cfWpjzKdMB5Bje63vGKYy"
   },
   {
@@ -2745,6 +2752,7 @@
     "__prefab": null,
     "typeLimit": 0,
     "detectionRadius": 100,
+    "snapDistance": 120,
     "_id": "aagegLT9JE2LztiAur/am6"
   },
   {
@@ -2871,6 +2879,7 @@
     "__prefab": null,
     "typeLimit": 0,
     "detectionRadius": 100,
+    "snapDistance": 120,
     "_id": "86X8c8bw1J/ZrCv2j8wW1B"
   },
   {

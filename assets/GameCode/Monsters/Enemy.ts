@@ -1,30 +1,62 @@
-import { _decorator, assert, Component, Label } from 'cc';
+// assets/GameCode/Monsters/Enemy.ts
+
+import { _decorator, assert, Component, Label, Enum, CCFloat } from 'cc';
+import { EnemyType, DamageType, WeaknessTable } from '../CoreSystems/GameConfig';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('Enemy')
 export class Enemy extends Component {
-    @property maxHp: number = 0;
-    currentHp: number = -1;
-    @property(Label) hpText: Label = null;
+    // --- HP System ---
+    @property({ type: CCFloat }) public maxHp: number = 100;
+    public currentHp: number = -1;
+
+    @property(Label) public hpText: Label = null;
+
+    // --- Enemy Type ---
+    @property({ type: Enum(EnemyType) })
+    public enemyType: EnemyType = EnemyType.NEUTRAL;
 
     protected start(): void {
         this.currentHp = this.maxHp;
-        assert(this.hpText !== null, `Didn't set hp Text for ${this.node.name}`)
-        this.updateHPText()
+        assert(this.hpText !== null, `Didn't set hp Text for ${this.node.name}`);
+        this.updateHPText();
     }
 
-    public takeDamage(damage: number) {
-        this.currentHp -= damage;
+
+    public takeDamage(baseDmg: number, type: DamageType = DamageType.PHYSICAL, holyBonus: number = 0) {
+
+        const primaryMultiplier = WeaknessTable[this.enemyType][type];
+        const finalPrimaryDmg = baseDmg * primaryMultiplier;
+
+
+        const holyMultiplier = WeaknessTable[this.enemyType][DamageType.HOLY];
+        const finalHolyDmg = (baseDmg * holyBonus) * holyMultiplier;
+
+
+        const totalDamage = finalPrimaryDmg + finalHolyDmg;
+
+        console.log(`[Combat] ${this.node.name} รับดาเมจ: ${totalDamage.toFixed(1)} (HP: ${this.currentHp.toFixed(1)} -> ${Math.max(this.currentHp - totalDamage, 0).toFixed(1)})`);
+
+        this.currentHp -= totalDamage;
+
         if (this.currentHp <= 0) {
             this.currentHp = 0;
-            this.node.destroy()
-            return;
+            this.die();
+        } else {
+            this.updateHPText();
         }
-        this.updateHPText()
     }
 
-    updateHPText() {
-        this.hpText.string = `${this.currentHp}/${this.maxHp}`
+    private updateHPText() {
+        if (this.hpText) {
+            this.hpText.string = `${this.currentHp}/${this.maxHp}`;
+        }
+    }
+
+    private die() {
+        console.log(`[Enemy] ${this.node.name} Neturlized`);
+        // TODO: แจกเงินรางวัลผ่าน ResourceManager
+        this.node.destroy();
     }
 }
-

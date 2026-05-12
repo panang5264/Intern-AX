@@ -1,6 +1,8 @@
-import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, assert, BoxCollider2D, Contact2DType, CCInteger, CCBoolean, Sprite } from 'cc';
+import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, assert, BoxCollider2D, Contact2DType, CCInteger, CCBoolean, Sprite, Enum } from 'cc';
 import { Enemy } from '../GameCode/Monsters/Enemy';
 import { SplashArea } from './SplashArea';
+import { DamageType } from '../GameCode/CoreSystems/GameConfig';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('Bullet')
@@ -14,6 +16,12 @@ export class Bullet extends Component {
     @property(CCBoolean) area_damage: boolean = false;
     @property(SplashArea) area_collider: SplashArea;
     stopMoving: boolean = false;
+
+    @property({ type: Enum(DamageType) })
+    public damageType: DamageType = DamageType.PHYSICAL;
+
+    @property({ type: CCFloat })
+    public holyBonus: number = 0;
 
     protected start(): void {
         const target_pos = this.target.getWorldPosition();
