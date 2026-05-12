@@ -1,6 +1,6 @@
 // assets/GameCode/Monsters/WaveManager.ts
 
-import { _decorator, assert, CCFloat, Component, instantiate, macro, Node, Prefab, Vec3 } from 'cc';
+import { _decorator, assert, CCFloat, Component, director, instantiate, macro, Node, Prefab } from 'cc';
 import { PathManager } from '../Stages/PathManager';
 import { EnemyMovement } from './EnemyMovement';
 import { ResourceManager } from '../CoreSystems/ResourceManager';
@@ -25,7 +25,7 @@ export class WaveData {
 export class Wave {
     @property([WaveData]) wave_data: WaveData[] = [];
 
-    // --- เพิ่ม Gold Reward ---
+    // --- Gold Reward ---
     @property({ displayName: "Gold Reward", tooltip: "money that get when finish this wave" })
     public goldReward: number = 100;
 
@@ -57,6 +57,15 @@ export class WaveManager extends Component {
         }
 
         const wave = this.waves[this.wave_idx];
+
+
+        director.getScene().emit("WAVE_STARTED", {
+            currentWave: this.wave_idx + 1,
+            totalWaves: this.waves.length,
+            income: wave.goldReward
+        });
+
+
         for (let data of wave.wave_data) {
             const cb = this.spawnEnemy.bind(this, data);
             this.spawnCallbacks.set(data, cb);
@@ -80,13 +89,13 @@ export class WaveManager extends Component {
             return;
         }
 
-        // --- เมื่อศัตรูใน waveData หมด ---
+
         this.unschedule(this.spawnCallbacks.get(data));
         this.spawnCallbacks.delete(data);
         wave.idx++;
 
         if (wave.is_done()) {
-            // แจกเงินเมื่อจบเวฟ
+
             console.log(`[Wave] end ${this.wave_idx + 1} ! +${wave.goldReward}`);
             if (ResourceManager.instance) {
                 ResourceManager.instance.addGold(wave.goldReward);
