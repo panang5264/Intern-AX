@@ -33,11 +33,11 @@
     ],
     "collisionMatrix": {
       "0": 7,
-      "1": 5,
+      "1": 37,
       "2": 11,
       "3": 4,
       "4": 32,
-      "5": 16
+      "5": 18
     }
   },
   "custom_joint_texture_layouts": []

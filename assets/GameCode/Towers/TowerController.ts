@@ -6,6 +6,7 @@ import { Bullet } from './Bullet/bullet';
 import { DamageType, TowerType } from '../CoreSystems/GameConfig'; // Import ประเภทดาเมจ
 import { BUFF_HOLY, BUFF_SPD_SCALE, BuffType } from '../CoreSystems/BuffType';
 import { ResourceManager } from '../CoreSystems/ResourceManager';
+import { Enemy } from '../Monsters/Enemy'; // เพิ่มการ Import Enemy
 
 const { ccclass, property } = _decorator;
 
@@ -79,12 +80,23 @@ export class TowerController extends Component {
                 this.shoot();
                 this._attackTimer = 0;
             }
+        } else if (this._enemyList.length > 0 && this.damage <= 0) {
+            // แจ้งเตือนถ้ามีศัตรูแต่ดาเมจเป็น 0
+            console.warn(`[Tower] ${this.towerName} มีศัตรูในระยะแต่ Damage เป็น 0!`);
         }
     }
 
     private shoot() {
+        if (this._enemyList.length === 0) return;
         const target = this._enemyList[0];
-        if (!target || !this.bulletPrefab) return;
+        
+        if (!target || !target.isValid) return;
+        if (!this.bulletPrefab) {
+            console.error(`[Tower] ${this.towerName} ลืมใส่ Bullet Prefab!`);
+            return;
+        }
+
+        console.log(`[Tower] ${this.towerName} กำลังยิง -> ${target.name}`);
 
         const bulletNode = instantiate(this.bulletPrefab);
         const canvas = director.getScene().getChildByName("Canvas");
@@ -104,8 +116,17 @@ export class TowerController extends Component {
     }
 
     public onEnemyEnter(enemy: Node) {
-        if (enemy && this._enemyList.indexOf(enemy) === -1)
-            this._enemyList.push(enemy);
+        // เช็คว่าโหนดที่เข้ามาคือศัตรูจริงหรือไม่ (ต้องมีคอมโพเนนต์ Enemy)
+        const enemyComp = enemy.getComponent(Enemy);
+        if (enemyComp) {
+            if (this._enemyList.indexOf(enemy) === -1) {
+                console.log(`[Tower] ${this.towerName} ตรวจพบศัตรู: ${enemy.name}`);
+                this._enemyList.push(enemy);
+            }
+        } else {
+            // ไม่ใช่ศัตรู (อาจเป็นตัวเองหรือป้อมอื่น) ให้ข้ามไป
+            console.log(`[Tower] ${this.towerName} ตรวจพบวัตถุที่ไม่ใช่ศัตรู: ${enemy.name} (ข้ามไป)`);
+        }
     }
 
     public onEnemyLeave(enemy: Node) {

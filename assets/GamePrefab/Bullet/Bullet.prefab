@@ -49,8 +49,8 @@
       "__type__": "cc.Quat",
       "x": 0,
       "y": 0,
-      "z": 0,
-      "w": 1
+      "z": 0.003420838662019886,
+      "w": 0.9999941489143066
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -64,7 +64,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 0
+      "z": 0.392
     },
     "_id": ""
   },
@@ -221,12 +221,8 @@
     "__prefab": {
       "__id__": 11
     },
-    "speed": 5,
-    "collider": null,
-    "damage": 1,
-    "area_damage": false,
-    "damageType": 0,
-    "holyBonus": 0,
+    "speed": 1000,
+    "hitRadius": 30,
     "_id": ""
   },
   {
