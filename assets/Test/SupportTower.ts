@@ -2,9 +2,8 @@
 import { _decorator, assert, Component, Node, Enum } from 'cc';
 import { DetectionArea, DetectionType } from '../GameCode/Towers/detection_area';
 import { ITower } from './ITower';
-import { BuffType } from '../BuffType';
-// นำเข้า TowerController ตัวใหม่
 import { TowerController } from '../GameCode/Towers/TowerController';
+import { BuffType } from '../GameCode/CoreSystems/BuffType';
 
 const { ccclass, property } = _decorator;
 

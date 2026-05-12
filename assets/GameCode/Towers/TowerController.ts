@@ -2,7 +2,7 @@ import { _decorator, Component, Node, Prefab, instantiate, CCFloat, director, Ve
 import { DetectionArea, DetectionType } from './detection_area';
 import { Bullet } from './Bullet/bullet';
 import { DamageType } from '../CoreSystems/GameConfig'; // Import ประเภทดาเมจ
-import { BuffType } from '../../BuffType';
+import { BUFF_HOLY, BUFF_SPD_SCALE, BuffType } from '../CoreSystems/BuffType';
 
 const { ccclass, property } = _decorator;
 
@@ -12,7 +12,7 @@ export class TowerController extends Component {
     @property({ group: "General" }) public towerName: string = "Tower";
     @property({ group: "General", type: CCFloat }) public cost: number = 100;
 
-    @property({ group: "Attack Stats", type: CCFloat }) public damage: number = 100;
+    @property({ group: "Attack Stats", type: CCFloat }) public damage: number = 1;
     @property({ group: "Attack Stats", type: CCFloat }) public attackCooldown: number = 1.0;
 
     // --- เพิ่ม: ประเภทดาเมจ ---
@@ -97,12 +97,26 @@ export class TowerController extends Component {
     }
 
     public getBuff(buff: BuffType) {
-        this.attackCooldown = this._baseAttackCooldown * 0.8;
-        this._holyDamageBonus = 0.1; // รับบัฟ Priest ได้โบนัส Holy 10%
+        switch (buff) {
+            case BuffType.IncAtkSpd:
+                this.attackCooldown = this._baseAttackCooldown * BUFF_SPD_SCALE;
+                break;
+
+            case BuffType.HolyDmg:
+                this._holyDamageBonus = BUFF_HOLY
+                break;
+        }
     }
 
     public removeBuff(buff: BuffType) {
-        this.attackCooldown = this._baseAttackCooldown;
-        this._holyDamageBonus = 0;
+        switch (buff) {
+            case BuffType.IncAtkSpd:
+                this.attackCooldown = this._baseAttackCooldown;
+                break;
+
+            case BuffType.HolyDmg:
+                this._holyDamageBonus = 0
+                break;
+        }
     }
 }
