@@ -9,13 +9,18 @@ import { ResourceManager } from '../CoreSystems/ResourceManager';
 
 const { ccclass, property } = _decorator;
 
+export enum TowerType {
+    AttackTower,
+    GoldMine,
+}
+
 @ccclass('TowerController')
 export class TowerController extends Component {
     // --- Stats ---
     @property({ group: "General" }) public towerName: string = "Tower";
     @property({ group: "General", type: CCFloat }) public cost: number = 100;
 
-    @property({ group: "Attack Stats", type: CCFloat }) public damage: number = 1;
+    @property({ group: "Attack Stats", type: CCFloat }) public damage: number = 0;
     @property({ group: "Attack Stats", type: CCFloat }) public attackCooldown: number = 1.0;
 
     @property({ group: "Attack Stats", type: Enum(DamageType) })
@@ -32,20 +37,39 @@ export class TowerController extends Component {
 
     @property({ type: DetectionArea }) public detectionArea: DetectionArea = null;
     @property({ type: Prefab }) public bulletPrefab: Prefab = null;
+    @property({ type: Enum(TowerType) }) public type = TowerType.AttackTower;
 
     private _enemyList: Node[] = [];
     private _attackTimer: number = 0;
-    private _economyTimer: number = 0;
     private _baseAttackCooldown: number = 1.0;
     private _holyDamageBonus: number = 0;
+    private _generatedGoldBound: () => void
 
     protected start() {
         this._baseAttackCooldown = this.attackCooldown;
-        if (!this.detectionArea) this.detectionArea = this.getComponentInChildren(DetectionArea);
-        if (this.detectionArea) {
-            this.detectionArea.setRadius(this.attackRange);
-            this.detectionArea.addListener(DetectionType.Enter, this.onEnemyEnter.bind(this));
-            this.detectionArea.addListener(DetectionType.Leave, this.onEnemyLeave.bind(this));
+        switch (this.type) {
+            case TowerType.AttackTower:
+                if (!this.detectionArea) {
+                    this.detectionArea = this.getComponentInChildren(DetectionArea);
+                }
+                if (this.detectionArea) {
+                    this.detectionArea.setRadius(this.attackRange);
+                    this.detectionArea.addListener(DetectionType.Enter, this.onEnemyEnter.bind(this));
+                    this.detectionArea.addListener(DetectionType.Leave, this.onEnemyLeave.bind(this));
+                }
+                break;
+            case TowerType.GoldMine:
+                this._generatedGoldBound = this.generatedGold.bind(this)
+                this.schedule(this._generatedGoldBound, this.generationInterval)
+                break;
+        }
+    }
+
+    generatedGold() {
+        console.log(`[Economy] ${this.towerName} ผลิตเงิน +${this.goldGenerated} Gold!`);
+
+        if (ResourceManager.instance) {
+            ResourceManager.instance.addGold(this.goldGenerated);
         }
     }
 
@@ -58,19 +82,6 @@ export class TowerController extends Component {
             if (this._attackTimer >= this.attackCooldown) {
                 this.shoot();
                 this._attackTimer = 0;
-            }
-        }
-
-        // --- Economy ---
-        if (this.goldGenerated > 0) {
-            this._economyTimer += dt;
-            if (this._economyTimer >= this.generationInterval) {
-                console.log(`[Economy] ${this.towerName} ผลิตเงิน +${this.goldGenerated} Gold!`);
-
-                if (ResourceManager.instance) {
-                    ResourceManager.instance.addGold(this.goldGenerated);
-                }
-                this._economyTimer = 0;
             }
         }
     }
