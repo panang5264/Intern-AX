@@ -1229,7 +1229,7 @@
     "spawnPoint": {
       "__id__": 83
     },
-    "duration": 5,
+    "duration": 0,
     "_id": "5dIGsU8KdOyoPmDgp3kyad"
   },
   {
@@ -1881,7 +1881,7 @@
     "start_at": 0,
     "spawn_freq": 1,
     "enemyPrefab": {
-      "__uuid__": "39f40532-e880-47e8-a61c-8d270ce79a1d",
+      "__uuid__": "abc2e9a4-c73b-4438-b509-f8f98ff716d2",
       "__expectedType__": "cc.Prefab"
     }
   },
@@ -1903,17 +1903,17 @@
     "start_at": 0,
     "spawn_freq": 1,
     "enemyPrefab": {
-      "__uuid__": "43ef64d2-47ea-42e5-b173-8d09674516ce",
+      "__uuid__": "abc2e9a4-c73b-4438-b509-f8f98ff716d2",
       "__expectedType__": "cc.Prefab"
     }
   },
   {
     "__type__": "WaveData",
     "enemy_num": 6,
-    "start_at": 0,
+    "start_at": 3,
     "spawn_freq": 0.5,
     "enemyPrefab": {
-      "__uuid__": "39f40532-e880-47e8-a61c-8d270ce79a1d",
+      "__uuid__": "e88f2d8d-5942-44e0-b5c3-7d4cf98839cb",
       "__expectedType__": "cc.Prefab"
     }
   },
