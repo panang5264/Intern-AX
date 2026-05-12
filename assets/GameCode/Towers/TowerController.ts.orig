@@ -3,9 +3,14 @@
 import { _decorator, Component, Node, Prefab, instantiate, CCFloat, director, Vec3, Enum } from 'cc';
 import { DetectionArea, DetectionType } from './detection_area';
 import { Bullet } from './Bullet/bullet';
+<<<<<<< HEAD
+import { DamageType } from '../CoreSystems/GameConfig';
+import { BuffType } from '../../BuffType';
+import { ResourceManager } from '../CoreSystems/ResourceManager';
+=======
 import { DamageType } from '../CoreSystems/GameConfig'; // Import ประเภทดาเมจ
 import { BUFF_HOLY, BUFF_SPD_SCALE, BuffType } from '../CoreSystems/BuffType';
-import { ResourceManager } from '../CoreSystems/ResourceManager';
+>>>>>>> thunder-BE
 
 const { ccclass, property } = _decorator;
 
@@ -67,9 +72,11 @@ export class TowerController extends Component {
             if (this._economyTimer >= this.generationInterval) {
                 console.log(`[Economy] ${this.towerName} ผลิตเงิน +${this.goldGenerated} Gold!`);
 
+
                 if (ResourceManager.instance) {
                     ResourceManager.instance.addGold(this.goldGenerated);
                 }
+
                 this._economyTimer = 0;
             }
         }
@@ -108,6 +115,10 @@ export class TowerController extends Component {
     }
 
     public getBuff(buff: BuffType) {
+<<<<<<< HEAD
+        this.attackCooldown = this._baseAttackCooldown * 0.8;
+        this._holyDamageBonus = 0.1; // Priest Buff: Holy +10%
+=======
         switch (buff) {
             case BuffType.IncAtkSpd:
                 this.attackCooldown = this._baseAttackCooldown * BUFF_SPD_SCALE;
@@ -117,6 +128,7 @@ export class TowerController extends Component {
                 this._holyDamageBonus = BUFF_HOLY
                 break;
         }
+>>>>>>> thunder-BE
     }
 
     public removeBuff(buff: BuffType) {

@@ -418,7 +418,7 @@
     },
     "towerName": "Tower",
     "cost": 100,
-    "damage": 100,
+    "damage": 1,
     "attackCooldown": 3,
     "damageType": 0,
     "isSplash": false,

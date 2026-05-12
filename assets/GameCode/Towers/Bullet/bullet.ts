@@ -31,9 +31,7 @@ export class Bullet extends Component {
         const my_pos = new Vec3();
         this.node.getWorldPosition(my_pos);
 
-
         this._dir = target_pos.subtract(my_pos).normalize();
-
 
         const radian = Math.atan2(this._dir.y, this._dir.x);
         const quat = new Quat();
@@ -54,7 +52,7 @@ export class Bullet extends Component {
 
         // หาคอมโพเนนต์ Enemy
         const enemy = otherCollider.node.getComponent(Enemy);
-        if (enemy == null) return;
+        if (enemy == null || otherCollider.node != this.target) return;
 
         // ระบบระเบิด (Splash Damage)
         if (this.area_damage) {
