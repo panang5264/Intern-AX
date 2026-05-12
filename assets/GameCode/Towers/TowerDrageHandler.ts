@@ -1,8 +1,9 @@
 // assets/GameCode/Towers/TowerDragHandler.ts
 
-import { _decorator, Component, Node, Prefab, instantiate, EventTouch, Vec3, director, Color, Sprite, CCFloat } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate, EventTouch, Vec3, director, Color, Sprite, CCFloat, Enum } from 'cc';
 import { TowerController } from './TowerController';
 import { ResourceManager } from '../CoreSystems/ResourceManager';
+import { TowerType } from '../CoreSystems/GameConfig';
 
 const { ccclass, property } = _decorator;
 
@@ -12,6 +13,7 @@ export class TowerDragHandler extends Component {
     @property(Prefab) public towerPrefab: Prefab = null;
     @property(String) public towerName: string = "Archer";
     @property(CCFloat) public towerCost: number = 100;
+    @property({ type: Enum(TowerType) }) public towerType: TowerType = TowerType.ATTACK_TOWER;
 
     private _ghostTower: Node | null = null;
 
@@ -48,19 +50,20 @@ export class TowerDragHandler extends Component {
     private onDragEnd(event: EventTouch) {
         if (!this._ghostTower) return;
 
-        // --- เช็คเงินก่อนซื้อ ---
-        const canAfford = ResourceManager.instance && ResourceManager.instance.spendGold(this.towerCost);
+        // --- เช็คเงินก่อนซื้อ (แค่เช็ค ไม่หักเงินที่นี่) ---
+        const canAfford = ResourceManager.instance && ResourceManager.instance.getGold() >= this.towerCost;
 
         if (canAfford) {
-            // ถ้าเงินพอ -> ส่งข้อมูลไปยัง Slot พร้อม cost
+            // ถ้าเงินพอ -> ส่งข้อมูลไปยัง Slot พร้อม cost และ type
             const worldPos = this._ghostTower.getWorldPosition();
             director.getScene().emit("TOWER_DROPPED", {
                 prefab: this.towerPrefab,
                 worldPosition: worldPos,
                 towerName: this.towerName,
-                cost: this.towerCost
+                cost: this.towerCost,
+                type: this.towerType // ส่งประเภทไปด้วย
             });
-            console.log(`[Shop] ซื้อป้อม ${this.towerName} สำเร็จ! (-${this.towerCost} Gold)`);
+            console.log(`[Shop] เตรียมสร้างป้อม ${this.towerName}...`);
         } else {
             // ถ้าเงินไม่พอ -> แสดงข้อความเตือน
             console.log(`[Shop] เงินไม่พอซื้อป้อม ${this.towerName}!`);

@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "Bullet",
+    "_name": "GoldMine",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Bullet",
+    "_name": "GoldMine",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -49,8 +49,8 @@
       "__type__": "cc.Quat",
       "x": 0,
       "y": 0,
-      "z": 0.003420838662019886,
-      "w": 0.9999941489143066
+      "z": 0,
+      "w": 1
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -59,12 +59,12 @@
       "z": 1
     },
     "_mobility": 0,
-    "_layer": 1073741824,
+    "_layer": 33554432,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 0.392
+      "z": 0
     },
     "_id": ""
   },
@@ -83,7 +83,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 20
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -94,7 +94,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "09I/NgGHtKRKeTRPh/hNQx"
+    "fileId": "7f7jV3/OdG2o7QaEwkGh3z"
   },
   {
     "__type__": "cc.Sprite",
@@ -114,12 +114,12 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 194,
+      "b": 0,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "b730527c-3233-41c2-aaf7-7cdab58f9749@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -139,7 +139,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "1cQF26bxhKc5y9QVKUtw8I"
+    "fileId": "12l8HIE0dD0o1uHLSXq50E"
   },
   {
     "__type__": "cc.RigidBody2D",
@@ -154,12 +154,12 @@
       "__id__": 7
     },
     "enabledContactListener": true,
-    "bullet": true,
+    "bullet": false,
     "awakeOnLoad": true,
-    "_group": 8,
+    "_group": 32,
     "_type": 1,
     "_allowSleep": true,
-    "_gravityScale": 0,
+    "_gravityScale": 1,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
@@ -173,7 +173,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "cfE8JEAeZPa5P8o4qtoUfh"
+    "fileId": "3efFoms6tJBqu2wy33qda+"
   },
   {
     "__type__": "cc.BoxCollider2D",
@@ -188,29 +188,29 @@
       "__id__": 9
     },
     "tag": 0,
-    "_group": 8,
+    "_group": 32,
     "_density": 1,
-    "_sensor": true,
+    "_sensor": false,
     "_friction": 0.2,
     "_restitution": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0.9,
-      "y": 0.2
+      "x": 0,
+      "y": 0
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 91.8,
-      "height": 14.7
+      "width": 100,
+      "height": 100
     },
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "78flJx5ZRNZa2yeM4TXayH"
+    "fileId": "efHjXAfaJChpsmilzr95yg"
   },
   {
-    "__type__": "5da9arXQCZP0LYZtLDFPh5n",
+    "__type__": "9a838tOs59LbZCZ0LbfM/xF",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -221,13 +221,24 @@
     "__prefab": {
       "__id__": 11
     },
-    "speed": 1000,
-    "hitRadius": 30,
+    "towerName": "Goldmine",
+    "cost": 250,
+    "damage": 0,
+    "attackCooldown": 100,
+    "damageType": 0,
+    "isSplash": false,
+    "splashRadius": 100,
+    "attackRange": 0,
+    "goldGenerated": 100,
+    "generationInterval": 40,
+    "detectionArea": null,
+    "bulletPrefab": null,
+    "type": 1,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "9dI/4ahJpBCqgtFccoQaaC"
+    "fileId": "ecw5cs/NBM5LB6Q0hQ233k"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -237,7 +248,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "c46/YsCPVOJYA4mWEpNYRx",
+    "fileId": "cdYYEmWC9CHouwlyHOkiPt",
     "instance": null,
     "targetOverrides": null
   }

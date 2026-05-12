@@ -57,14 +57,11 @@ export class WaveManager extends Component {
         }
 
         const wave = this.waves[this.wave_idx];
-
-
         director.getScene().emit("WAVE_STARTED", {
             currentWave: this.wave_idx + 1,
             totalWaves: this.waves.length,
             income: wave.goldReward
         });
-
 
         for (let data of wave.wave_data) {
             const cb = this.spawnEnemy.bind(this, data);

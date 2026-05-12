@@ -3,10 +3,13 @@ import { PathManager } from '../Stages/PathManager';
 import { BaseManager } from '../CoreSystems/BaseManager';
 const { ccclass, property } = _decorator;
 
+const TILE_SIZE = 64
+
 @ccclass('EnemyMovement')
 export class EnemyMovement extends Component {
     @property({ type: PathManager }) pathManager: PathManager = null;
-    @property speed: number = 2;
+    @property({ tooltip: 'Speed in tiles/sec' }) speed: number = 2;
+    private _speed: number = 0;
 
     private _waypoints: Node[] = [];
     private _targetIndex: number = 0;
@@ -19,6 +22,7 @@ export class EnemyMovement extends Component {
                 this._targetIndex = 1;
             }
         }
+        this._speed = this.speed * TILE_SIZE;
     }
 
     public set_path_manager(pathManager: PathManager) {
@@ -30,7 +34,7 @@ export class EnemyMovement extends Component {
 
         const targetPos = this._waypoints[this._targetIndex].worldPosition;
         const currentPos = this.node.worldPosition;
-        const stepLen = this.speed * dt;
+        const stepLen = this._speed * dt;
         const remaining = Vec3.distance(currentPos, targetPos);
 
         if (remaining <= stepLen) {

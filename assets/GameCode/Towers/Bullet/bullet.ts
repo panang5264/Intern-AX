@@ -1,27 +1,33 @@
-import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, assert, BoxCollider2D, Contact2DType, CCInteger, CCBoolean, Sprite, Enum } from 'cc';
-import { SplashArea } from './SplashArea';
+import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, Contact2DType, CCBoolean, Sprite } from 'cc';
 import { DamageType } from '../../CoreSystems/GameConfig';
 import { Enemy } from '../../Monsters/Enemy';
+import { SplashArea } from './SplashArea';
 
 const { ccclass, property } = _decorator;
 
 @ccclass('Bullet')
 export class Bullet extends Component {
-    @property({ type: CCFloat }) public speed = 800;
+    @property({ type: CCFloat }) public speed = 1000;
+    @property({ type: CCFloat }) public hitRadius = 30;
 
     public target: Node = null;
     public damage: number = 0;
     public damageType: DamageType = DamageType.PHYSICAL;
     public holyBonus: number = 0;
 
-    @property({ type: Collider2D })
-    public collider: Collider2D = null;
+    private _dir = new Vec3();
+    private _stopMoving: boolean = false;
+    private _collider: Collider2D = null;
 
     @property(CCBoolean) public area_damage: boolean = false;
     @property(SplashArea) public area_collider: SplashArea = null;
 
-    private _dir = new Vec3();
-    private _stopMoving: boolean = false;
+    protected onLoad() {
+        this._collider = this.getComponent(Collider2D);
+        if (this._collider) {
+            this._collider.on(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this);
+        }
+    }
 
     protected start(): void {
         if (!this.target || !this.target.isValid) return;
@@ -32,19 +38,41 @@ export class Bullet extends Component {
         this.node.getWorldPosition(my_pos);
 
         this._dir = target_pos.subtract(my_pos).normalize();
+        const radian = Math.atan2(this._dir.y, this._dir.x);
+        const quat = new Quat();
+        Quat.fromAxisAngle(quat, Vec3.FORWARD, -radian);
+
+        this.node.setWorldRotation(quat);
+        if (this._collider === null) {
+            this._collider = this.node.getComponent(Collider2D);
+        }
+
+        if (this._collider) {
+            this._collider.on(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this);
+        }
+    }
+
+    protected update(dt: number) {
+        if (this._stopMoving) return;
+        if (!this.target || !this.target.isValid) {
+            this.node.destroy();
+            return;
+        }
+
+        const targetPos = new Vec3();
+        this.target.getWorldPosition(targetPos);
+        const myPos = new Vec3();
+        this.node.getWorldPosition(myPos);
+
+        this._dir = targetPos.subtract(myPos).normalize();
 
         const radian = Math.atan2(this._dir.y, this._dir.x);
         const quat = new Quat();
-        Quat.fromAxisAngle(quat, Vec3.FORWARD, radian);
+        Quat.fromAxisAngle(quat, Vec3.FORWARD, -radian);
         this.node.setWorldRotation(quat);
 
-        if (this.collider === null) {
-            this.collider = this.node.getComponent(Collider2D);
-        }
-
-        if (this.collider) {
-            this.collider.on(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this);
-        }
+        const moveStep = this._dir.multiplyScalar(this.speed * dt);
+        this.node.setWorldPosition(myPos.add(moveStep));
     }
 
     private onHitEnemy(selfCollider: Collider2D, otherCollider: Collider2D) {
@@ -66,32 +94,15 @@ export class Bullet extends Component {
             if (sprite) sprite.enabled = false;
 
             this.scheduleOnce(() => { this.node.destroy(); }, 0.1);
-        }
-        // ระบบโจมตีเป้าหมายเดี่ยว
-        else {
+        } else {
             enemy.takeDamage(this.damage, this.damageType, this.holyBonus);
             this.node.destroy();
         }
     }
 
-    protected update(dt: number) {
-        if (this._stopMoving || !this.target) return;
-
-        // เคลื่อนที่ตามทิศทางที่คำนวณไว้
-        const currentPos = new Vec3();
-        this.node.getWorldPosition(currentPos);
-        const moveStep = this._dir.clone().multiplyScalar(this.speed * dt);
-        this.node.setWorldPosition(currentPos.add(moveStep));
-
-        // ระบบสำรอง: ถ้ากระสุนหลุดระยะ หรือบินไปไกลเกินไปให้ทำลายทิ้ง
-        if (Vec3.distance(currentPos, Vec3.ZERO) > 5000) {
-            this.node.destroy();
-        }
-    }
-
-    protected onDestroy(): void {
-        if (this.collider) {
-            this.collider.off(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this);
+    protected onDestroy() {
+        if (this._collider) {
+            this._collider.off(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this);
         }
     }
 }
