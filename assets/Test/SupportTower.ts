@@ -34,7 +34,7 @@ export class SupportTower extends Component implements ITower {
 
     InTowerRange(tower: Node): void {
         const t = tower.getComponent(TowerController);
-        // ตรวจสอบก่อนว่าป้อมมีตัวตนจริงไหม (Null Check)
+
         if (t) {
             t.getBuff(this.buff);
         }
@@ -42,7 +42,7 @@ export class SupportTower extends Component implements ITower {
 
     OutTowerRange(tower: Node): void {
         const t = tower.getComponent(TowerController);
-        // ตรวจสอบก่อนว่าป้อมยังมีชีวิตอยู่ไหม (เพื่อกัน Error ตอนลบป้อม)
+
         if (t) {
             t.removeBuff(this.buff);
         }
