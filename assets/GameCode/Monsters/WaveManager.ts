@@ -72,10 +72,15 @@ export class WaveManager extends Component {
     private startRestTimer(duration: number) {
         this.isResting = true;
         console.log(`[Wave] Resting for ${duration}s...`);
-
-        // ส่ง Event ไปบอก UI ให้แสดงปุ่ม Skip และซ่อนพวก Income/Wave Info
-        director.getScene().emit("WAVE_RESTING", { duration: duration, nextWave: this.wave_idx + 1 });
-
+        // คำนวณรางวัลที่เพิ่งได้รับ (ถ้าเริ่มเกม wave_idx เป็น 0 ให้รางวัลเป็น 0)
+        const lastWaveReward = (this.wave_idx === 0) ? 0 : this.waves[this.wave_idx - 1].goldReward;
+        // ส่ง Event ไปบอก UI ให้แสดงข้อมูลการพักและรางวัล
+        director.getScene().emit("WAVE_RESTING", {
+            duration: duration,
+            nextWave: this.wave_idx + 1,
+            totalWaves: this.waves.length,
+            reward: lastWaveReward
+        });
         this.scheduleOnce(this.beginWave, duration);
     }
 
