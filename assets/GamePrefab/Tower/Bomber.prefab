@@ -421,7 +421,7 @@
     "damage": 2,
     "attackCooldown": 2,
     "damageType": 0,
-    "isSplash": false,
+    "isSplash": true,
     "splashRadius": 100,
     "attackRange": 550,
     "goldGenerated": 0,
