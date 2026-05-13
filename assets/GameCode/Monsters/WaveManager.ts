@@ -60,6 +60,11 @@ export class WaveManager extends Component {
     private wave_idx: number = 0;
     private spawnCallbacks: Map<WaveData, () => void> = new Map();
     private isResting: boolean = false;
+    private activeEnemyCount: number = 0;
+
+    protected onLoad() {
+        director.getScene().on("ENEMY_REMOVED", this.onEnemyRemoved, this);
+    }
 
     protected start(): void {
         assert(this.spawnPoint !== null, "didn't set enemy spawn Point for WaveManager");
@@ -85,10 +90,21 @@ export class WaveManager extends Component {
     }
 
     public skipRest() {
-        if (!this.isResting) return;
+        const wave = this.waves[this.wave_idx];
+        const canSkipCombat = wave && wave.isAllSpawned() && !this.isResting;
 
-        console.log("[Wave] Skip Rest!");
+        if (!this.isResting && !canSkipCombat) return;
+
+        console.log("[Wave] Skip Pressed!");
         this.unschedule(this.beginWave);
+
+        if (canSkipCombat) {
+            if (ResourceManager.instance) {
+                ResourceManager.instance.addGold(wave.goldReward);
+            }
+            this.wave_idx += 1;
+        }
+
         this.beginWave();
     }
 
@@ -127,19 +143,28 @@ export class WaveManager extends Component {
         node.setWorldPosition(this.spawnPoint.worldPosition);
         node.getComponent(EnemyMovement).pathManager = this.path_manager;
 
+        this.activeEnemyCount++;
         data.remaining_enemies -= 1;
-
+        
         // ถ้ากลุ่มนี้ปล่อยครบแล้ว
         if (data.remaining_enemies <= 0) {
             this.unschedule(this.spawnCallbacks.get(data));
             this.spawnCallbacks.delete(data);
-
+            
             wave.markGroupDone();
 
-            // ถ้าทุกกลุ่มในเวฟนี้ปล่อยครบแล้ว
-            if (wave.isAllSpawned()) {
-                this.onWaveSpawnComplete(wave);
+            if (wave.isAllSpawned() && this.wave_idx < this.waves.length - 1) {
+                director.getScene().emit("ENABLE_SKIP", true);
             }
+        }
+    }
+
+    private onEnemyRemoved() {
+        this.activeEnemyCount--;
+        
+        const wave = this.waves[this.wave_idx];
+        if (wave && wave.isAllSpawned() && this.activeEnemyCount <= 0) {
+            this.onWaveSpawnComplete(wave);
         }
     }
 
