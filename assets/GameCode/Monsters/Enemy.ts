@@ -1,6 +1,6 @@
 // assets/GameCode/Monsters/Enemy.ts
 
-import { _decorator, assert, Component, Label, Enum, CCFloat } from 'cc';
+import { _decorator, assert, Component, Label, Enum, CCFloat, director } from 'cc';
 import { EnemyType, DamageType, WeaknessTable } from '../CoreSystems/GameConfig';
 
 const { ccclass, property } = _decorator;
@@ -56,6 +56,7 @@ export class Enemy extends Component {
 
     private die() {
         console.log(`[Enemy] ${this.node.name} Neturlized`);
+        director.getScene().emit("ENEMY_REMOVED");
         // TODO: แจกเงินรางวัลผ่าน ResourceManager
         this.node.destroy();
     }

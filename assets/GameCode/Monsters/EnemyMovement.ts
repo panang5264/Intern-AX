@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Vec3 } from 'cc';
+import { _decorator, Component, Node, Vec3, director } from 'cc';
 import { PathManager } from '../Stages/PathManager';
 import { BaseManager } from '../CoreSystems/BaseManager';
 const { ccclass, property } = _decorator;
@@ -60,6 +60,7 @@ export class EnemyMovement extends Component {
     private reachGoal() {
         console.log("ศัตรูถึงฐานแล้ว!");
         BaseManager.instance.takeDamage(1);
+        director.getScene().emit("ENEMY_REMOVED");
         this.node.destroy();
     }
 }
