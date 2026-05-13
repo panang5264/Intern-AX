@@ -40,4 +40,12 @@ export class TowerManager extends Component {
         const currentCount = this._typeCounts.get(type) || 0;
         this._typeCounts.set(type, currentCount + 1);
     }
+
+    public removeTower(type: string) {
+        if (this._currentTotalTowers > 0) this._currentTotalTowers--;
+        const currentCount = this._typeCounts.get(type) || 0;
+        if (currentCount > 0) {
+            this._typeCounts.set(type, currentCount - 1);
+        }
+    }
 }

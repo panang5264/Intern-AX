@@ -19,6 +19,9 @@ export class PlacementSlot extends Component {
     @property({ type: CCFloat }) public snapDistance: number = 120;
 
     private _isOccupied: boolean = false;
+    private _currentTower: Node = null;
+    private _currentCost: number = 0;
+    private _currentType: string = "";
 
     start() {
         director.getScene().on("TOWER_DROPPED", this.onTowerDropped, this);
@@ -48,9 +51,14 @@ export class PlacementSlot extends Component {
 
         if (ResourceManager.instance && ResourceManager.instance.getGold() >= data.cost) {
             ResourceManager.instance.spendGold(data.cost);
+            this._currentCost = data.cost;
+            this._currentType = data.type || "";
             this.placeTower(data.prefab, data.towerName, data.type);
             console.log(`[Slot] place tower ${data.towerName} success! (paid ${data.cost})`);
         } else {
+            // ใช้ Event แจ้งเตือนไปยัง UI
+            director.getScene().emit("SHOW_NOTIFICATION", "INSUFFICIENT FUNDS!");
+
             console.log(`[Slot] not enought money ${data.towerName}!`);
         }
     }
@@ -59,6 +67,7 @@ export class PlacementSlot extends Component {
         const tower = instantiate(prefab);
         tower.parent = this.node;
         tower.setPosition(0, 0, 0);
+        this._currentTower = tower;
         this._isOccupied = true;
 
         if (TowerManager.instance && type) {
@@ -66,5 +75,24 @@ export class PlacementSlot extends Component {
         }
 
         console.log(`place tower ${towerName} into ${this.node.name}`);
+    }
+
+    public sellTower() {
+        if (!this._isOccupied || !this._currentTower) return;
+
+        const refund = Math.floor(this._currentCost * 0.3);
+
+        if (ResourceManager.instance) {
+            ResourceManager.instance.addGold(refund);
+            director.getScene().emit("SHOW_NOTIFICATION", `SOLD FOR +${refund} GOLD`);
+        }
+
+        if (TowerManager.instance && this._currentType) {
+            TowerManager.instance.removeTower(this._currentType);
+        }
+
+        this._currentTower.destroy();
+        this._currentTower = null;
+        this._isOccupied = false;
     }
 }
