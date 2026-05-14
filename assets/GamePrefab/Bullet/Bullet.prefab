@@ -223,11 +223,13 @@
     },
     "speed": 1000,
     "hitRadius": 30,
+    "area_damage": false,
+    "area_collider": null,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "9dI/4ahJpBCqgtFccoQaaC"
+    "fileId": "20u+fhSe9DJoCILlOKhXRi"
   },
   {
     "__type__": "cc.PrefabInfo",

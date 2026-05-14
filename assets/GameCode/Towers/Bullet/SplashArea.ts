@@ -1,6 +1,6 @@
 import { _decorator, Component, assert, CircleCollider2D, Collider2D, Contact2DType, Graphics } from 'cc';
 import { Enemy } from '../../Monsters/Enemy';
-import { DamageType } from '../../CoreSystems/GameConfig'; // Import มาใช้
+import { DamageType } from '../../Core/GameConfig'; // Import มาใช้
 
 const { ccclass, property } = _decorator;
 

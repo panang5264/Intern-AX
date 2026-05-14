@@ -1,8 +1,8 @@
 import { _decorator, assert, Component, Node, Prefab, instantiate, CCFloat, director } from 'cc';
 import { ITower } from './ITower';
-import { DetectionArea, DetectionType } from '../GameCode/Towers/detection_area';
-import { Bullet } from '../GameCode/Towers/Bullet/bullet';
-import { BUFF_SPD_SCALE, BuffType } from '../GameCode/CoreSystems/BuffType';
+import { DetectionArea, DetectionType } from '../Towers/detection_area';
+import { BUFF_SPD_SCALE, BuffType } from '../Core/BuffType';
+import { Bullet } from '../Towers/Bullet/bullet';
 const { ccclass, property } = _decorator;
 
 @ccclass('AttackTower')

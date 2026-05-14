@@ -1,10 +1,8 @@
-// assets/GameCode/Towers/TowerController.ts
-
 import { _decorator, Component, Node, Prefab, instantiate, CCFloat, director, Vec3, Enum } from 'cc';
 import { DetectionArea, DetectionType } from './detection_area';
 import { Bullet } from './Bullet/bullet';
-import { DamageType } from '../CoreSystems/GameConfig'; // Import ประเภทดาเมจ
-import { BUFF_HOLY, BUFF_SPD_SCALE, BuffType } from '../CoreSystems/BuffType';
+import { DamageType } from '../Core/GameConfig'; // Import ประเภทดาเมจ
+import { BUFF_HOLY, BUFF_SPD_SCALE, BuffType } from '../Core/BuffType';
 
 const { ccclass, property } = _decorator;
 

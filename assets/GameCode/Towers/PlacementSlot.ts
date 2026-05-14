@@ -2,7 +2,7 @@
 
 import { _decorator, Component, Node, Prefab, instantiate, Vec3, director, CCFloat } from 'cc';
 import { TowerManager } from './TowerManager';
-import { ResourceManager } from '../CoreSystems/ResourceManager';
+import { ResourceManager } from '../Core/ResourceManager';
 
 const { ccclass, property } = _decorator;
 

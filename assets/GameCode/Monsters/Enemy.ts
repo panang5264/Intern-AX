@@ -1,7 +1,7 @@
 // assets/GameCode/Monsters/Enemy.ts
 
 import { _decorator, assert, Component, Label, Enum, CCFloat, director } from 'cc';
-import { EnemyType, DamageType, WeaknessTable } from '../CoreSystems/GameConfig';
+import { EnemyType, DamageType, WeaknessTable } from '../Core/GameConfig';
 
 const { ccclass, property } = _decorator;
 

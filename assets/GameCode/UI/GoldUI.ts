@@ -1,5 +1,5 @@
 import { _decorator, Component, Label, director, tween, v3 } from 'cc';
-import { ResourceManager } from '../CoreSystems/ResourceManager';
+import { ResourceManager } from '../Core/ResourceManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GoldUI')

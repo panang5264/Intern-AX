@@ -1,9 +1,9 @@
 // assets/Test/SupportTower.ts
 import { _decorator, assert, Component, Node, Enum } from 'cc';
-import { DetectionArea, DetectionType } from '../GameCode/Towers/detection_area';
+import { DetectionArea, DetectionType } from '../Towers/detection_area';
 import { ITower } from './ITower';
-import { TowerController } from '../GameCode/Towers/TowerController';
-import { BuffType } from '../GameCode/CoreSystems/BuffType';
+import { TowerController } from '../Towers/TowerController';
+import { BuffType } from '../Core/BuffType';
 
 const { ccclass, property } = _decorator;
 

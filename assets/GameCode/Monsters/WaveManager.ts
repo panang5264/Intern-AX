@@ -3,7 +3,7 @@
 import { _decorator, assert, CCFloat, Component, director, instantiate, macro, Node, Prefab } from 'cc';
 import { PathManager } from '../Stages/PathManager';
 import { EnemyMovement } from './EnemyMovement';
-import { ResourceManager } from '../CoreSystems/ResourceManager';
+import { ResourceManager } from '../Core/ResourceManager';
 
 const { ccclass, property } = _decorator;
 
@@ -145,12 +145,12 @@ export class WaveManager extends Component {
 
         this.activeEnemyCount++;
         data.remaining_enemies -= 1;
-        
+
         // ถ้ากลุ่มนี้ปล่อยครบแล้ว
         if (data.remaining_enemies <= 0) {
             this.unschedule(this.spawnCallbacks.get(data));
             this.spawnCallbacks.delete(data);
-            
+
             wave.markGroupDone();
 
             if (wave.isAllSpawned() && this.wave_idx < this.waves.length - 1) {
@@ -161,7 +161,7 @@ export class WaveManager extends Component {
 
     private onEnemyRemoved() {
         this.activeEnemyCount--;
-        
+
         const wave = this.waves[this.wave_idx];
         if (wave && wave.isAllSpawned() && this.activeEnemyCount <= 0) {
             this.onWaveSpawnComplete(wave);

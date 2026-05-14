@@ -3,9 +3,9 @@
 import { _decorator, Component, Node, Prefab, instantiate, CCFloat, director, Vec3, Enum } from 'cc';
 import { DetectionArea, DetectionType } from './detection_area';
 import { Bullet } from './Bullet/bullet';
-import { DamageType, TowerType } from '../CoreSystems/GameConfig'; // Import ประเภทดาเมจ
-import { BUFF_HOLY, BUFF_SPD_SCALE, BuffType } from '../CoreSystems/BuffType';
-import { ResourceManager } from '../CoreSystems/ResourceManager';
+import { DamageType, TowerType } from '../Core/GameConfig'; // Import ประเภทดาเมจ
+import { BUFF_HOLY, BUFF_SPD_SCALE, BuffType } from '../Core/BuffType';
+import { ResourceManager } from '../Core/ResourceManager';
 import { Enemy } from '../Monsters/Enemy'; // เพิ่มการ Import Enemy
 
 const { ccclass, property } = _decorator;

@@ -2,8 +2,8 @@
 
 import { _decorator, Component, Node, Prefab, instantiate, EventTouch, Vec3, director, Color, Sprite, CCFloat, Enum } from 'cc';
 import { TowerController } from './TowerController';
-import { ResourceManager } from '../CoreSystems/ResourceManager';
-import { TowerType } from '../CoreSystems/GameConfig';
+import { ResourceManager } from '../Core/ResourceManager';
+import { TowerType } from '../Core/GameConfig';
 
 const { ccclass, property } = _decorator;
 

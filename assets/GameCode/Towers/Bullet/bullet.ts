@@ -1,5 +1,5 @@
 import { _decorator, CCFloat, Component, Node, Vec3, Quat, Collider2D, Contact2DType, CCBoolean, Sprite } from 'cc';
-import { DamageType } from '../../CoreSystems/GameConfig';
+import { DamageType } from '../../Core/GameConfig';
 import { Enemy } from '../../Monsters/Enemy';
 import { SplashArea } from './SplashArea';
 
