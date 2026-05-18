@@ -15,20 +15,26 @@ export class StageNode extends Component {
 
     start() {
         const config = STAGE_LIST.find(s => s.id === this.stageId);
-
-
-        if (config && this.stageLabel) {
-            this.stageLabel.string = config.name;
+        if (config) {
+            this.init(config.id, config.name, config.sceneName, config.preRequisiteId);
         }
-
-        const preReqId = config ? config.preRequisiteId : null;
-        this._isUnlocked = StageDataManager.instance.isStageUnlocked(this.stageId, preReqId);
-        this.updateVisual();
 
         const btn = this.getComponent(Button);
         if (btn) {
             this.node.on(Button.EventType.CLICK, this.onStageClick, this);
         }
+    }
+
+    init(id: number, name: string, sceneName: string, preRequisiteId: number | null) {
+        this.stageId = id;
+        this.sceneName = sceneName;
+
+        if (this.stageLabel) {
+            this.stageLabel.string = name;
+        }
+
+        this._isUnlocked = StageDataManager.instance.isStageUnlocked(id, preRequisiteId);
+        this.updateVisual();
     }
 
     updateVisual() {
