@@ -56,7 +56,7 @@ export class TowerDragHandler extends Component {
         if (canAfford) {
             // ถ้าเงินพอ -> ส่งข้อมูลไปยัง Slot พร้อม cost และ type
             const worldPos = this._ghostTower.getWorldPosition();
-            director.getScene().emit("TOWER_DROPPED", {
+            director.getScene().emit(GlobalEvent.TOWER_DROPPED, {
                 prefab: this.towerPrefab,
                 worldPosition: worldPos,
                 towerName: this.towerName,

@@ -60,7 +60,7 @@ export class EnemyMovement extends Component {
     private reachGoal() {
         console.log("ศัตรูถึงฐานแล้ว!");
         BaseManager.instance.takeDamage(1);
-        director.getScene().emit("ENEMY_REMOVED");
+        director.getScene().emit(GlobalEvent.ENEMY_REMOVED);
         this.node.destroy();
     }
 }

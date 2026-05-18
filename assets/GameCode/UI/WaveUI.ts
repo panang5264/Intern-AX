@@ -13,9 +13,9 @@ export class WaveUI extends Component {
     private _nextWaveNum: number = 1;
 
     protected start() {
-        director.getScene().on("WAVE_STARTED", this.onWaveStarted, this);
-        director.getScene().on("WAVE_RESTING", this.onWaveResting, this);
-        director.getScene().on("ENABLE_SKIP", (show: boolean) => {
+        director.getScene().on(WaveState.START, this.onWaveStarted, this);
+        director.getScene().on(WaveState.REST, this.onWaveResting, this);
+        director.getScene().on(GlobalEvent.ENABLE_SKIP, (show: boolean) => {
             if (this.skipButton) this.skipButton.active = show;
         }, this);
 
@@ -33,7 +33,7 @@ export class WaveUI extends Component {
                 // ถ้าเหลือเวลา 5 วินาทีสุดท้าย ให้แสดงเป็นตัวเลขถอยหลังตัวใหญ่ๆ (นับถอยหลังเริ่มเกม)
                 if (remaining <= 5) {
                     this.incomeLabel.color = Color.RED;
-                    
+
                     if (this._nextWaveNum === 1) {
                         this.incomeLabel.string = `GAME START IN: ${remaining}`;
                     } else {

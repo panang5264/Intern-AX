@@ -1,4 +1,3 @@
-// assets/GameCode/Monsters/WaveManager.ts
 
 import { _decorator, assert, CCFloat, Component, director, instantiate, macro, Node, Prefab } from 'cc';
 import { PathManager } from '../Stages/PathManager';
@@ -6,6 +5,7 @@ import { EnemyMovement } from './EnemyMovement';
 import { ResourceManager } from '../Core/ResourceManager';
 
 const { ccclass, property } = _decorator;
+
 
 @ccclass('WaveData')
 export class WaveData {
@@ -63,7 +63,7 @@ export class WaveManager extends Component {
     private activeEnemyCount: number = 0;
 
     protected onLoad() {
-        director.getScene().on("ENEMY_REMOVED", this.onEnemyRemoved, this);
+        director.getScene().on(GlobalEvent.ENEMY_REMOVED, this.onEnemyRemoved, this);
     }
 
     protected start(): void {
@@ -80,7 +80,7 @@ export class WaveManager extends Component {
         // คำนวณรางวัลที่เพิ่งได้รับ (ถ้าเริ่มเกม wave_idx เป็น 0 ให้รางวัลเป็น 0)
         const lastWaveReward = (this.wave_idx === 0) ? 0 : this.waves[this.wave_idx - 1].goldReward;
         // ส่ง Event ไปบอก UI ให้แสดงข้อมูลการพักและรางวัล
-        director.getScene().emit("WAVE_RESTING", {
+        director.getScene().emit(WaveState.REST, {
             duration: duration,
             nextWave: this.wave_idx + 1,
             totalWaves: this.waves.length,
@@ -118,7 +118,7 @@ export class WaveManager extends Component {
         const wave = this.waves[this.wave_idx];
         wave.reset(); // รีเซ็ตจำนวนศัตรูที่จะเกิดในเวฟนี้
 
-        director.getScene().emit("WAVE_STARTED", {
+        director.getScene().emit(WaveState.START, {
             currentWave: this.wave_idx + 1,
             totalWaves: this.waves.length,
             income: wave.goldReward
@@ -154,7 +154,7 @@ export class WaveManager extends Component {
             wave.markGroupDone();
 
             if (wave.isAllSpawned() && this.wave_idx < this.waves.length - 1) {
-                director.getScene().emit("ENABLE_SKIP", true);
+                director.getScene().emit(GlobalEvent.ENABLE_SKIP, true);
             }
         }
     }

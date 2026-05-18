@@ -13,7 +13,7 @@ export class NotificationUI extends Component {
         if (this.container) this.container.active = false;
 
         // ดักฟัง Event แจ้งเตือน
-        director.getScene().on("SHOW_NOTIFICATION", this.onShowNotification, this);
+        director.getScene().on(GlobalEvent.SHOW_NOTI, this.onShowNotification, this);
     }
 
     private onShowNotification(msg: string) {

@@ -56,7 +56,7 @@ export class Enemy extends Component {
 
     private die() {
         console.log(`[Enemy] ${this.node.name} Neturlized`);
-        director.getScene().emit("ENEMY_REMOVED");
+        director.getScene().emit(GlobalEvent.ENEMY_REMOVED);
         // TODO: แจกเงินรางวัลผ่าน ResourceManager
         this.node.destroy();
     }

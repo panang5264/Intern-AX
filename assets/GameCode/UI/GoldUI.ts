@@ -14,7 +14,7 @@ export class GoldUI extends Component {
     private _targetGold: number = 0;  // ค่าเงินจริงๆ ที่ควรจะเป็น
 
     protected onLoad() {
-        director.getScene().on("GOLD_CHANGED", this.onGoldChanged, this);
+        director.getScene().on(GlobalEvent.GOLD_CHANGED, this.onGoldChanged, this);
     }
 
     protected start() {
@@ -28,7 +28,7 @@ export class GoldUI extends Component {
 
     protected onDestroy() {
         if (director.getScene()) {
-            director.getScene().off("GOLD_CHANGED", this.onGoldChanged, this);
+            director.getScene().off(GlobalEvent.GOLD_CHANGED, this.onGoldChanged, this);
         }
     }
 

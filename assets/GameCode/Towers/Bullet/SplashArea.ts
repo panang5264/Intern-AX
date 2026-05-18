@@ -26,6 +26,9 @@ export class SplashArea extends Component {
         // ดักจับศัตรูที่อยู่ในวงระเบิด
         this.area.on(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this);
     }
+    protected onDestroy(): void {
+        this.area.off(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this);
+    }
 
     private onHitEnemy(selfCollider: Collider2D, otherCollider: Collider2D) {
         // หาคอมโพเนนต์ Enemy
