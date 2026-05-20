@@ -2,20 +2,27 @@
 
 import { _decorator, assert, Component, Label, Enum, CCFloat, director } from 'cc';
 import { EnemyType, DamageType, WeaknessTable } from '../Core/GameConfig';
+import { ResourceManager } from '../Core/ResourceManager';
 
 const { ccclass, property } = _decorator;
 
 @ccclass('Enemy')
 export class Enemy extends Component {
     // --- HP System ---
-    @property({ type: CCFloat }) public maxHp: number = 100;
+    @property({ type: CCFloat })
+    public maxHp: number = 100;
     public currentHp: number = -1;
 
-    @property(Label) public hpText: Label = null;
+    @property(Label)
+    public hpText: Label = null;
 
     // --- Enemy Type ---
     @property({ type: Enum(EnemyType) })
     public enemyType: EnemyType = EnemyType.NEUTRAL;
+
+    // --- Reward System ---
+    @property({ type: CCFloat, tooltip: "เงินรางวัลเมื่อกำจัดศัตรูตัวนี้ได้" })
+    public goldReward: number = 20;
 
     protected start(): void {
         this.currentHp = this.maxHp;
@@ -23,16 +30,12 @@ export class Enemy extends Component {
         this.updateHPText();
     }
 
-
     public takeDamage(baseDmg: number, type: DamageType = DamageType.PHYSICAL, holyBonus: number = 0) {
-
         const primaryMultiplier = WeaknessTable[this.enemyType][type];
         const finalPrimaryDmg = baseDmg * primaryMultiplier;
 
-
         const holyMultiplier = WeaknessTable[this.enemyType][DamageType.HOLY];
         const finalHolyDmg = (baseDmg * holyBonus) * holyMultiplier;
-
 
         const totalDamage = finalPrimaryDmg + finalHolyDmg;
 
@@ -55,9 +58,17 @@ export class Enemy extends Component {
     }
 
     private die() {
-        console.log(`[Enemy] ${this.node.name} Neturlized`);
+        console.log(`[Enemy] ${this.node.name} Neutralized`);
+
+        // แจกเงินรางวัล
+        if (ResourceManager && ResourceManager.instance) {
+            ResourceManager.instance.addGold(this.goldReward);
+        }
+
+        // แจ้ง event ว่าศัตรูถูกกำจัดแล้ว
         director.getScene().emit(GlobalEvent.ENEMY_REMOVED);
-        // TODO: แจกเงินรางวัลผ่าน ResourceManager
+
+        // ทำลาย node
         this.node.destroy();
     }
 }

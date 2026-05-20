@@ -11,3 +11,7 @@ enum WaveState {
     REST = "WAVE_RESTING",
 }
 
+(window as any).GlobalEvent = GlobalEvent;
+(window as any).WaveState = WaveState;
+
+
