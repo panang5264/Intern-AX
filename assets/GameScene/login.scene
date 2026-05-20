@@ -2033,7 +2033,7 @@
     "_constraint": 0,
     "_constraintNum": 2,
     "_affectedByScale": true,
-    "_isAlign": false,
+    "_isAlign": true,
     "_id": "efcSuKxlZJuoy9e5cTeKr2"
   },
   {
