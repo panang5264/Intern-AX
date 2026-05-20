@@ -1,6 +1,6 @@
 // assets/GameCode/Towers/TowerController.ts
 
-import { _decorator, Component, Node, Prefab, instantiate, CCFloat, director, Vec3, Enum } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate, CCFloat, director, Vec3, Enum, Animation } from 'cc';
 import { DetectionArea, DetectionType } from './detection_area';
 import { Bullet } from './Bullet/bullet';
 import { DamageType, TowerType } from '../Core/GameConfig'; // Import ประเภทดาเมจ
@@ -36,6 +36,13 @@ export class TowerController extends Component {
     @property({ type: Prefab }) public bulletPrefab: Prefab = null;
     @property({ type: Enum(TowerType) }) public type = TowerType.ATTACK_TOWER;
 
+    @property({ type: Animation, group: "Visuals" }) 
+    public unitAnim: Animation = null;
+    @property({ group: "Visuals" })
+    public idleAnimName: string = "Idle";
+    @property({ group: "Visuals" })
+    public attackAnimName: string = "Attack";
+
     private _enemyList: Node[] = [];
     private _attackTimer: number = 0;
     private _baseAttackCooldown: number = 1.0;
@@ -44,6 +51,11 @@ export class TowerController extends Component {
 
     protected start() {
         this._baseAttackCooldown = this.attackCooldown;
+
+        if (this.unitAnim && this.idleAnimName) {
+            this.unitAnim.play(this.idleAnimName);
+        }
+
         switch (this.type) {
             case TowerType.ATTACK_TOWER:
                 if (!this.detectionArea) {
@@ -97,6 +109,15 @@ export class TowerController extends Component {
         }
 
         console.log(`[Tower] ${this.towerName} กำลังยิง -> ${target.name}`);
+
+        if (this.unitAnim && this.attackAnimName) {
+            this.unitAnim.play(this.attackAnimName);
+            this.unitAnim.once(Animation.EventType.FINISHED, () => {
+                if (this.unitAnim && this.idleAnimName) {
+                    this.unitAnim.play(this.idleAnimName);
+                }
+            }, this);
+        }
 
         const bulletNode = instantiate(this.bulletPrefab);
         const canvas = director.getScene().getChildByName("Canvas");
