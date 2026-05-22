@@ -14,29 +14,34 @@ const { ccclass, property } = _decorator;
 @ccclass('TowerController')
 export class TowerController extends Component {
     // --- Stats ---
+    @property({ type: Enum(TowerType) }) public type = TowerType.ATTACK_TOWER;
+    @property({ type: DetectionArea }) public detectionArea: DetectionArea = null;
+    @property({ type: Prefab }) public bulletPrefab: Prefab = null;
+
     @property({ group: "General" }) public towerName: string = "Tower";
     @property({ group: "General", type: CCFloat }) public cost: number = 100;
 
-    @property({ group: "Attack Stats", type: CCFloat }) public damage: number = 0;
-    @property({ group: "Attack Stats", type: CCFloat }) public attackCooldown: number = 1.0;
+    @property({ group: "Attack Stats", visible() { return this.type === TowerType.ATTACK_TOWER }, type: CCFloat })
+    public damage: number = 0;
+    @property({ group: "Attack Stats", visible() { return this.type === TowerType.ATTACK_TOWER }, type: CCFloat })
+    public attackCooldown: number = 1.0;
 
-    @property({ group: "Attack Stats", type: Enum(DamageType) })
+    @property({ group: "Attack Stats", visible() { return this.type === TowerType.ATTACK_TOWER }, type: Enum(DamageType) })
     public damageType: DamageType = DamageType.PHYSICAL;
 
-    @property({ group: "Attack Stats" }) public isSplash: boolean = false;
-    @property({ group: "Attack Stats", type: CCFloat, visible() { return this.isSplash; } })
+    @property({ group: "Attack Stats", visible() { return this.type === TowerType.ATTACK_TOWER }, }) public isSplash: boolean = false;
+    @property({ group: "Attack Stats", type: CCFloat, visible() { return this.isSplash && this.type === TowerType.ATTACK_TOWER; } })
     public splashRadius: number = 100;
-    @property({ group: "Attack Stats", type: CCFloat })
+    @property({ group: "Attack Stats", type: CCFloat, visible() { return this.isSplash && this.type === TowerType.ATTACK_TOWER; } })
     public attackRange: number = 275;
 
-    @property({ group: "Economy", type: CCFloat }) public goldGenerated: number = 0;
-    @property({ group: "Economy", type: CCFloat }) public generationInterval: number = 40;
+    @property({ group: "Economy", visible() { return this.type === TowerType.GOLDMINE }, type: CCFloat })
+    public goldGenerated: number = 0;
+    @property({ group: "Economy", visible() { return this.type === TowerType.GOLDMINE }, type: CCFloat })
+    public generationInterval: number = 40;
 
-    @property({ type: DetectionArea }) public detectionArea: DetectionArea = null;
-    @property({ type: Prefab }) public bulletPrefab: Prefab = null;
-    @property({ type: Enum(TowerType) }) public type = TowerType.ATTACK_TOWER;
 
-    @property({ type: Animation, group: "Visuals" }) 
+    @property({ type: Animation, group: "Visuals" })
     public unitAnim: Animation = null;
     @property({ group: "Visuals" })
     public idleAnimName: string = "Idle";
