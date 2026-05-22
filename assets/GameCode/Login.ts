@@ -1,4 +1,4 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, director, Node } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Login')
@@ -10,6 +10,9 @@ export class Login extends Component {
 Password: ${this.password}`)
     }
 
+    back_to_landing_page() {
+        director.loadScene('landing_page');
+    }
     on_username_text_change(text: string) {
         console.log(text)
         this.username = text
