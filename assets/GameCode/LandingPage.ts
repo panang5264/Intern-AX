@@ -1,4 +1,5 @@
 import { _decorator, Component, director, Node, Scene, SceneAsset } from 'cc';
+import { SceneName } from './Core/Constant';
 const { ccclass, property } = _decorator;
 
 

@@ -2117,7 +2117,7 @@
       "__expectedType__": "cc.SpriteFrame"
     },
     "_inputFlag": 5,
-    "_inputMode": 6,
+    "_inputMode": 1,
     "_maxLength": 100,
     "_id": "3fHap8NMNBLIFDnQvLdOwD"
   },
@@ -2786,7 +2786,7 @@
       "__uuid__": "bd1bcaba-bd7d-4a71-b143-997c882383e4@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
-    "_inputFlag": 5,
+    "_inputFlag": 0,
     "_inputMode": 6,
     "_maxLength": 20,
     "_id": "01/+53bf9JuJWvoTdeqPBV"
@@ -3456,7 +3456,7 @@
       "__uuid__": "bd1bcaba-bd7d-4a71-b143-997c882383e4@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
-    "_inputFlag": 5,
+    "_inputFlag": 0,
     "_inputMode": 6,
     "_maxLength": 20,
     "_id": "e3zIVQnIJG2r2tBZs2tK/n"

@@ -11,7 +11,7 @@ enum WaveState {
     REST = "WAVE_RESTING",
 }
 
-enum SceneName {
+export enum SceneName {
     LOGIN = "login",
     REGISTER = "register",
     LANDING_PAGE = "landing_page",
