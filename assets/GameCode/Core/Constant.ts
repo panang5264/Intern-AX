@@ -15,6 +15,7 @@ export enum SceneName {
     LOGIN = "login",
     REGISTER = "register",
     LANDING_PAGE = "landing_page",
+    MAINMENU = "main_menu"
 }
 
 (window as any).GlobalEvent = GlobalEvent;
