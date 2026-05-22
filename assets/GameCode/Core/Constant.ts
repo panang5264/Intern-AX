@@ -11,6 +11,12 @@ enum WaveState {
     REST = "WAVE_RESTING",
 }
 
+enum SceneName {
+    LOGIN = "login",
+    REGISTER = "register",
+    LANDING_PAGE = "landing_page",
+}
+
 (window as any).GlobalEvent = GlobalEvent;
 (window as any).WaveState = WaveState;
 

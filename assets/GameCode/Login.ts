@@ -11,7 +11,7 @@ Password: ${this.password}`)
     }
 
     back_to_landing_page() {
-        director.loadScene('landing_page');
+        director.loadScene(SceneName.LANDING_PAGE);
     }
     on_username_text_change(text: string) {
         console.log(text)

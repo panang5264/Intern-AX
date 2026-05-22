@@ -24,7 +24,7 @@ export class Register extends Component {
     }
 
     back_to_landing_page() {
-        director.loadScene('landing_page');
+        director.loadScene(SceneName.LANDING_PAGE);
     }
 
     on_username_change(text: string) {

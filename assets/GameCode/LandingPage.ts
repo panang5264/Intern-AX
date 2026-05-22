@@ -1,22 +1,20 @@
 import { _decorator, Component, director, Node, Scene, SceneAsset } from 'cc';
 const { ccclass, property } = _decorator;
 
-const LOGIN_SCENE = 'login'
-const REGISTER_SCENE = 'register'
 
 @ccclass('LandingPage')
 export class LandingPage extends Component {
 
     public onLoad(): void {
-        director.preloadScene(LOGIN_SCENE)
-        director.preloadScene(REGISTER_SCENE)
+        director.preloadScene(SceneName.LOGIN)
+        director.preloadScene(SceneName.REGISTER)
     }
 
     on_login_button_pressed() {
-        director.loadScene(LOGIN_SCENE)
+        director.loadScene(SceneName.LOGIN)
     }
 
     on_register_button_pressed() {
-        director.loadScene(REGISTER_SCENE)
+        director.loadScene(SceneName.REGISTER)
     }
 }
