@@ -1,6 +1,7 @@
 import { _decorator, Component, Node, Vec3, director } from 'cc';
 import { PathManager } from '../Stages/PathManager';
 import { BaseManager } from '../Core/BaseManager';
+import { GlobalEvent } from '../Core/Constant';
 const { ccclass, property } = _decorator;
 
 const TILE_SIZE = 64

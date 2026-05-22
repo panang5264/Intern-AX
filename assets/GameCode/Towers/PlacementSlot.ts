@@ -3,7 +3,7 @@
 import { _decorator, Component, Node, Prefab, instantiate, Vec3, director, CCFloat } from 'cc';
 import { TowerManager } from './TowerManager';
 import { ResourceManager } from '../Core/ResourceManager';
-
+import { GlobalEvent } from '../Core/Constant';
 const { ccclass, property } = _decorator;
 
 @ccclass('PlacementSlot')

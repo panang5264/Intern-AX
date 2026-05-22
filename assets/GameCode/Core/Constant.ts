@@ -1,4 +1,4 @@
-enum GlobalEvent {
+export enum GlobalEvent {
     ENEMY_REMOVED = "ENEMY_REMOVED",
     ENABLE_SKIP = "ENABLE_SKIP",
     TOWER_DROPPED = "TOWER_DROPPED",
@@ -6,7 +6,7 @@ enum GlobalEvent {
     GOLD_CHANGED = "GOLD_CHANGED",
 }
 
-enum WaveState {
+export enum WaveState {
     START = "WAVE_STARTED",
     REST = "WAVE_RESTING",
 }

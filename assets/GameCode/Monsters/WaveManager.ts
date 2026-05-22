@@ -3,6 +3,7 @@ import { _decorator, assert, CCFloat, Component, director, instantiate, macro, N
 import { PathManager } from '../Stages/PathManager';
 import { EnemyMovement } from './EnemyMovement';
 import { ResourceManager } from '../Core/ResourceManager';
+import { GlobalEvent, WaveState } from '../Core/Constant';
 
 const { ccclass, property } = _decorator;
 
