@@ -3,6 +3,7 @@
 import { _decorator, assert, Component, Label, Enum, CCFloat, director } from 'cc';
 import { EnemyType, DamageType, WeaknessTable } from '../Core/GameConfig';
 import { ResourceManager } from '../Core/ResourceManager';
+import { GlobalEvent } from '../Core/Constant';
 
 const { ccclass, property } = _decorator;
 
