@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="41" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="21">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="41" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="30">
  <tileset firstgid="1" source="Assetเก่า/Stage1.tsx"/>
  <layer id="1" name="Tile Layer 1" width="41" height="20" offsetx="-1.33333" offsety="1.33333">
   <data encoding="csv">
@@ -25,12 +25,12 @@
 799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,587,588,833,834,835,836,837,838,839
 </data>
  </layer>
+ <objectgroup id="3" name="Homebase">
+  <object id="4" x="1174.67" y="250" width="72.6667" height="93.3333"/>
+ </objectgroup>
  <objectgroup id="2" name="path">
   <object id="2" x="5" y="450">
    <polygon points="0,0 111.5,-3 151,-66 206,-125 248,-268 278.5,-285 330,-288.5 371.5,-281.5 408.5,-266.5 426.5,-215 424.5,-148 423.5,-89.5 439.5,-57 510.5,-59.5 541.5,-103.5 578,-119.5 615.5,-124 654.5,-120.5 675.5,-105.5 700,-83.5 701,-29 702.5,-0.5 733,13.5 772,1 790,-18.5 801.5,-63 830,-96.5 875,-121 967.5,-116 999.5,-88 1005,-52.5 1013,-14 1031,12 1107,4 1152,-11 1176.5,-21.5 1178,-98 1236.5,-98 1241,28 1193.5,34.5 1134.5,51.5 1102.5,75.5 1046.5,86.5 987.5,60 967,33 959.5,-43.5 951.5,-65.5 876,-70.5 841,-39.5 847,18.5 809.5,62.5 709.5,59 672,34.5 654.5,-44 608.5,-75.5 533.667,-34 539,-19.3333 440.333,-12.6667 408.333,-28.6667 387,-71.3333 388.333,-176.667 375.333,-229.667 350.333,-247 307,-251.333 280.667,-236 268,-201 269.333,-157.333 257,-89 175,-38 167,4 123,40 11,42 -6,41.5 -5,-0.125"/>
   </object>
- </objectgroup>
- <objectgroup id="3" name="Homebase">
-  <object id="4" x="1174.67" y="250" width="72.6667" height="93.3333"/>
  </objectgroup>
 </map>

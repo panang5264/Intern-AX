@@ -134,13 +134,19 @@ export class WaveManager extends Component {
         }
     }
 
+    @property(Node) enemyContainer: Node = null;
+
     private spawnEnemy(data: WaveData): void {
         const wave = this.waves[this.wave_idx];
         if (!wave) return;
 
         // สร้างศัตรู
         const node = instantiate(data.enemyPrefab);
-        node.setParent(this.node, true);
+        
+        // ให้ศัตรูไปเกิดใน Container ที่เรากำหนด (เช่น Canvas หรือ World_layer) แทนที่จะเกิดใน GameManagers
+        const parentNode = this.enemyContainer ? this.enemyContainer : this.node;
+        node.setParent(parentNode, true);
+        
         node.setWorldPosition(this.spawnPoint.worldPosition);
         node.getComponent(EnemyMovement).pathManager = this.path_manager;
 
