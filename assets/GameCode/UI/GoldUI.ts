@@ -1,5 +1,6 @@
 import { _decorator, Component, Label, director, tween, v3 } from 'cc';
 import { ResourceManager } from '../Core/ResourceManager';
+import { GlobalEvent } from '../Core/Constant'
 const { ccclass, property } = _decorator;
 
 @ccclass('GoldUI')
@@ -33,21 +34,17 @@ export class GoldUI extends Component {
     }
 
     private onGoldChanged(newAmount: number) {
-        // ถ้ายอดเงินใหม่มากกว่ายอดเก่า (ได้เงินเพิ่ม) ให้ทำ Animation ขยายขนาดด้วย
         if (newAmount > this._targetGold) {
             this.playBounceEffect();
         }
 
         this._targetGold = newAmount;
-
-        // ใช้ Tween ทำให้ _displayGold วิ่งไปยัง _targetGold
         tween(this as any)
             .to(this.animDuration, { _displayGold: newAmount }, {
                 onUpdate: () => {
-                    // ทุกครั้งที่เลขเปลี่ยน ให้ปัดเศษและโชว์
                     this.updateLabel(Math.floor(this._displayGold));
                 },
-                easing: 'quadOut' // เริ่มวิ่งเร็วและค่อยๆ ช้าลงตอนใกล้ถึง
+                easing: 'quadOut'
             })
             .start();
     }
@@ -58,11 +55,9 @@ export class GoldUI extends Component {
         }
     }
 
-    // เอฟเฟกต์เด้งเล็กน้อยเวลาได้เงิน
     private playBounceEffect() {
         if (!this.goldLabel) return;
 
-        // ขยาย Node ของ Label ขึ้น 1.2 เท่าแล้วหดกลับ
         tween(this.goldLabel.node)
             .to(0.1, { scale: v3(1.2, 1.2, 1) })
             .to(0.1, { scale: v3(1, 1, 1) })
