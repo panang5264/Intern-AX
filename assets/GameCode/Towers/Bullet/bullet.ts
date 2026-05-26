@@ -105,4 +105,8 @@ export class Bullet extends Component {
             this._collider.off(Contact2DType.BEGIN_CONTACT, this.onHitEnemy, this);
         }
     }
+
+    public setSplashRadius(radius: number) {
+        this.area_collider.setSplashRadius(radius)
+    }
 }

@@ -51,8 +51,10 @@ export class DetectionArea extends Component {
     public setRadius(radius: number): void {
         if (this.area) {
             this.area.radius = radius;
-            this.area.apply(); // สำคัญ: อัปเดตค่าในระบบฟิสิกส์
+            this.area.apply();
             const g = this.getComponent(Graphics);
+            console.log(this.area.radius)
+            g.clear()
             g.circle(this.node.position.x, this.node.position.y, this.area.radius);
             g.stroke();
             g.fill();

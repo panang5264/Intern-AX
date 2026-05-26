@@ -224,6 +224,10 @@
     "__prefab": {
       "__id__": 11
     },
+    "maxHp": 100,
+    "hpText": null,
+    "enemyType": 0,
+    "goldReward": 20,
     "_id": ""
   },
   {
@@ -243,7 +247,7 @@
       "__id__": 13
     },
     "pathManager": null,
-    "speed": 50,
+    "speed": 0.5,
     "_id": ""
   },
   {

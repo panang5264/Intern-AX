@@ -4,6 +4,7 @@ export enum GlobalEvent {
     TOWER_DROPPED = "TOWER_DROPPED",
     SHOW_NOTI = "SHOW_NOTIFICATION",
     GOLD_CHANGED = "GOLD_CHANGED",
+    TOWER_UPGRADE = "TOWER_UPGRADE"
 }
 
 export enum WaveState {

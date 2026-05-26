@@ -1,7 +1,8 @@
-import { _decorator, assert, Component, Enum, Node, EventTarget } from 'cc';
+import { _decorator, assert, Component, Enum, Node, EventTarget, Button } from 'cc';
 import { TowerController } from './TowerController';
 import { GlobalEvent } from '../Core/Constant';
 import { UpgradePopup } from './UpgradePopup';
+import { ResourceManager } from '../Core/ResourceManager';
 const { ccclass, property } = _decorator;
 
 /* NOTE: Upgrade Attribute
@@ -82,23 +83,51 @@ export class UpgradeData {
 export class TowerUpgrade extends Component {
     cur_tier: number = 1
     tower_ctrl: TowerController = null
-    @property(UpgradePopup) upgradPopup: UpgradePopup = null;
-
+    @property(UpgradePopup) upgradePopup: UpgradePopup = null;
+    @property(Button) upgradeButton: Button = null;
     @property([UpgradeData]) upgradelist: UpgradeData[] = [];
+
+    max_upgrade: boolean = false;
+    cur_data: UpgradeData = null
+    cur_stats: UpgradeStat[] = []
 
     protected start(): void {
         this.tower_ctrl = this.node.getComponent(TowerController)
         assert(this.tower_ctrl !== null, "Couldn't find TowerController Component")
+        assert(this.upgradeButton !== null, "Didn't set upgradeButton")
 
         const data = this.getUpgrade()
         const stats = this.getTowerStat(data)
-        this.upgradPopup.update_text(this.cur_tier, stats)
+        this.upgradePopup.update_text(this.cur_tier, stats)
+        this.cur_data = data
+        this.cur_stats = stats;
+    }
+
+    protected update(dt: number): void {
+        if (ResourceManager.instance.getGold() < this.cur_data.price || this.max_upgrade) {
+            this.upgradeButton.enabled = false
+        } else {
+            this.upgradeButton.enabled = true
+        }
     }
 
     public upgrade(event: Event, customeData: string): void {
-        console.log("upgrade")
-        const data = this.getUpgrade()
+        if (!this.cur_stats) console.log("stats is null")
+        this.tower_ctrl.upgrade(this.cur_stats)
+        ResourceManager.instance.spendGold(this.cur_data.price)
         this.cur_tier += 1;
+
+        if (this.cur_tier - 1 >= this.upgradelist.length) {
+            this.max_upgrade = true
+            this.upgradePopup.setMaxUpgrade()
+            this.upgradeButton.node.active = false
+            return
+        }
+
+        const data = this.getUpgrade()
+        const stats = this.getTowerStat(data)
+        this.upgradePopup.update_text(this.cur_tier, stats)
+        this.cur_stats = stats;
     }
 
     public getUpgrade(): UpgradeData {
@@ -140,7 +169,7 @@ export class TowerUpgrade extends Component {
                         value: this.tower_ctrl.damage, // WARN: not yet implement GetSplashRange from TowerController or ignore 
                         upgrade_value: u.area,
                     }
-                    break;
+                    throw Error("Not Implement")
                 case UpgradeType.GoldGenerate:
                     stat = {
                         attr: u.type,
@@ -149,12 +178,8 @@ export class TowerUpgrade extends Component {
                     }
                     break;
                 case UpgradeType.BuffEffective:
-                    stat = {
-                        attr: u.type,
-                        value: this.tower_ctrl.damage, // WARN: not yet implement GetSplashRange from TowerController or ignore
-                        upgrade_value: u.damage,
-                    }
-                    break;
+                    // WARN: Not yet Implement BuffTower Type
+                    throw Error("Not Yet Implement")
             }
             if (stat) stats.push(stat)
         }

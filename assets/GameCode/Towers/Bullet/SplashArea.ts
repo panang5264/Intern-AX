@@ -39,18 +39,19 @@ export class SplashArea extends Component {
         enemy.takeDamage(this._damage, this._damageType, this._holyBonus);
     }
 
-    /**
-     * สั่งให้ระเบิดทำงาน
-     */
+    public setSplashRadius(radius: number) {
+        if (this.area) {
+            this.area.radius = radius;
+        }
+    }
+
     public explode(damage: number, type: DamageType, holyBonus: number = 0) {
         this._damage = damage;
         this._damageType = type;
         this._holyBonus = holyBonus;
 
-        // เปิดใช้งาน Collider เพื่อเช็คการชนในเฟรมนี้
         this.area.enabled = true;
 
-        // วาดวงระเบิดโชว์ (ถ้ามี Graphics)
         if (this.graphics) {
             this.graphics.clear();
             this.graphics.circle(0, 0, this.area.radius);
@@ -58,7 +59,6 @@ export class SplashArea extends Component {
             this.graphics.fill();
         }
 
-        // ปิด Collider ในเฟรมถัดไป เพื่อไม่ให้ระเบิดซ้ำซ้อน
         this.scheduleOnce(() => {
             if (this.area) this.area.enabled = false;
             if (this.graphics) this.graphics.clear();
