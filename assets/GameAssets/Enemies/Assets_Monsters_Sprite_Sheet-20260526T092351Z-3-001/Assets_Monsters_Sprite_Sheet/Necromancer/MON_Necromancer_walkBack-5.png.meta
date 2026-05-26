@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.27",
+  "importer": "image",
+  "imported": true,
+  "uuid": "8fbb3ee3-b10a-4486-80f1-256d226f2e37",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "8fbb3ee3-b10a-4486-80f1-256d226f2e37@6c48a",
+      "displayName": "MON_Necromancer_walkBack-5",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "8fbb3ee3-b10a-4486-80f1-256d226f2e37",
+        "isUuid": true,
+        "visible": false,
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "8fbb3ee3-b10a-4486-80f1-256d226f2e37@f9941",
+      "displayName": "MON_Necromancer_walkBack-5",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": -2.5,
+        "offsetY": -1.5,
+        "trimX": 37,
+        "trimY": 6,
+        "width": 177,
+        "height": 247,
+        "rawWidth": 256,
+        "rawHeight": 256,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -88.5,
+            -123.5,
+            0,
+            88.5,
+            -123.5,
+            0,
+            -88.5,
+            123.5,
+            0,
+            88.5,
+            123.5,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            37,
+            250,
+            214,
+            250,
+            37,
+            3,
+            214,
+            3
+          ],
+          "nuv": [
+            0.14453125,
+            0.01171875,
+            0.8359375,
+            0.01171875,
+            0.14453125,
+            0.9765625,
+            0.8359375,
+            0.9765625
+          ],
+          "minPos": [
+            -88.5,
+            -123.5,
+            0
+          ],
+          "maxPos": [
+            88.5,
+            123.5,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8fbb3ee3-b10a-4486-80f1-256d226f2e37@6c48a",
+        "atlasUuid": "",
+        "trimType": "auto"
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "fixAlphaTransparencyArtifacts": false,
+    "hasAlpha": true,
+    "redirect": "8fbb3ee3-b10a-4486-80f1-256d226f2e37@6c48a"
+  }
+}

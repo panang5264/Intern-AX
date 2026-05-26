@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.27",
+  "importer": "image",
+  "imported": true,
+  "uuid": "52ffc698-38e0-43c8-8752-7385ce35eb93",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "52ffc698-38e0-43c8-8752-7385ce35eb93@6c48a",
+      "displayName": "MON_CorruptedSoldier_walkRight-4",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "52ffc698-38e0-43c8-8752-7385ce35eb93",
+        "isUuid": true,
+        "visible": false,
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "52ffc698-38e0-43c8-8752-7385ce35eb93@f9941",
+      "displayName": "MON_CorruptedSoldier_walkRight-4",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 12,
+        "offsetY": -4,
+        "trimX": 24,
+        "trimY": 20,
+        "width": 232,
+        "height": 224,
+        "rawWidth": 256,
+        "rawHeight": 256,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -116,
+            -112,
+            0,
+            116,
+            -112,
+            0,
+            -116,
+            112,
+            0,
+            116,
+            112,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            24,
+            236,
+            256,
+            236,
+            24,
+            12,
+            256,
+            12
+          ],
+          "nuv": [
+            0.09375,
+            0.046875,
+            1,
+            0.046875,
+            0.09375,
+            0.921875,
+            1,
+            0.921875
+          ],
+          "minPos": [
+            -116,
+            -112,
+            0
+          ],
+          "maxPos": [
+            116,
+            112,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "52ffc698-38e0-43c8-8752-7385ce35eb93@6c48a",
+        "atlasUuid": "",
+        "trimType": "auto"
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "fixAlphaTransparencyArtifacts": false,
+    "hasAlpha": true,
+    "redirect": "52ffc698-38e0-43c8-8752-7385ce35eb93@6c48a"
+  }
+}
