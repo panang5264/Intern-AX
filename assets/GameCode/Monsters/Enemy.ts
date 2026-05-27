@@ -22,7 +22,7 @@ export class Enemy extends Component {
     public enemyType: EnemyType = EnemyType.NEUTRAL;
 
     // --- Reward System ---
-    @property({ type: CCFloat, tooltip: "เงินรางวัลเมื่อกำจัดศัตรูตัวนี้ได้" })
+    @property({ type: CCFloat, tooltip: "Reward" })
     public goldReward: number = 20;
 
     protected start(): void {
@@ -40,7 +40,7 @@ export class Enemy extends Component {
 
         const totalDamage = finalPrimaryDmg + finalHolyDmg;
 
-        console.log(`[Combat] ${this.node.name} รับดาเมจ: ${totalDamage.toFixed(1)} (HP: ${this.currentHp.toFixed(1)} -> ${Math.max(this.currentHp - totalDamage, 0).toFixed(1)})`);
+        console.log(`[Combat] ${this.node.name} รับดาเมจ: ${totalDamage.toFixed(2)} (HP: ${this.currentHp.toFixed(2)} -> ${Math.max(this.currentHp - totalDamage, 0).toFixed(2)})`);
 
         this.currentHp -= totalDamage;
 
@@ -54,7 +54,7 @@ export class Enemy extends Component {
 
     private updateHPText() {
         if (this.hpText) {
-            this.hpText.string = `${this.currentHp}/${this.maxHp}`;
+            this.hpText.string = `${this.currentHp.toFixed(1)}/${this.maxHp}`;
         }
     }
 
