@@ -1,4 +1,4 @@
-import { _decorator, assert, Component, Enum, Node, EventTarget, Button } from 'cc';
+import { _decorator, assert, Component, Enum, Node, EventTarget, Button, EventHandler } from 'cc';
 import { TowerController } from './TowerController';
 import { GlobalEvent } from '../Core/Constant';
 import { UpgradePopup } from './UpgradePopup';
@@ -96,6 +96,12 @@ export class TowerUpgrade extends Component {
         assert(this.tower_ctrl !== null, "Couldn't find TowerController Component")
         assert(this.upgradeButton !== null, "Didn't set upgradeButton")
 
+        const hanlder = new EventHandler()
+        hanlder.target = this.node
+        hanlder.component = "TowerUpgrade"
+        hanlder.handler = 'upgrade'
+        this.upgradeButton.clickEvents.push(hanlder)
+
         const data = this.getUpgrade()
         const stats = this.getTowerStat(data)
         this.upgradePopup.update_text(this.cur_tier, stats)
@@ -104,7 +110,8 @@ export class TowerUpgrade extends Component {
     }
 
     protected update(dt: number): void {
-        if (ResourceManager.instance.getGold() < this.cur_data.price || this.max_upgrade) {
+        if (!this.cur_data || this.max_upgrade) return;
+        if (ResourceManager.instance.getGold() < this.cur_data.price) {
             this.upgradeButton.enabled = false
         } else {
             this.upgradeButton.enabled = true
@@ -156,20 +163,24 @@ export class TowerUpgrade extends Component {
                 case UpgradeType.Range:
                     stat = {
                         attr: u.type,
-                        value: this.tower_ctrl.attackRange,
+                        value: this.tower_ctrl.towerRange,
                         upgrade_value: u.range,
                     }
                     break;
                 case UpgradeType.Hit:
-                    // WARN: not implement
-                    throw Error("Not Implement")
+                    stat = {
+                        attr: u.type,
+                        value: this.tower_ctrl.hit_number,
+                        upgrade_value: u.hit,
+                    }
+                    break;
                 case UpgradeType.SplashArea:
                     stat = {
                         attr: u.type,
-                        value: this.tower_ctrl.damage, // WARN: not yet implement GetSplashRange from TowerController or ignore 
+                        value: this.tower_ctrl.splashRadius, // WARN: not yet implement GetSplashRange from TowerController or ignore 
                         upgrade_value: u.area,
                     }
-                    throw Error("Not Implement")
+                    break;
                 case UpgradeType.GoldGenerate:
                     stat = {
                         attr: u.type,
@@ -178,8 +189,12 @@ export class TowerUpgrade extends Component {
                     }
                     break;
                 case UpgradeType.BuffEffective:
-                    // WARN: Not yet Implement BuffTower Type
-                    throw Error("Not Yet Implement")
+                    stat = {
+                        attr: u.type,
+                        value: this.tower_ctrl.buffEff,
+                        upgrade_value: u.buff_eff,
+                    }
+                    break;
             }
             if (stat) stats.push(stat)
         }

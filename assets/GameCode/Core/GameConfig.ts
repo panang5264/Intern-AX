@@ -3,6 +3,7 @@
 export enum TowerType {
     ATTACK_TOWER,
     GOLDMINE,
+    SUPPORT,
 }
 export enum DamageType {
     PHYSICAL,
