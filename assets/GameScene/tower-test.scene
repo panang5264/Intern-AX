@@ -2047,7 +2047,7 @@
     "start_at": 0,
     "spawn_freq": 2,
     "enemyPrefab": {
-      "__uuid__": "abc2e9a4-c73b-4438-b509-f8f98ff716d2",
+      "__uuid__": "e88f2d8d-5942-44e0-b5c3-7d4cf98839cb",
       "__expectedType__": "cc.Prefab"
     }
   },
