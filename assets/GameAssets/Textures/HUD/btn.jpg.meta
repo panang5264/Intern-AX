@@ -2,22 +2,22 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "49c69d04-fc2b-49e8-8f44-b954b546c3cf",
+  "uuid": "bf7a2387-b183-471d-8489-fb0fc1cbf89d",
   "files": [
-    ".json",
-    ".webp"
+    ".jpg",
+    ".json"
   ],
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "49c69d04-fc2b-49e8-8f44-b954b546c3cf@6c48a",
-      "displayName": "Logo_Towers",
+      "uuid": "bf7a2387-b183-471d-8489-fb0fc1cbf89d@6c48a",
+      "displayName": "btn",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "49c69d04-fc2b-49e8-8f44-b954b546c3cf",
+        "imageUuidOrDatabaseUri": "bf7a2387-b183-471d-8489-fb0fc1cbf89d",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,8 +34,8 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "49c69d04-fc2b-49e8-8f44-b954b546c3cf@f9941",
-      "displayName": "Logo_Towers",
+      "uuid": "bf7a2387-b183-471d-8489-fb0fc1cbf89d@f9941",
+      "displayName": "btn",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "49c69d04-fc2b-49e8-8f44-b954b546c3cf@6c48a",
+        "imageUuidOrDatabaseUri": "bf7a2387-b183-471d-8489-fb0fc1cbf89d@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": false,
-    "redirect": "49c69d04-fc2b-49e8-8f44-b954b546c3cf@6c48a"
+    "redirect": "bf7a2387-b183-471d-8489-fb0fc1cbf89d@6c48a"
   }
 }
