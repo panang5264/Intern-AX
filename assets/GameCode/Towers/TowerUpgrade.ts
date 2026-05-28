@@ -1,4 +1,4 @@
-import { _decorator, assert, Component, Enum, Node, EventTarget, Button, EventHandler } from 'cc';
+import { _decorator, assert, Component, Enum, Node, EventTarget, Button, EventHandler, Label } from 'cc';
 import { TowerController } from './TowerController';
 import { GlobalEvent } from '../Core/Constant';
 import { UpgradePopup } from './UpgradePopup';
@@ -83,8 +83,10 @@ export class UpgradeData {
 export class TowerUpgrade extends Component {
     cur_tier: number = 1
     tower_ctrl: TowerController = null
+    tower_value: number = 0;
     @property(UpgradePopup) upgradePopup: UpgradePopup = null;
     @property(Button) upgradeButton: Button = null;
+    @property(Button) sellButton: Button = null;
     @property([UpgradeData]) upgradelist: UpgradeData[] = [];
 
     max_upgrade: boolean = false;
@@ -95,18 +97,31 @@ export class TowerUpgrade extends Component {
         this.tower_ctrl = this.node.getComponent(TowerController)
         assert(this.tower_ctrl !== null, "Couldn't find TowerController Component")
         assert(this.upgradeButton !== null, "Didn't set upgradeButton")
+        assert(this.sellButton !== null, "Didn't set sellButton")
 
-        const hanlder = new EventHandler()
-        hanlder.target = this.node
-        hanlder.component = "TowerUpgrade"
-        hanlder.handler = 'upgrade'
-        this.upgradeButton.clickEvents.push(hanlder)
+        if (this.tower_ctrl) {
+            this.tower_value = this.tower_ctrl.cost;
+            this.update_sellLabel();
+        }
 
         const data = this.getUpgrade()
         const stats = this.getTowerStat(data)
         this.upgradePopup.update_text(this.cur_tier, stats)
         this.cur_data = data
         this.cur_stats = stats;
+
+        if (!this.sellButton || !this.upgradeButton) return;
+        const upgradeHandler = new EventHandler()
+        upgradeHandler.target = this.node
+        upgradeHandler.component = "TowerUpgrade"
+        upgradeHandler.handler = 'upgrade'
+        this.upgradeButton.clickEvents.push(upgradeHandler)
+
+        const sellHandler = new EventHandler()
+        sellHandler.target = this.node
+        sellHandler.component = "TowerUpgrade"
+        sellHandler.handler = 'sellTower'
+        this.sellButton.clickEvents.push(sellHandler)
     }
 
     protected update(dt: number): void {
@@ -119,9 +134,12 @@ export class TowerUpgrade extends Component {
     }
 
     public upgrade(event: Event, customeData: string): void {
-        if (!this.cur_stats) console.log("stats is null")
-        this.tower_ctrl.upgrade(this.cur_stats)
-        ResourceManager.instance.spendGold(this.cur_data.price)
+        if (!this.cur_stats || !this.cur_data) console.log("stats or upgrade data is null");
+        const price = this.cur_data.price
+        this.tower_value += price
+        this.update_sellLabel()
+        this.tower_ctrl.upgrade(this.cur_stats);
+        ResourceManager.instance.spendGold(price);
         this.cur_tier += 1;
 
         if (this.cur_tier - 1 >= this.upgradelist.length) {
@@ -136,10 +154,20 @@ export class TowerUpgrade extends Component {
         this.upgradePopup.update_text(this.cur_tier, stats)
         this.cur_stats = stats;
     }
+    update_sellLabel() {
+        const value = this.tower_value / 2;
+        const label = this.sellButton.node.getComponentInChildren(Label)
+        label.string = `Sell (${Math.trunc(value)} g)`
+    }
+
+    sellTower() {
+        const value = this.tower_value / 2;
+        ResourceManager.instance.addGold(Math.trunc(value))
+        this.node.destroy()
+    }
 
     public getUpgrade(): UpgradeData {
-        const index = this.cur_tier - 1
-        return this.upgradelist[index];
+        return this.upgradelist.shift();
     }
 
     public getCurTier(): number {

@@ -247,7 +247,6 @@ export class TowerController extends Component {
     }
 
     public upgrade(upgradeStats: UpgradeStat[]): void {
-        console.log(upgradeStats)
         for (const stat of upgradeStats) {
             switch (stat.attr) {
                 case UpgradeType.Damage:
