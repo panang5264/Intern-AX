@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "3eade8bf-7b46-4188-8120-851059849b57",
+  "uuid": "b34046bf-b24d-422c-a5ba-3222353a461b",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "3eade8bf-7b46-4188-8120-851059849b57@6c48a",
-      "displayName": "Archer",
+      "uuid": "b34046bf-b24d-422c-a5ba-3222353a461b@6c48a",
+      "displayName": "treasure_chest",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "3eade8bf-7b46-4188-8120-851059849b57",
+        "imageUuidOrDatabaseUri": "b34046bf-b24d-422c-a5ba-3222353a461b",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,21 +34,21 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "3eade8bf-7b46-4188-8120-851059849b57@f9941",
-      "displayName": "Archer",
+      "uuid": "b34046bf-b24d-422c-a5ba-3222353a461b@f9941",
+      "displayName": "treasure_chest",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": -4,
-        "offsetY": 2,
-        "trimX": 17,
-        "trimY": 17,
-        "width": 478,
-        "height": 495,
-        "rawWidth": 520,
-        "rawHeight": 533,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 0,
+        "width": 222,
+        "height": 239,
+        "rawWidth": 222,
+        "rawHeight": 239,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
@@ -60,17 +60,17 @@
         "meshType": 0,
         "vertices": {
           "rawPosition": [
-            -239,
-            -247.5,
+            -111,
+            -119.5,
             0,
-            239,
-            -247.5,
+            111,
+            -119.5,
             0,
-            -239,
-            247.5,
+            -111,
+            119.5,
             0,
-            239,
-            247.5,
+            111,
+            119.5,
             0
           ],
           "indexes": [
@@ -82,38 +82,38 @@
             3
           ],
           "uv": [
-            17,
-            516,
-            495,
-            516,
-            17,
-            21,
-            495,
-            21
+            0,
+            239,
+            222,
+            239,
+            0,
+            0,
+            222,
+            0
           ],
           "nuv": [
-            0.032692307692307694,
-            0.039399624765478425,
-            0.9519230769230769,
-            0.039399624765478425,
-            0.032692307692307694,
-            0.9681050656660413,
-            0.9519230769230769,
-            0.9681050656660413
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
           ],
           "minPos": [
-            -239,
-            -247.5,
+            -111,
+            -119.5,
             0
           ],
           "maxPos": [
-            239,
-            247.5,
+            111,
+            119.5,
             0
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "3eade8bf-7b46-4188-8120-851059849b57@6c48a",
+        "imageUuidOrDatabaseUri": "b34046bf-b24d-422c-a5ba-3222353a461b@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -128,7 +128,7 @@
   "userData": {
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
-    "hasAlpha": true,
-    "redirect": "3eade8bf-7b46-4188-8120-851059849b57@6c48a"
+    "hasAlpha": false,
+    "redirect": "b34046bf-b24d-422c-a5ba-3222353a461b@6c48a"
   }
 }
