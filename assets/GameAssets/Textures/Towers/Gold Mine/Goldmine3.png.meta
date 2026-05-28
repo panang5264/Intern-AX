@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "5682e1ee-2f2a-4b2f-ae05-93ea8686dec1",
+  "uuid": "53580cf4-685a-4530-b63d-523bbb989348",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "5682e1ee-2f2a-4b2f-ae05-93ea8686dec1@6c48a",
+      "uuid": "53580cf4-685a-4530-b63d-523bbb989348@6c48a",
       "displayName": "Goldmine3",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "5682e1ee-2f2a-4b2f-ae05-93ea8686dec1",
+        "imageUuidOrDatabaseUri": "53580cf4-685a-4530-b63d-523bbb989348",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "5682e1ee-2f2a-4b2f-ae05-93ea8686dec1@f9941",
+      "uuid": "53580cf4-685a-4530-b63d-523bbb989348@f9941",
       "displayName": "Goldmine3",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5682e1ee-2f2a-4b2f-ae05-93ea8686dec1@6c48a",
+        "imageUuidOrDatabaseUri": "53580cf4-685a-4530-b63d-523bbb989348@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "5682e1ee-2f2a-4b2f-ae05-93ea8686dec1@6c48a"
+    "redirect": "53580cf4-685a-4530-b63d-523bbb989348@6c48a"
   }
 }

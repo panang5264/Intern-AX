@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "6c5af87d-37e8-4750-8468-b3415b0511b2",
+  "uuid": "27ff9d2b-2929-4f83-99e3-c3fc4132a713",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "6c5af87d-37e8-4750-8468-b3415b0511b2@6c48a",
+      "uuid": "27ff9d2b-2929-4f83-99e3-c3fc4132a713@6c48a",
       "displayName": "WoodTable",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "6c5af87d-37e8-4750-8468-b3415b0511b2",
+        "imageUuidOrDatabaseUri": "27ff9d2b-2929-4f83-99e3-c3fc4132a713",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "6c5af87d-37e8-4750-8468-b3415b0511b2@f9941",
+      "uuid": "27ff9d2b-2929-4f83-99e3-c3fc4132a713@f9941",
       "displayName": "WoodTable",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "6c5af87d-37e8-4750-8468-b3415b0511b2@6c48a",
+        "imageUuidOrDatabaseUri": "27ff9d2b-2929-4f83-99e3-c3fc4132a713@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "6c5af87d-37e8-4750-8468-b3415b0511b2@6c48a"
+    "redirect": "27ff9d2b-2929-4f83-99e3-c3fc4132a713@6c48a"
   }
 }

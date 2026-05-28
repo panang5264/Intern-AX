@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "9d4ae890-67fb-4e96-8214-19cfde4d2eed",
+  "uuid": "00a00afd-27ef-4601-b8d8-b29a08c05f94",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "9d4ae890-67fb-4e96-8214-19cfde4d2eed@6c48a",
+      "uuid": "00a00afd-27ef-4601-b8d8-b29a08c05f94@6c48a",
       "displayName": "Monastery",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "9d4ae890-67fb-4e96-8214-19cfde4d2eed",
+        "imageUuidOrDatabaseUri": "00a00afd-27ef-4601-b8d8-b29a08c05f94",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "9d4ae890-67fb-4e96-8214-19cfde4d2eed@f9941",
+      "uuid": "00a00afd-27ef-4601-b8d8-b29a08c05f94@f9941",
       "displayName": "Monastery",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d4ae890-67fb-4e96-8214-19cfde4d2eed@6c48a",
+        "imageUuidOrDatabaseUri": "00a00afd-27ef-4601-b8d8-b29a08c05f94@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "9d4ae890-67fb-4e96-8214-19cfde4d2eed@6c48a"
+    "redirect": "00a00afd-27ef-4601-b8d8-b29a08c05f94@6c48a"
   }
 }

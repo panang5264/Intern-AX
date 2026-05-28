@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "26ec4be5-64a2-4034-b905-6b9433633669",
+  "uuid": "73d7de90-b72c-4b80-98a4-86c3d19ee747",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "26ec4be5-64a2-4034-b905-6b9433633669@6c48a",
+      "uuid": "73d7de90-b72c-4b80-98a4-86c3d19ee747@6c48a",
       "displayName": "SmallRedRoundButton_Pressed",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "26ec4be5-64a2-4034-b905-6b9433633669",
+        "imageUuidOrDatabaseUri": "73d7de90-b72c-4b80-98a4-86c3d19ee747",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "26ec4be5-64a2-4034-b905-6b9433633669@f9941",
+      "uuid": "73d7de90-b72c-4b80-98a4-86c3d19ee747@f9941",
       "displayName": "SmallRedRoundButton_Pressed",
       "id": "f9941",
       "name": "spriteFrame",
@@ -49,10 +49,10 @@
         "height": 85,
         "rawWidth": 128,
         "rawHeight": 128,
-        "borderTop": 38,
-        "borderBottom": 40,
-        "borderLeft": 45,
-        "borderRight": 45,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
         "packable": true,
         "pixelsToUnit": 100,
         "pivotX": 0.5,
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "26ec4be5-64a2-4034-b905-6b9433633669@6c48a",
+        "imageUuidOrDatabaseUri": "73d7de90-b72c-4b80-98a4-86c3d19ee747@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "26ec4be5-64a2-4034-b905-6b9433633669@6c48a"
+    "redirect": "73d7de90-b72c-4b80-98a4-86c3d19ee747@6c48a"
   }
 }

@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "d6407bad-f5fb-4c1d-af83-402c889c1e3a",
+  "uuid": "21d836eb-b276-466c-b71f-0da66c19142e",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "d6407bad-f5fb-4c1d-af83-402c889c1e3a@6c48a",
+      "uuid": "21d836eb-b276-466c-b71f-0da66c19142e@6c48a",
       "displayName": "MON_PlagueKnight_walkRight-1",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "d6407bad-f5fb-4c1d-af83-402c889c1e3a",
+        "imageUuidOrDatabaseUri": "21d836eb-b276-466c-b71f-0da66c19142e",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "d6407bad-f5fb-4c1d-af83-402c889c1e3a@f9941",
+      "uuid": "21d836eb-b276-466c-b71f-0da66c19142e@f9941",
       "displayName": "MON_PlagueKnight_walkRight-1",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d6407bad-f5fb-4c1d-af83-402c889c1e3a@6c48a",
+        "imageUuidOrDatabaseUri": "21d836eb-b276-466c-b71f-0da66c19142e@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "d6407bad-f5fb-4c1d-af83-402c889c1e3a@6c48a"
+    "redirect": "21d836eb-b276-466c-b71f-0da66c19142e@6c48a"
   }
 }

@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "e4561374-5827-4e52-b2d6-1467f1d84af1",
+  "uuid": "d368b8e5-cf1c-4e4e-8046-1194d59d32f7",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "e4561374-5827-4e52-b2d6-1467f1d84af1@6c48a",
+      "uuid": "d368b8e5-cf1c-4e4e-8046-1194d59d32f7@6c48a",
       "displayName": "panel",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "e4561374-5827-4e52-b2d6-1467f1d84af1",
+        "imageUuidOrDatabaseUri": "d368b8e5-cf1c-4e4e-8046-1194d59d32f7",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "e4561374-5827-4e52-b2d6-1467f1d84af1@f9941",
+      "uuid": "d368b8e5-cf1c-4e4e-8046-1194d59d32f7@f9941",
       "displayName": "panel",
       "id": "f9941",
       "name": "spriteFrame",
@@ -49,10 +49,10 @@
         "height": 183,
         "rawWidth": 192,
         "rawHeight": 192,
-        "borderTop": 15,
-        "borderBottom": 17,
-        "borderLeft": 16,
-        "borderRight": 14,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
         "packable": true,
         "pixelsToUnit": 100,
         "pivotX": 0.5,
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "e4561374-5827-4e52-b2d6-1467f1d84af1@6c48a",
+        "imageUuidOrDatabaseUri": "d368b8e5-cf1c-4e4e-8046-1194d59d32f7@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "e4561374-5827-4e52-b2d6-1467f1d84af1@6c48a"
+    "redirect": "d368b8e5-cf1c-4e4e-8046-1194d59d32f7@6c48a"
   }
 }

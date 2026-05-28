@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "1841d3ac-dace-40d5-ac8f-2b88b7aa5f27",
+  "uuid": "d43622c5-eb24-42c4-9de8-ee4d9181ccaf",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "1841d3ac-dace-40d5-ac8f-2b88b7aa5f27@6c48a",
+      "uuid": "d43622c5-eb24-42c4-9de8-ee4d9181ccaf@6c48a",
       "displayName": "Wood",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "1841d3ac-dace-40d5-ac8f-2b88b7aa5f27",
+        "imageUuidOrDatabaseUri": "d43622c5-eb24-42c4-9de8-ee4d9181ccaf",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "1841d3ac-dace-40d5-ac8f-2b88b7aa5f27@f9941",
+      "uuid": "d43622c5-eb24-42c4-9de8-ee4d9181ccaf@f9941",
       "displayName": "Wood",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "1841d3ac-dace-40d5-ac8f-2b88b7aa5f27@6c48a",
+        "imageUuidOrDatabaseUri": "d43622c5-eb24-42c4-9de8-ee4d9181ccaf@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "1841d3ac-dace-40d5-ac8f-2b88b7aa5f27@6c48a"
+    "redirect": "d43622c5-eb24-42c4-9de8-ee4d9181ccaf@6c48a"
   }
 }

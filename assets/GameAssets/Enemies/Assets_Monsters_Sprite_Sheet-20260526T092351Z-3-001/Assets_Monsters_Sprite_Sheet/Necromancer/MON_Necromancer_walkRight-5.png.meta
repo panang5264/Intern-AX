@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "d24c8765-2066-4128-9819-ae2daceb372c",
+  "uuid": "fc927d5f-3fc6-4aba-aa9d-b96e441894f0",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "d24c8765-2066-4128-9819-ae2daceb372c@6c48a",
+      "uuid": "fc927d5f-3fc6-4aba-aa9d-b96e441894f0@6c48a",
       "displayName": "MON_Necromancer_walkRight-5",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "d24c8765-2066-4128-9819-ae2daceb372c",
+        "imageUuidOrDatabaseUri": "fc927d5f-3fc6-4aba-aa9d-b96e441894f0",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "d24c8765-2066-4128-9819-ae2daceb372c@f9941",
+      "uuid": "fc927d5f-3fc6-4aba-aa9d-b96e441894f0@f9941",
       "displayName": "MON_Necromancer_walkRight-5",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d24c8765-2066-4128-9819-ae2daceb372c@6c48a",
+        "imageUuidOrDatabaseUri": "fc927d5f-3fc6-4aba-aa9d-b96e441894f0@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "d24c8765-2066-4128-9819-ae2daceb372c@6c48a"
+    "redirect": "fc927d5f-3fc6-4aba-aa9d-b96e441894f0@6c48a"
   }
 }

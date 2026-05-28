@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "70bc7a8d-8e45-4c95-a64c-4d9ab9509b3e",
+  "uuid": "ac74cc28-7ab6-48c5-942f-c352bc783a16",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "70bc7a8d-8e45-4c95-a64c-4d9ab9509b3e@6c48a",
+      "uuid": "ac74cc28-7ab6-48c5-942f-c352bc783a16@6c48a",
       "displayName": "Ribbon_Yellow",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "70bc7a8d-8e45-4c95-a64c-4d9ab9509b3e",
+        "imageUuidOrDatabaseUri": "ac74cc28-7ab6-48c5-942f-c352bc783a16",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "70bc7a8d-8e45-4c95-a64c-4d9ab9509b3e@f9941",
+      "uuid": "ac74cc28-7ab6-48c5-942f-c352bc783a16@f9941",
       "displayName": "Ribbon_Yellow",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "70bc7a8d-8e45-4c95-a64c-4d9ab9509b3e@6c48a",
+        "imageUuidOrDatabaseUri": "ac74cc28-7ab6-48c5-942f-c352bc783a16@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "70bc7a8d-8e45-4c95-a64c-4d9ab9509b3e@6c48a"
+    "redirect": "ac74cc28-7ab6-48c5-942f-c352bc783a16@6c48a"
   }
 }

@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "617f0eab-c8a7-46b4-9921-a606e15e6de0",
+  "uuid": "bbcb7d4f-664f-4178-83a1-7a026ba69b28",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "617f0eab-c8a7-46b4-9921-a606e15e6de0@6c48a",
+      "uuid": "bbcb7d4f-664f-4178-83a1-7a026ba69b28@6c48a",
       "displayName": "MON_Zombie_Idle-3",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "617f0eab-c8a7-46b4-9921-a606e15e6de0",
+        "imageUuidOrDatabaseUri": "bbcb7d4f-664f-4178-83a1-7a026ba69b28",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "617f0eab-c8a7-46b4-9921-a606e15e6de0@f9941",
+      "uuid": "bbcb7d4f-664f-4178-83a1-7a026ba69b28@f9941",
       "displayName": "MON_Zombie_Idle-3",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "617f0eab-c8a7-46b4-9921-a606e15e6de0@6c48a",
+        "imageUuidOrDatabaseUri": "bbcb7d4f-664f-4178-83a1-7a026ba69b28@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "617f0eab-c8a7-46b4-9921-a606e15e6de0@6c48a"
+    "redirect": "bbcb7d4f-664f-4178-83a1-7a026ba69b28@6c48a"
   }
 }

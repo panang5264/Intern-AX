@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "24cf68b5-ab28-4acb-9fa3-1b3d2243e2d7",
+  "uuid": "fae5a72c-5875-48d6-9b52-b58aebcba298",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "24cf68b5-ab28-4acb-9fa3-1b3d2243e2d7@6c48a",
+      "uuid": "fae5a72c-5875-48d6-9b52-b58aebcba298@6c48a",
       "displayName": "Swords",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "24cf68b5-ab28-4acb-9fa3-1b3d2243e2d7",
+        "imageUuidOrDatabaseUri": "fae5a72c-5875-48d6-9b52-b58aebcba298",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "24cf68b5-ab28-4acb-9fa3-1b3d2243e2d7@f9941",
+      "uuid": "fae5a72c-5875-48d6-9b52-b58aebcba298@f9941",
       "displayName": "Swords",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "24cf68b5-ab28-4acb-9fa3-1b3d2243e2d7@6c48a",
+        "imageUuidOrDatabaseUri": "fae5a72c-5875-48d6-9b52-b58aebcba298@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "24cf68b5-ab28-4acb-9fa3-1b3d2243e2d7@6c48a"
+    "redirect": "fae5a72c-5875-48d6-9b52-b58aebcba298@6c48a"
   }
 }

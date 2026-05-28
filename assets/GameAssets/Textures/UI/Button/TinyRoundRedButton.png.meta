@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "6f11ea0c-81ba-45f6-b4bf-0a76b53a38d0",
+  "uuid": "7fc50822-be49-4bc5-9a31-022dcd9fd185",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "6f11ea0c-81ba-45f6-b4bf-0a76b53a38d0@6c48a",
+      "uuid": "7fc50822-be49-4bc5-9a31-022dcd9fd185@6c48a",
       "displayName": "TinyRoundRedButton",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "6f11ea0c-81ba-45f6-b4bf-0a76b53a38d0",
+        "imageUuidOrDatabaseUri": "7fc50822-be49-4bc5-9a31-022dcd9fd185",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "6f11ea0c-81ba-45f6-b4bf-0a76b53a38d0@f9941",
+      "uuid": "7fc50822-be49-4bc5-9a31-022dcd9fd185@f9941",
       "displayName": "TinyRoundRedButton",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "6f11ea0c-81ba-45f6-b4bf-0a76b53a38d0@6c48a",
+        "imageUuidOrDatabaseUri": "7fc50822-be49-4bc5-9a31-022dcd9fd185@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "6f11ea0c-81ba-45f6-b4bf-0a76b53a38d0@6c48a"
+    "redirect": "7fc50822-be49-4bc5-9a31-022dcd9fd185@6c48a"
   }
 }

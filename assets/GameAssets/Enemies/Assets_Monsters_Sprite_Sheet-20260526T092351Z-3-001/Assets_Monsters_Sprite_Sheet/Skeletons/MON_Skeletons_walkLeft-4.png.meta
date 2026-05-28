@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "427197fd-49fb-4139-ab27-f43b053d6887",
+  "uuid": "ea5cd592-5d88-4f66-90e7-c8db2462414e",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "427197fd-49fb-4139-ab27-f43b053d6887@6c48a",
+      "uuid": "ea5cd592-5d88-4f66-90e7-c8db2462414e@6c48a",
       "displayName": "MON_Skeletons_walkLeft-4",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "427197fd-49fb-4139-ab27-f43b053d6887",
+        "imageUuidOrDatabaseUri": "ea5cd592-5d88-4f66-90e7-c8db2462414e",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "427197fd-49fb-4139-ab27-f43b053d6887@f9941",
+      "uuid": "ea5cd592-5d88-4f66-90e7-c8db2462414e@f9941",
       "displayName": "MON_Skeletons_walkLeft-4",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "427197fd-49fb-4139-ab27-f43b053d6887@6c48a",
+        "imageUuidOrDatabaseUri": "ea5cd592-5d88-4f66-90e7-c8db2462414e@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "427197fd-49fb-4139-ab27-f43b053d6887@6c48a"
+    "redirect": "ea5cd592-5d88-4f66-90e7-c8db2462414e@6c48a"
   }
 }

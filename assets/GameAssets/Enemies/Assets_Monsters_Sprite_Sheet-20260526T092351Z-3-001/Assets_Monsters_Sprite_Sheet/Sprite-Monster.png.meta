@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "a815c467-6141-492d-81ab-b3ca21a5bbf7",
+  "uuid": "81566aee-78f2-4e5d-8de8-a8451e564b7e",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "a815c467-6141-492d-81ab-b3ca21a5bbf7@6c48a",
+      "uuid": "81566aee-78f2-4e5d-8de8-a8451e564b7e@6c48a",
       "displayName": "Sprite-Monster",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "a815c467-6141-492d-81ab-b3ca21a5bbf7",
+        "imageUuidOrDatabaseUri": "81566aee-78f2-4e5d-8de8-a8451e564b7e",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "a815c467-6141-492d-81ab-b3ca21a5bbf7@f9941",
+      "uuid": "81566aee-78f2-4e5d-8de8-a8451e564b7e@f9941",
       "displayName": "Sprite-Monster",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "a815c467-6141-492d-81ab-b3ca21a5bbf7@6c48a",
+        "imageUuidOrDatabaseUri": "81566aee-78f2-4e5d-8de8-a8451e564b7e@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "a815c467-6141-492d-81ab-b3ca21a5bbf7@6c48a"
+    "redirect": "81566aee-78f2-4e5d-8de8-a8451e564b7e@6c48a"
   }
 }
