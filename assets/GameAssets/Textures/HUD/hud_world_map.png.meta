@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "c68282b8-dfc3-4e12-adf2-e78b4543d105",
+  "uuid": "d623bd42-ca8a-4334-a15d-1083c5bf2ba4",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "c68282b8-dfc3-4e12-adf2-e78b4543d105@6c48a",
+      "uuid": "d623bd42-ca8a-4334-a15d-1083c5bf2ba4@6c48a",
       "displayName": "hud_world_map",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "c68282b8-dfc3-4e12-adf2-e78b4543d105",
+        "imageUuidOrDatabaseUri": "d623bd42-ca8a-4334-a15d-1083c5bf2ba4",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "c68282b8-dfc3-4e12-adf2-e78b4543d105@f9941",
+      "uuid": "d623bd42-ca8a-4334-a15d-1083c5bf2ba4@f9941",
       "displayName": "hud_world_map",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "c68282b8-dfc3-4e12-adf2-e78b4543d105@6c48a",
+        "imageUuidOrDatabaseUri": "d623bd42-ca8a-4334-a15d-1083c5bf2ba4@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "c68282b8-dfc3-4e12-adf2-e78b4543d105@6c48a"
+    "redirect": "d623bd42-ca8a-4334-a15d-1083c5bf2ba4@6c48a"
   }
 }

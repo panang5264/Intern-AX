@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "c39f8ef7-9010-40e5-8125-3cc8f4b71056",
+  "uuid": "ee202e6e-0d5b-48be-983c-9bd30506bfb7",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "c39f8ef7-9010-40e5-8125-3cc8f4b71056@6c48a",
+      "uuid": "ee202e6e-0d5b-48be-983c-9bd30506bfb7@6c48a",
       "displayName": "SmallBlueRoundButton_Pressed",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "c39f8ef7-9010-40e5-8125-3cc8f4b71056",
+        "imageUuidOrDatabaseUri": "ee202e6e-0d5b-48be-983c-9bd30506bfb7",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "c39f8ef7-9010-40e5-8125-3cc8f4b71056@f9941",
+      "uuid": "ee202e6e-0d5b-48be-983c-9bd30506bfb7@f9941",
       "displayName": "SmallBlueRoundButton_Pressed",
       "id": "f9941",
       "name": "spriteFrame",
@@ -49,10 +49,10 @@
         "height": 85,
         "rawWidth": 128,
         "rawHeight": 128,
-        "borderTop": 31,
-        "borderBottom": 41,
-        "borderLeft": 40,
-        "borderRight": 40,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
         "packable": true,
         "pixelsToUnit": 100,
         "pivotX": 0.5,
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "c39f8ef7-9010-40e5-8125-3cc8f4b71056@6c48a",
+        "imageUuidOrDatabaseUri": "ee202e6e-0d5b-48be-983c-9bd30506bfb7@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "c39f8ef7-9010-40e5-8125-3cc8f4b71056@6c48a"
+    "redirect": "ee202e6e-0d5b-48be-983c-9bd30506bfb7@6c48a"
   }
 }

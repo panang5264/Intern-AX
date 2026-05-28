@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "64eb2099-7def-46da-b7fd-c1150b18d8bf",
+  "uuid": "473530ca-7ae6-4222-8fa4-c44f2346b9b2",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "64eb2099-7def-46da-b7fd-c1150b18d8bf@6c48a",
+      "uuid": "473530ca-7ae6-4222-8fa4-c44f2346b9b2@6c48a",
       "displayName": "MediavelFree",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "64eb2099-7def-46da-b7fd-c1150b18d8bf",
+        "imageUuidOrDatabaseUri": "473530ca-7ae6-4222-8fa4-c44f2346b9b2",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "64eb2099-7def-46da-b7fd-c1150b18d8bf@f9941",
+      "uuid": "473530ca-7ae6-4222-8fa4-c44f2346b9b2@f9941",
       "displayName": "MediavelFree",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "64eb2099-7def-46da-b7fd-c1150b18d8bf@6c48a",
+        "imageUuidOrDatabaseUri": "473530ca-7ae6-4222-8fa4-c44f2346b9b2@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "64eb2099-7def-46da-b7fd-c1150b18d8bf@6c48a"
+    "redirect": "473530ca-7ae6-4222-8fa4-c44f2346b9b2@6c48a"
   }
 }

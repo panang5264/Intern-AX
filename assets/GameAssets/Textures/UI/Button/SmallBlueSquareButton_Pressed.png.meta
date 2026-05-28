@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "38a3e3a5-84e2-4474-816e-edcfc8edbf6f",
+  "uuid": "fc1cd2d5-7f7e-4bb0-8e87-9c9a623d9814",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "38a3e3a5-84e2-4474-816e-edcfc8edbf6f@6c48a",
+      "uuid": "fc1cd2d5-7f7e-4bb0-8e87-9c9a623d9814@6c48a",
       "displayName": "SmallBlueSquareButton_Pressed",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "38a3e3a5-84e2-4474-816e-edcfc8edbf6f",
+        "imageUuidOrDatabaseUri": "fc1cd2d5-7f7e-4bb0-8e87-9c9a623d9814",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "38a3e3a5-84e2-4474-816e-edcfc8edbf6f@f9941",
+      "uuid": "fc1cd2d5-7f7e-4bb0-8e87-9c9a623d9814@f9941",
       "displayName": "SmallBlueSquareButton_Pressed",
       "id": "f9941",
       "name": "spriteFrame",
@@ -49,10 +49,10 @@
         "height": 85,
         "rawWidth": 128,
         "rawHeight": 128,
-        "borderTop": 29,
-        "borderBottom": 27,
-        "borderLeft": 25,
-        "borderRight": 29,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
         "packable": true,
         "pixelsToUnit": 100,
         "pivotX": 0.5,
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "38a3e3a5-84e2-4474-816e-edcfc8edbf6f@6c48a",
+        "imageUuidOrDatabaseUri": "fc1cd2d5-7f7e-4bb0-8e87-9c9a623d9814@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "38a3e3a5-84e2-4474-816e-edcfc8edbf6f@6c48a"
+    "redirect": "fc1cd2d5-7f7e-4bb0-8e87-9c9a623d9814@6c48a"
   }
 }

@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "97f3f027-fa76-427f-a438-0e2a87b55d25",
+  "uuid": "939ce970-227e-459f-a4b3-7e99848d3601",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "97f3f027-fa76-427f-a438-0e2a87b55d25@6c48a",
+      "uuid": "939ce970-227e-459f-a4b3-7e99848d3601@6c48a",
       "displayName": "MON_Orc_walkBack-4",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "97f3f027-fa76-427f-a438-0e2a87b55d25",
+        "imageUuidOrDatabaseUri": "939ce970-227e-459f-a4b3-7e99848d3601",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "97f3f027-fa76-427f-a438-0e2a87b55d25@f9941",
+      "uuid": "939ce970-227e-459f-a4b3-7e99848d3601@f9941",
       "displayName": "MON_Orc_walkBack-4",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "97f3f027-fa76-427f-a438-0e2a87b55d25@6c48a",
+        "imageUuidOrDatabaseUri": "939ce970-227e-459f-a4b3-7e99848d3601@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "97f3f027-fa76-427f-a438-0e2a87b55d25@6c48a"
+    "redirect": "939ce970-227e-459f-a4b3-7e99848d3601@6c48a"
   }
 }

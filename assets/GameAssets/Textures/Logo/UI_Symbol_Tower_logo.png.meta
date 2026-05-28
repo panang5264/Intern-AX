@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "4804c9cf-b7b8-4b28-8642-3061a6c239ab",
+  "uuid": "af0ea3cd-0fae-47ce-b11c-7787fbfb19d0",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "4804c9cf-b7b8-4b28-8642-3061a6c239ab@6c48a",
+      "uuid": "af0ea3cd-0fae-47ce-b11c-7787fbfb19d0@6c48a",
       "displayName": "UI_Symbol_Tower_logo",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "4804c9cf-b7b8-4b28-8642-3061a6c239ab",
+        "imageUuidOrDatabaseUri": "af0ea3cd-0fae-47ce-b11c-7787fbfb19d0",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "4804c9cf-b7b8-4b28-8642-3061a6c239ab@f9941",
+      "uuid": "af0ea3cd-0fae-47ce-b11c-7787fbfb19d0@f9941",
       "displayName": "UI_Symbol_Tower_logo",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "4804c9cf-b7b8-4b28-8642-3061a6c239ab@6c48a",
+        "imageUuidOrDatabaseUri": "af0ea3cd-0fae-47ce-b11c-7787fbfb19d0@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "4804c9cf-b7b8-4b28-8642-3061a6c239ab@6c48a"
+    "redirect": "af0ea3cd-0fae-47ce-b11c-7787fbfb19d0@6c48a"
   }
 }

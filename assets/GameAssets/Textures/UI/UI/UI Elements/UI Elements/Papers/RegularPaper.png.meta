@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "5afca948-5431-49c3-9a8d-6b61cc25bbc9",
+  "uuid": "b2bacbb1-2748-47cc-8688-5c28dd326c04",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "5afca948-5431-49c3-9a8d-6b61cc25bbc9@6c48a",
+      "uuid": "b2bacbb1-2748-47cc-8688-5c28dd326c04@6c48a",
       "displayName": "RegularPaper",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "5afca948-5431-49c3-9a8d-6b61cc25bbc9",
+        "imageUuidOrDatabaseUri": "b2bacbb1-2748-47cc-8688-5c28dd326c04",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "5afca948-5431-49c3-9a8d-6b61cc25bbc9@f9941",
+      "uuid": "b2bacbb1-2748-47cc-8688-5c28dd326c04@f9941",
       "displayName": "RegularPaper",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5afca948-5431-49c3-9a8d-6b61cc25bbc9@6c48a",
+        "imageUuidOrDatabaseUri": "b2bacbb1-2748-47cc-8688-5c28dd326c04@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "5afca948-5431-49c3-9a8d-6b61cc25bbc9@6c48a"
+    "redirect": "b2bacbb1-2748-47cc-8688-5c28dd326c04@6c48a"
   }
 }

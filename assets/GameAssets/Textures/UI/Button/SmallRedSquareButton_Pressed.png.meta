@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "2edb682a-4b3a-4984-8b55-ede2d16f0725",
+  "uuid": "10aa123e-7104-4f1b-a028-d2fd66651805",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "2edb682a-4b3a-4984-8b55-ede2d16f0725@6c48a",
+      "uuid": "10aa123e-7104-4f1b-a028-d2fd66651805@6c48a",
       "displayName": "SmallRedSquareButton_Pressed",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "2edb682a-4b3a-4984-8b55-ede2d16f0725",
+        "imageUuidOrDatabaseUri": "10aa123e-7104-4f1b-a028-d2fd66651805",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "2edb682a-4b3a-4984-8b55-ede2d16f0725@f9941",
+      "uuid": "10aa123e-7104-4f1b-a028-d2fd66651805@f9941",
       "displayName": "SmallRedSquareButton_Pressed",
       "id": "f9941",
       "name": "spriteFrame",
@@ -49,10 +49,10 @@
         "height": 85,
         "rawWidth": 128,
         "rawHeight": 128,
-        "borderTop": 27,
-        "borderBottom": 24,
-        "borderLeft": 24,
-        "borderRight": 28,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
         "packable": true,
         "pixelsToUnit": 100,
         "pivotX": 0.5,
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2edb682a-4b3a-4984-8b55-ede2d16f0725@6c48a",
+        "imageUuidOrDatabaseUri": "10aa123e-7104-4f1b-a028-d2fd66651805@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "2edb682a-4b3a-4984-8b55-ede2d16f0725@6c48a"
+    "redirect": "10aa123e-7104-4f1b-a028-d2fd66651805@6c48a"
   }
 }

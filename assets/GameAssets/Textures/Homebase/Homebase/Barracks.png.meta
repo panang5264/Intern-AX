@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "38a574c4-947c-4cf7-8902-045fbda7b121",
+  "uuid": "b9659850-701c-48fe-8cd7-5c370feb600d",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "38a574c4-947c-4cf7-8902-045fbda7b121@6c48a",
+      "uuid": "b9659850-701c-48fe-8cd7-5c370feb600d@6c48a",
       "displayName": "Barracks",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "38a574c4-947c-4cf7-8902-045fbda7b121",
+        "imageUuidOrDatabaseUri": "b9659850-701c-48fe-8cd7-5c370feb600d",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "38a574c4-947c-4cf7-8902-045fbda7b121@f9941",
+      "uuid": "b9659850-701c-48fe-8cd7-5c370feb600d@f9941",
       "displayName": "Barracks",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "38a574c4-947c-4cf7-8902-045fbda7b121@6c48a",
+        "imageUuidOrDatabaseUri": "b9659850-701c-48fe-8cd7-5c370feb600d@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "38a574c4-947c-4cf7-8902-045fbda7b121@6c48a"
+    "redirect": "b9659850-701c-48fe-8cd7-5c370feb600d@6c48a"
   }
 }

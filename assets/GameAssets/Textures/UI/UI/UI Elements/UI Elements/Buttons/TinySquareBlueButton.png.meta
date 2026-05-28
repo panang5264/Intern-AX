@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "2e9b61fa-5c82-4f9f-a59d-d43e09211962",
+  "uuid": "da192883-afca-4234-bf56-ff78e942ca31",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "2e9b61fa-5c82-4f9f-a59d-d43e09211962@6c48a",
+      "uuid": "da192883-afca-4234-bf56-ff78e942ca31@6c48a",
       "displayName": "TinySquareBlueButton",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "2e9b61fa-5c82-4f9f-a59d-d43e09211962",
+        "imageUuidOrDatabaseUri": "da192883-afca-4234-bf56-ff78e942ca31",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "2e9b61fa-5c82-4f9f-a59d-d43e09211962@f9941",
+      "uuid": "da192883-afca-4234-bf56-ff78e942ca31@f9941",
       "displayName": "TinySquareBlueButton",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2e9b61fa-5c82-4f9f-a59d-d43e09211962@6c48a",
+        "imageUuidOrDatabaseUri": "da192883-afca-4234-bf56-ff78e942ca31@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "2e9b61fa-5c82-4f9f-a59d-d43e09211962@6c48a"
+    "redirect": "da192883-afca-4234-bf56-ff78e942ca31@6c48a"
   }
 }

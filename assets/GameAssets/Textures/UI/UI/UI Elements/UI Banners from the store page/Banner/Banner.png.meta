@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "61eab301-520d-42fb-bc87-65ef6c7790d6",
+  "uuid": "e585730b-9cef-43d8-b840-d09ac1b20d95",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "61eab301-520d-42fb-bc87-65ef6c7790d6@6c48a",
+      "uuid": "e585730b-9cef-43d8-b840-d09ac1b20d95@6c48a",
       "displayName": "Banner",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "61eab301-520d-42fb-bc87-65ef6c7790d6",
+        "imageUuidOrDatabaseUri": "e585730b-9cef-43d8-b840-d09ac1b20d95",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "61eab301-520d-42fb-bc87-65ef6c7790d6@f9941",
+      "uuid": "e585730b-9cef-43d8-b840-d09ac1b20d95@f9941",
       "displayName": "Banner",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "61eab301-520d-42fb-bc87-65ef6c7790d6@6c48a",
+        "imageUuidOrDatabaseUri": "e585730b-9cef-43d8-b840-d09ac1b20d95@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "61eab301-520d-42fb-bc87-65ef6c7790d6@6c48a"
+    "redirect": "e585730b-9cef-43d8-b840-d09ac1b20d95@6c48a"
   }
 }

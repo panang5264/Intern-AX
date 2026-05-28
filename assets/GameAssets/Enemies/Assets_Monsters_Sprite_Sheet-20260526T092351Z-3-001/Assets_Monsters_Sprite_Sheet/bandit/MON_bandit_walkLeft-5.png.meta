@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "23e8d9df-f464-4454-a949-14f73c9132cc",
+  "uuid": "baafd1c9-0a57-4e7e-bf3b-430004b91079",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "23e8d9df-f464-4454-a949-14f73c9132cc@6c48a",
+      "uuid": "baafd1c9-0a57-4e7e-bf3b-430004b91079@6c48a",
       "displayName": "MON_bandit_walkLeft-5",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "23e8d9df-f464-4454-a949-14f73c9132cc",
+        "imageUuidOrDatabaseUri": "baafd1c9-0a57-4e7e-bf3b-430004b91079",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "23e8d9df-f464-4454-a949-14f73c9132cc@f9941",
+      "uuid": "baafd1c9-0a57-4e7e-bf3b-430004b91079@f9941",
       "displayName": "MON_bandit_walkLeft-5",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "23e8d9df-f464-4454-a949-14f73c9132cc@6c48a",
+        "imageUuidOrDatabaseUri": "baafd1c9-0a57-4e7e-bf3b-430004b91079@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "23e8d9df-f464-4454-a949-14f73c9132cc@6c48a"
+    "redirect": "baafd1c9-0a57-4e7e-bf3b-430004b91079@6c48a"
   }
 }

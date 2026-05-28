@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "82b4bd2a-a6e9-4002-b8f9-67b1991f9411",
+  "uuid": "bbfc473b-6da4-4c82-ae9b-f8059142c007",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "82b4bd2a-a6e9-4002-b8f9-67b1991f9411@6c48a",
+      "uuid": "bbfc473b-6da4-4c82-ae9b-f8059142c007@6c48a",
       "displayName": "Slots",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "82b4bd2a-a6e9-4002-b8f9-67b1991f9411",
+        "imageUuidOrDatabaseUri": "bbfc473b-6da4-4c82-ae9b-f8059142c007",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "82b4bd2a-a6e9-4002-b8f9-67b1991f9411@f9941",
+      "uuid": "bbfc473b-6da4-4c82-ae9b-f8059142c007@f9941",
       "displayName": "Slots",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "82b4bd2a-a6e9-4002-b8f9-67b1991f9411@6c48a",
+        "imageUuidOrDatabaseUri": "bbfc473b-6da4-4c82-ae9b-f8059142c007@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "82b4bd2a-a6e9-4002-b8f9-67b1991f9411@6c48a"
+    "redirect": "bbfc473b-6da4-4c82-ae9b-f8059142c007@6c48a"
   }
 }
