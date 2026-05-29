@@ -142,8 +142,10 @@ export class TowerUpgrade extends Component {
         const price = this.cur_data.price
         this.tower_value += price
         this.update_sellLabel()
+
+        const can_spend = ResourceManager.instance.spendGold(price)
+        if (!can_spend) return;
         this.tower_ctrl.upgrade(this.cur_stats);
-        ResourceManager.instance.spendGold(price);
         this.cur_tier += 1;
 
         if (this.cur_tier - 1 >= this.upgradelist.length) {
