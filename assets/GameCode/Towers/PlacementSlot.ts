@@ -25,11 +25,18 @@ export class PlacementSlot extends Component {
 
     start() {
         director.getScene().on(GlobalEvent.TOWER_DROPPED, this.onTowerDropped, this);
+        director.getScene().on(GlobalEvent.TOWER_SELLED, this.onTowerSell, this);
     }
 
     onDestroy() {
         if (director.getScene()) {
             director.getScene().off(GlobalEvent.TOWER_DROPPED, this.onTowerDropped, this);
+            director.getScene().off(GlobalEvent.TOWER_SELLED, this.onTowerSell, this);
+        }
+    }
+    onTowerSell(tower: Node) {
+        if (tower === this._currentTower) {
+            this._isOccupied = false
         }
     }
 
@@ -56,7 +63,6 @@ export class PlacementSlot extends Component {
             this.placeTower(data.prefab, data.towerName, data.type);
             console.log(`[Slot] place tower ${data.towerName} success! (paid ${data.cost})`);
         } else {
-            // ใช้ Event แจ้งเตือนไปยัง UI
             director.getScene().emit(GlobalEvent.SHOW_NOTI, "INSUFFICIENT FUNDS!");
 
             console.log(`[Slot] not enought money ${data.towerName}!`);
@@ -75,24 +81,5 @@ export class PlacementSlot extends Component {
         }
 
         console.log(`place tower ${towerName} into ${this.node.name}`);
-    }
-
-    public sellTower() {
-        if (!this._isOccupied || !this._currentTower) return;
-
-        const refund = Math.floor(this._currentCost * 0.3);
-
-        if (ResourceManager.instance) {
-            ResourceManager.instance.addGold(refund);
-            director.getScene().emit(GlobalEvent.SHOW_NOTI, `SOLD FOR +${refund} GOLD`);
-        }
-
-        if (TowerManager.instance && this._currentType) {
-            TowerManager.instance.removeTower(this._currentType);
-        }
-
-        this._currentTower.destroy();
-        this._currentTower = null;
-        this._isOccupied = false;
     }
 }

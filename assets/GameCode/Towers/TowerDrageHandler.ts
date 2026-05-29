@@ -4,6 +4,7 @@ import { _decorator, Component, Node, Prefab, instantiate, EventTouch, Vec3, dir
 import { TowerController } from './TowerController';
 import { ResourceManager } from '../Core/ResourceManager';
 import { TowerType } from '../Core/GameConfig';
+import { GlobalEvent } from '../Core/Constant';
 
 const { ccclass, property } = _decorator;
 

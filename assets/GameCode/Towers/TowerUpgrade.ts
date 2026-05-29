@@ -1,4 +1,4 @@
-import { _decorator, assert, Component, Enum, Node, EventTarget, Button, EventHandler, Label } from 'cc';
+import { _decorator, assert, Component, Enum, Node, EventTarget, Button, EventHandler, Label, director } from 'cc';
 import { TowerController } from './TowerController';
 import { GlobalEvent } from '../Core/Constant';
 import { UpgradePopup } from './UpgradePopup';
@@ -144,7 +144,10 @@ export class TowerUpgrade extends Component {
         this.update_sellLabel()
 
         const can_spend = ResourceManager.instance.spendGold(price)
-        if (!can_spend) return;
+        if (!can_spend) {
+            director.getScene().emit(GlobalEvent.SHOW_NOTI, "INSUFFICIENT FUNDS!");
+            return
+        };
         this.tower_ctrl.upgrade(this.cur_stats);
         this.cur_tier += 1;
 
@@ -174,6 +177,7 @@ export class TowerUpgrade extends Component {
     sellTower() {
         const value = this.tower_value / 2;
         ResourceManager.instance.addGold(Math.trunc(value))
+        director.getScene().emit(GlobalEvent.TOWER_SELLED, this.node)
         this.node.destroy()
     }
 
