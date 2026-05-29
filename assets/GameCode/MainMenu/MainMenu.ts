@@ -1,5 +1,6 @@
-import { _decorator, assert, Component, Label, Node } from 'cc';
+import { _decorator, assert, Component, director, Label, Node } from 'cc';
 import { PlayerData } from '../PlayerData';
+import { SceneName } from '../Core/Constant';
 const { ccclass, property } = _decorator;
 
 @ccclass('MainMenu')
@@ -14,7 +15,21 @@ export class MainMenu extends Component {
         assert(this.leaderBoard != null, "Can't find Setting node")
         assert(this.scrollLabel != null, "Didn't Set scrollLabel")
         assert(this.diamonLabel != null, "Didn't Set diamonLabel")
+
+        this.setting.active = false
+        this.leaderBoard.active = false
     }
+
+    switch_to_world_map() {
+        director.loadScene(SceneName.MAP)
+    }
+
+    open_inventory() {
+    }
+
+    open_shop() {
+    }
+
     open_setting() {
         this.setting.active = true
     }
