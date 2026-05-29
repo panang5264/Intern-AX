@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "5f65b1ea-089d-4daa-9e86-28a704aebd60",
+  "uuid": "e1be8a57-751e-4f58-b6f4-c354c6e260c8",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "5f65b1ea-089d-4daa-9e86-28a704aebd60@6c48a",
+      "uuid": "e1be8a57-751e-4f58-b6f4-c354c6e260c8@6c48a",
       "displayName": "Ribbon_Red",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "5f65b1ea-089d-4daa-9e86-28a704aebd60",
+        "imageUuidOrDatabaseUri": "e1be8a57-751e-4f58-b6f4-c354c6e260c8",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "5f65b1ea-089d-4daa-9e86-28a704aebd60@f9941",
+      "uuid": "e1be8a57-751e-4f58-b6f4-c354c6e260c8@f9941",
       "displayName": "Ribbon_Red",
       "id": "f9941",
       "name": "spriteFrame",
@@ -113,7 +113,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5f65b1ea-089d-4daa-9e86-28a704aebd60@6c48a",
+        "imageUuidOrDatabaseUri": "e1be8a57-751e-4f58-b6f4-c354c6e260c8@6c48a",
         "atlasUuid": "",
         "trimType": "auto"
       },
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "fixAlphaTransparencyArtifacts": false,
     "hasAlpha": true,
-    "redirect": "5f65b1ea-089d-4daa-9e86-28a704aebd60@6c48a"
+    "redirect": "e1be8a57-751e-4f58-b6f4-c354c6e260c8@6c48a"
   }
 }

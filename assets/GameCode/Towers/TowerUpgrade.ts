@@ -110,6 +110,10 @@ export class TowerUpgrade extends Component {
         this.cur_data = data
         this.cur_stats = stats;
 
+        if (this.cur_data) {
+            this.update_updateLabel();
+        }
+
         if (!this.sellButton || !this.upgradeButton) return;
         const upgradeHandler = new EventHandler()
         upgradeHandler.target = this.node
@@ -158,6 +162,11 @@ export class TowerUpgrade extends Component {
         const value = this.tower_value / 2;
         const label = this.sellButton.node.getComponentInChildren(Label)
         label.string = `Sell (${Math.trunc(value)} g)`
+    }
+    update_updateLabel() {
+        const value = this.cur_data.price
+        const label = this.upgradeButton.node.getComponentInChildren(Label)
+        label.string = `Upgrade (${value} g)`
     }
 
     sellTower() {
