@@ -68,7 +68,7 @@ export class Enemy extends Component {
 
         // แจ้ง event ว่าศัตรูถูกกำจัดแล้ว
         director.getScene().emit(GlobalEvent.ENEMY_REMOVED);
-
+        director.getScene().emit(GlobalEvent.SHOW_NOTI, `Enemy Defeated! +${this.goldReward} G`);
         // ทำลาย node
         this.node.destroy();
     }

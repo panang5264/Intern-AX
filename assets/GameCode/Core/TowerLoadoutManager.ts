@@ -26,7 +26,7 @@ export class TowerLoadoutManager {
 
     // คลังป้อมปืนทั้งหมดในเกม (Collection)
     private _collection: TowerData[] = [];
-    
+
     // ป้อมปืนที่ติดตั้งไว้สำหรับลงเล่น 5 ตัว (Loadout)
     private _equippedTowers: (TowerData | null)[] = [null, null, null, null, null];
 
